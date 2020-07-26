@@ -29,7 +29,7 @@ jobs:
         key: ${{ runner.os }}-${{ matrix.node_version }}-${{ hashFiles(matrix.os == 'windows-latest' && '**\yarn.lock' || '**/yarn.lock') }}
     - name: Install Dependencies
       run: yarn
-    - name: Build Project
-      run: yarn build
     - name: Test
       run: yarn test
+    - name: Build Project
+      run: yarn build

@@ -11,6 +11,13 @@
     "@klasa/core": "github:dirigeants/core#build",
     "klasa": "github:dirigeants/klasa#build"
   },
+  "scripts": {
+    "lint": "eslint --fix --ext ts src",
+    "test": "eslint --ext ts src",
+    "build": "tsc -p .",
+    "watch": "tsc -p . -w",
+    "clean": "rm -rf dist; yarn build"
+  },
   "devDependencies": {
     "@pengubot/lint": "^1.1.2",
     "@typescript-eslint/eslint-plugin": "^3.7.0",
