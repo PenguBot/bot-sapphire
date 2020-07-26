@@ -18,4 +18,4 @@ jobs:
       - name: Run Label Sync
         uses: crazy-max/ghaction-github-labeler@v2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PENGU_SECRET }}

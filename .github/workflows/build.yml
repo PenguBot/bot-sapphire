@@ -52,4 +52,4 @@ jobs:
         git commit -m "TSC build: ${GITHUB_SHA}" || true
         git push origin $TARGET_BRANCH
       env:
-        GITHUB_TOKEN: ${{ secrets.COMMIT_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PENGU_SECRET }}
