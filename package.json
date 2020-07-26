@@ -1,0 +1,21 @@
+{
+  "name": "@pengubot/bot",
+  "version": "3.0.0",
+  "description": "PenguBot is a multi-purpose discord bot",
+  "main": "dist/index.js",
+  "repository": "https://github.com/PenguBot/bot.git",
+  "author": "Aditya N. Tripathi <adityatripathidelhi@gmail.com>",
+  "license": "Apache-2.0",
+  "private": true,
+  "dependencies": {
+    "@klasa/core": "github:dirigeants/core#build",
+    "klasa": "github:dirigeants/klasa#build"
+  },
+  "devDependencies": {
+    "@pengubot/lint": "^1.1.2",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "eslint": "^7.5.0",
+    "typescript": "^3.9.7"
+  }
+}

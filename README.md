@@ -15,6 +15,7 @@ PenguBot is a Multi-Purpose Discord Bot with Entertainment, Social, Music, Image
 [![Discord Bots](https://top.gg/api/widget/upvotes/303181184718995457.svg)](https://top.gg/bot/303181184718995457/vote)
 </div>
 
+----
 
 ## Contributors ✨
 
@@ -34,3 +35,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+# License
+[Apache-2.0](https://github.com/PenguBot/bot/blob/main/LICENSE)
