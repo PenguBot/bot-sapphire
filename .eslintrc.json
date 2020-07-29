@@ -1,21 +1,3 @@
 {
-  "extends": "@axonteam/eslint-config",
-  "overrides": [
-    {
-      "files": ["*.ts"],
-      "extends": [
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
-      ],
-      "parser": "@typescript-eslint/parser",
-      "rules": {
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "no-magic-numbers": "off",
-        "@typescript-eslint/no-non-null-assertion": "off"
-      }
-    }
-  ],
-  "rules": {
-    "no-magic-numbers": "off"
-  }
+  "extends": ["@pengubot"]
 }

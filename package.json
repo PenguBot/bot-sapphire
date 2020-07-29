@@ -1,14 +1,14 @@
 {
-  "name": "axoncore-app",
-  "version": "1.0.0",
-  "description": "Boilerplate AxonCore app [discordjs-esm].",
-  "author": "KhaaZ",
-  "link": "https://github.com/Khaazz/AxonCore",
-  "license": "MIT",
-  "engines": {
-    "node": ">=8.0.0"
-  },
+  "name": "@pengubot/bot",
+  "version": "3.0.0",
+  "description": "PenguBot is a multi-purpose discord bot",
+  "main": "dist/index.js",
+  "repository": "https://github.com/PenguBot/bot.git",
+  "author": "Aditya N. Tripathi <adityatripathidelhi@gmail.com>",
+  "license": "Apache-2.0",
+  "private": true,
   "dependencies": {
+    "@pengubot/lint": "^1.1.3",
     "axoncore": "github:khaaz/AxonCore#dev",
     "chalk": "^2.4.2",
     "discord.js": "^12.0.1",
@@ -19,17 +19,13 @@
     "@types/node": "^14.0.27",
     "eslint": "^6.8.0"
   },
-  "main": "./index.js",
   "scripts": {
+    "build": "tsc -p",
+    "clean": "rm -rf dist; yarn build",
+    "lint": "eslint --fix --ext ts src",
     "start": "node -r esm src/index.js",
-    "start:pm2": "pm2 start scripts/start.config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Khaazz/AxonCore.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Khaazz/AxonCore/issues"
-  },
-  "homepage": "https://github.com/Khaazz/AxonCore#readme"
+    "start:pm2": "pm2 start scripts/start.config.js",
+    "test": "eslint --ext ts src",
+    "watch": "tsc -p . -w"
+  }
 }
