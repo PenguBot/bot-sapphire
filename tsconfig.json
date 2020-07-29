@@ -5,6 +5,10 @@
     "rootDir": "./src",
     "baseUrl": "./src",
     "composite": true,
-    "declaration": true
-  }
+    "declaration": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src"
+  ]
 }
