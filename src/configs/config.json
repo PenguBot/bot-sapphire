@@ -1,0 +1,36 @@
+{
+    "settings": {
+        "lang": "english",
+        "debugMode": true,
+        "library": 1,
+        "logger": 0,
+        "db": 1,
+        "guildConfigCache": 1000
+    },
+    "prefixes": {
+        "general": "a!",
+        "admin": "a.",
+        "owner": "a$"
+    },
+    "info": {
+        "name": "AxonCore - discordjs",
+        "description": "AxonCore - Description",
+        "version": "0.1.0"
+    },
+    "staff": {
+        "owners": [{ "name": "", "id": "" }],
+        "admins": [{ "name": "", "id": "" }]
+    },
+    "template": {
+        "embeds": {
+            "help": "ffffff",
+            "global": 4315874,
+            "error": 15844367
+        },
+
+        "emotes": {
+            "error": ":x:",
+            "success": ":white_check_mark:"
+        }
+    }
+}
