@@ -1,5 +1,5 @@
 {
-  "extends": "@pengubot/lint",
+  "extends": "@pengubot/eslint-config",
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",

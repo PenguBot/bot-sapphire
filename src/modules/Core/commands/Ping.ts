@@ -1,52 +1,52 @@
 import {
-    Command, CommandOptions, CommandResponse, Module, CommandEnvironment,
-} from 'axoncore';
+    Command, CommandOptions, CommandResponse, Module, CommandEnvironment
+} from "axoncore";
 
-import Pong from './Ping_Pong';
+import Pong from "./Ping_Pong";
 
 class Ping extends Command {
     constructor(module: Module) {
         super(module);
 
-        this.label = 'ping';
+        this.label = "ping";
         this.aliases = [
-            'ping',
-            'pang',
-            'pung',
+            "ping",
+            "pang",
+            "pung"
         ];
 
         this.hasSubcmd = true;
 
         this.info = {
-            owners: ['KhaaZ'],
-            name: 'ping',
-            description: 'Ping the bot.',
-            usage: 'ping',
-            examples: ['ping'],
+            owners: ["KhaaZ"],
+            name: "ping",
+            description: "Ping the bot.",
+            usage: "ping",
+            examples: ["ping"]
         };
 
         this.options = new CommandOptions(this, {
             argsMin: 0,
-            guildOnly: false,
-        } );
+            guildOnly: false
+        });
     }
 
     init() {
         return [Pong];
     }
 
-    async execute( { msg }: CommandEnvironment) {
+    async execute({ msg }: CommandEnvironment) {
         const start = Date.now();
 
-        const mess = await this.sendMessage(msg.channel, 'Pong! ');
+        const mess = await this.sendMessage(msg.channel, "Pong! ");
         if (!mess) {
-            return new CommandResponse( { success: false } );
+            return new CommandResponse({ success: false });
         }
 
         const diff = (Date.now() - start);
         this.editMessage(mess, `Pong! \`${diff}ms\``);
 
-        return new CommandResponse( { success: true } );
+        return new CommandResponse({ success: true });
     }
 }
 

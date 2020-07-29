@@ -1,9 +1,9 @@
 import {
-    AxonClient, AxonOptions, GuildConfig, Command, CommandEnvironment,
-} from 'axoncore';
-import * as djs from 'discord.js';
+    AxonClient, AxonOptions, GuildConfig, Command, CommandEnvironment
+} from "axoncore";
+import * as djs from "discord.js";
 
-import * as modules from './modules/index';
+import * as modules from "./modules/index";
 
 /**
  * Example - Client constructor
@@ -36,20 +36,20 @@ class Client extends AxonClient {
         // overrides default editStatus
         // used to setup custom status
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        this.botClient.user!.setPresence( {
-            status: 'online',
+        this.botClient.user!.setPresence({
+            status: "online",
             activity: {
                 name: `AxonCore | ${this.settings.prefixes[0]}help`,
-                type: 0,
-            },
-        } );
+                type: 0
+            }
+        });
     }
 
     // disabled
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     $sendFullHelp(msg: djs.Message, guildConfig: GuildConfig): Promise<djs.Message> {
         // override sendFullHelp method
-        return this.axonUtils.sendMessage(msg.channel, 'Full Help override');
+        return this.axonUtils.sendMessage(msg.channel, "Full Help override");
     }
 
     // disabled

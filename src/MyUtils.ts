@@ -1,8 +1,8 @@
-import { Utils, AxonClient } from 'axoncore';
+import { Utils, AxonClient } from "axoncore";
 
 class MyUtils extends Utils {
     invite: RegExp;
-    
+
     constructor(client: AxonClient) {
         super(client);
         this.invite = /^(discord.gg\/|discordapp.com\/invite\/)([a-z0-9]+)$/gi;
@@ -15,11 +15,11 @@ class MyUtils extends Utils {
      * @returns rgb color code `[xxx, xxx, xxx]`
      */
     hexTOrgb(hex: number | string): [number, number, number] {
-        const num = parseInt(String(hex).replace('#', ''), 16);
+        const num = parseInt(String(hex).replace("#", ""), 16);
         return [
             num >> 16,
             (num >> 8) & 255,
-            num & 255,
+            num & 255
         ];
     }
 
@@ -32,7 +32,7 @@ class MyUtils extends Utils {
      * @returns Hex color code (6 char) (without #)
      */
     rgbTOhex(red: number, green: number, blue: number): string {
-        return ( (blue | (green << 8) | (red << 16) ) | (1 << 24) ).toString(16).slice(1);
+        return ((blue | (green << 8) | (red << 16)) | (1 << 24)).toString(16).slice(1);
     }
 }
 

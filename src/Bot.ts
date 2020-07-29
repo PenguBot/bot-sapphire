@@ -1,16 +1,16 @@
-import Discordjs, { Intents } from 'discord.js';
+import Discordjs, { Intents } from "discord.js";
 
-import { AxonOptions } from 'axoncore';
+import { AxonOptions } from "axoncore";
 
-import Client from './Client';
+import Client from "./Client";
 
-import botConfig from './configs/config.json';
-import secret from './configs/secret.json';
-import lang from './configs/lang.json';
+import botConfig from "./configs/config.json";
+import secret from "./configs/secret.json";
+import lang from "./configs/lang.json";
 
-import MyUtils from './MyUtils';
+import MyUtils from "./MyUtils";
 
-const axonOptions = new AxonOptions( {
+const axonOptions = new AxonOptions({
     token: secret.bot.token,
     prefixes: botConfig.prefixes,
     settings: botConfig.settings,
@@ -21,8 +21,8 @@ const axonOptions = new AxonOptions( {
     staff: botConfig.staff,
     template: botConfig.template,
     custom: {
-        param: 1,
-    },
+        param: 1
+    }
 },
 // webhooks
 secret.webhooks,
@@ -34,10 +34,10 @@ secret.webhooks,
     DBLocation: `${__dirname}/database/`,
 
     axonConfig: null,
-    guildConfig: null,
-} );
+    guildConfig: null
+});
 
-const intents = new Intents(Intents.ALL).remove('GUILD_MESSAGE_TYPING');
+const intents = new Intents(Intents.ALL).remove("GUILD_MESSAGE_TYPING");
 
 /**
  * new AxonClient(token, erisOptions, AxonOptions, modules)
@@ -46,16 +46,16 @@ const intents = new Intents(Intents.ALL).remove('GUILD_MESSAGE_TYPING');
  */
 const client = new Discordjs.Client(
     {
-        disableMentions: 'all',
+        disableMentions: "all",
         fetchAllMembers: false,
         messageCacheMaxSize: 100,
-        ws: { intents },
-    },
+        ws: { intents }
+    }
 );
 
 const Bot = new Client(
     client,
-    axonOptions,
+    axonOptions
 );
 
 export default Bot;
