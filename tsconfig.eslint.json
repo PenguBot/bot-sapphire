@@ -1,14 +1,8 @@
 {
-  "extends": "@pengubot/eslint-config",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "baseUrl": "./src",
-    "composite": true,
-    "declaration": true,
-    "resolveJsonModule": true
-  },
-  "include": [
-    "src"
-  ]
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true
+	},
+	"include": ["src", "scripts", "tests", "jest.config.js"]
 }
