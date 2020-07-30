@@ -1,3 +1,13 @@
 {
-    "extends": ["@pengubot"]
+    "extends": ["@pengubot"],
+    "rules": {
+        "valid-jsdoc": [
+            "error",
+            {
+                "requireReturnType": false,
+                "requireParamType": false
+            }
+        ],
+        "no-void": "off"
+    }
 }

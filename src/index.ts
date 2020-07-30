@@ -1,5 +1,6 @@
 import Bot from "./Bot";
 
-Bot.start();
+void Bot
+	.start();
 
 Bot.logger.notice("=== ONLINE ===");

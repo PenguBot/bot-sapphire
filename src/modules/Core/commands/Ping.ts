@@ -1,53 +1,53 @@
 import {
-    Command, CommandOptions, CommandResponse, Module, CommandEnvironment
+	Command, CommandOptions, CommandResponse, Module, CommandEnvironment
 } from "axoncore";
 
 import Pong from "./Ping_Pong";
 
 class Ping extends Command {
-    constructor(module: Module) {
-        super(module);
+	public constructor(module: Module) {
+		super(module);
 
-        this.label = "ping";
-        this.aliases = [
-            "ping",
-            "pang",
-            "pung"
-        ];
+		this.label = "ping";
+		this.aliases = [
+			"ping",
+			"pang",
+			"pung"
+		];
 
-        this.hasSubcmd = true;
+		this.hasSubcmd = true;
 
-        this.info = {
-            owners: ["KhaaZ"],
-            name: "ping",
-            description: "Ping the bot.",
-            usage: "ping",
-            examples: ["ping"]
-        };
+		this.info = {
+			owners: ["KhaaZ"],
+			name: "ping",
+			description: "Ping the bot.",
+			usage: "ping",
+			examples: ["ping"]
+		};
 
-        this.options = new CommandOptions(this, {
-            argsMin: 0,
-            guildOnly: false
-        });
-    }
+		this.options = new CommandOptions(this, {
+			argsMin: 0,
+			guildOnly: false
+		});
+	}
 
-    init() {
-        return [Pong];
-    }
+	public init() {
+		return [Pong];
+	}
 
-    async execute({ msg }: CommandEnvironment) {
-        const start = Date.now();
+	public async execute({ msg }: CommandEnvironment) {
+		const start = Date.now();
 
-        const mess = await this.sendMessage(msg.channel, "Pong! ");
-        if (!mess) {
-            return new CommandResponse({ success: false });
-        }
+		const mess = await this.sendMessage(msg.channel, "Pong! ");
+		if (!mess) {
+			return new CommandResponse({ success: false });
+		}
 
-        const diff = (Date.now() - start);
-        this.editMessage(mess, `Pong! \`${diff}ms\``);
+		const diff = (Date.now() - start);
+		await this.editMessage(mess, `Pong! \`${diff}ms\``);
 
-        return new CommandResponse({ success: true });
-    }
+		return new CommandResponse({ success: true });
+	}
 }
 
 export default Ping;

@@ -4,23 +4,23 @@ import * as commands from "./commands/index";
 import * as listeners from "./listeners/index";
 
 class Core extends Module {
-    constructor(client: AxonClient, data: ModuleData = {}) {
-        super(client, data);
+	public constructor(client: AxonClient, data: ModuleData = {}) {
+		super(client, data);
 
-        this.label = "Core";
+		this.label = "Core";
 
-        this.enabled = true;
-        this.serverBypass = true;
+		this.enabled = true;
+		this.serverBypass = true;
 
-        this.info = {
-            name: "Core",
-            description: "The main module with most basic commands."
-        };
-    }
+		this.info = {
+			name: "Core",
+			description: "The main module with most basic commands."
+		};
+	}
 
-    init() {
-        return { commands, listeners };
-    }
+	public init() {
+		return { commands, listeners };
+	}
 }
 
 export default Core;
