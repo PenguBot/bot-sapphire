@@ -4,7 +4,7 @@ import * as commands from "./commands/index";
 // import * as listeners from './commands/index';
 
 class Private extends Module {
-    constructor(client: AxonClient, data: ModuleData = {}) {
+    public constructor(client: AxonClient, data: ModuleData = {}) {
         super(client, data);
 
         this.label = "Private";
@@ -20,7 +20,7 @@ class Private extends Module {
         this.permissions = new CommandPermissions(this, {}, true);
     }
 
-    init() {
+    public init() {
         return { commands };
     }
 }
