@@ -53,8 +53,7 @@
  },
  "lint-staged": {
   "*.ts": [
-   "eslint --fix --ext ts",
-   "eclint fix src"
+   "eslint --fix --ext ts"
   ]
  },
  "config": {

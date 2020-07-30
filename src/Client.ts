@@ -1,5 +1,5 @@
 import {
-	AxonClient, AxonOptions, GuildConfig, Command, CommandEnvironment
+	AxonClient, AxonOptions, Command, CommandEnvironment
 } from "axoncore";
 import * as djs from "discord.js";
 
@@ -46,8 +46,7 @@ class Client extends AxonClient {
 	}
 
 	// disabled
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	public $sendFullHelp(msg: djs.Message, guildConfig: GuildConfig): Promise<djs.Message> {
+	public $sendFullHelp(msg: djs.Message): Promise<djs.Message> {
 		// override sendFullHelp method
 		return this.axonUtils.sendMessage(msg.channel, "Full Help override");
 	}

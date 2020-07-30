@@ -2,7 +2,7 @@ import { Listener, Module, ListenerData, GuildConfig } from "axoncore";
 import { Message } from "discord.js";
 
 class MessageCreateMod extends Listener {
-    constructor(module: Module, data: ListenerData = {}) {
+    public constructor(module: Module, data: ListenerData = {}) {
         super(module, data);
 
         /** Event Name (Discord name) */
@@ -18,7 +18,7 @@ class MessageCreateMod extends Listener {
         };
     }
 
-    execute(message: Message, guildConfig: GuildConfig) { // eslint-disable-line
+    public execute(message: Message, guildConfig: GuildConfig) {
         if (guildConfig) {
             console.log(`Prefix: ${guildConfig.prefixes}`);
         }

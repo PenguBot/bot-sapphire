@@ -6,23 +6,12 @@ import {
     CommandPermissions,
     CommandOptions,
     CommandResponse,
-    AxonEnums,
-    DiscordEnums,
-    Collection,
-    Embed,
-    Prompt,
-    MessageCollector,
-    Stack,
-    Queue,
-    FunctionQueue,
-    AutoQueue,
-    AsyncQueue,
     Module,
     CommandEnvironment
 } from "axoncore";
 
 class Eval extends Command {
-    constructor(module: Module) {
+    public constructor(module: Module) {
         super(module);
 
         this.label = "eval";
@@ -49,8 +38,9 @@ class Eval extends Command {
         });
     }
 
-    async execute(env: CommandEnvironment) {
-        const { msg, args, guildConfig } = env;
+    public async execute(env: CommandEnvironment) {
+        const { msg, args } = env;
+        // eslint-disable-next-line @typescript-eslint/init-declarations
         let evalString;
         try {
             // eslint-disable-next-line no-eval
@@ -75,25 +65,26 @@ class Eval extends Command {
         const splitEvaled = evalString.match(/[\s\S]{1,1900}[\n\r]/g) || [evalString];
 
         if (splitEvaled.length > 3) {
-            this.sendMessage(msg.channel, `Cut the response! [3/${splitEvaled.length} | ${evalString.length} chars]`);
+            await this.sendMessage(msg.channel, `Cut the response! [3/${splitEvaled.length} | ${evalString.length} chars]`);
         }
 
         for (let i = 0; i < 3; i++) {
             if (!splitEvaled[i]) {
                 break;
             }
-            this.sendCode(msg.channel, splitEvaled[i]);
+            await this.sendCode(msg.channel, splitEvaled[i]);
         }
         return new CommandResponse({
             success: true
         });
     }
 
-    cleanUpToken(evalString: string) {
+    public cleanUpToken(evalString: string) {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         return evalString.replace(new RegExp(this.bot.token!, "g"), "Khaaz Baguette");
     }
 
-    sendCode(channel: TextChannel | DMChannel | NewsChannel, content: string, lang = "js") {
+    public sendCode(channel: TextChannel | DMChannel | NewsChannel, content: string, lang = "js") {
         return this.sendMessage(channel, `\`\`\`${lang}\n${content}\`\`\``);
     }
 }
