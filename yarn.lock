@@ -1141,8 +1141,8 @@ axios@^0.18.0:
     is-buffer "^2.0.2"
 
 "axoncore@github:khaaz/AxonCore#dev":
-  version "2.0.1"
-  resolved "https://codeload.github.com/khaaz/AxonCore/tar.gz/da4a4e2dd1fc542e4651a2c7fed5d0222e985ace"
+  version "2.1.0"
+  resolved "https://codeload.github.com/khaaz/AxonCore/tar.gz/327fcb9aa5a4168f5f92c0ff21a4ff07139ad9d5"
   dependencies:
     esm "^3.2.25"
     inquirer "^7.1.0"
