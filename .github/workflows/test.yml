@@ -32,4 +32,6 @@ jobs:
     - name: Test
       run: yarn test
     - name: Build Project
-      run: yarn build
+      uses: icrawl/action-tsc@v1
+      with:
+        build: src

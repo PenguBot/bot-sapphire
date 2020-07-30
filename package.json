@@ -10,8 +10,8 @@
     "scripts": {
         "lint": "eslint --fix --ext ts src",
         "test": "eslint --ext ts src",
-        "build": "tsc -p .",
-        "watch": "tsc -p . -w",
+        "build": "tsc -b src",
+        "watch": "tsc -b src -w",
         "clean": "rm -rf dist; yarn build"
     },
     "dependencies": {
