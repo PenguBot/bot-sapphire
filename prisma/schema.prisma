@@ -121,13 +121,13 @@ model Guild {
   musicDJs String[]
 
   /// Roles
-  autoRoleIDs String[]
-  selfRoleIDs String[]
-  adminRole   String
-  modRole     String
-  staffRole   String
-  musicDJRole String[]
-  mutedRole   String
+  autoRoleIDs    String[]
+  selfRoleIDs    String[]
+  adminRoleIDs   String[]
+  modRoleIDs     String[]
+  staffRoleIDs   String[]
+  musicDJRoleIDs String[]
+  mutedRole      String
 }
 
 model Command {
