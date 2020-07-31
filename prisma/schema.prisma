@@ -27,8 +27,8 @@ model User {
   lastUpvote  Int      @default(0)
 
   /// AFK
-  time   Int
-  reason String
+  afkTime   Int
+  afkReason String
 
   /// Patreon
   paying   Boolean  @default(false)
