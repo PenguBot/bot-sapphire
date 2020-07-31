@@ -82,10 +82,6 @@ model Guild {
   joinMessage  String @default("Welcome {MENTION} to {GUILD_NAME}, we hope you enjoy your stay!")
   leaveMessage String @default("It's sad to see you leave {USERNAME}, hope to see you again.")
 
-  /// Patreon
-  premium Boolean @default(false)
-  patron  String
-
   /// Misc
   leveluptype String @default("guild")
   volume      Int    @default(100)

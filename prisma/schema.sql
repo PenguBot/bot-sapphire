@@ -31,10 +31,6 @@ CREATE TABLE IF NOT EXISTS "Guilds" (
 	"joinMessage" TEXT NOT NULL DEFAULT "Welcome {MENTION} to {GUILD_NAME}, we hope you enjoy your stay!",
 	"leaveMessage" TEXT NOT NULL DEFAULT "It's sad to see you leave {USERNAME}, hope to see you again.",
 
--- Patreon
-  "premium" BOOLEAN NOT NULL DEFAULT false,
-  "patron" VARCHAR(19) NOT NULL,
-
 -- Misc
 	"leveluptype" TEXT NOT NULL DEFAULT "guild",
   "volume" INTEGER NOT NULL DEFAULT 100,
