@@ -130,12 +130,26 @@ model Guild {
   mutedRole      String
 }
 
-model Command {
-  id      Int    @default(autoincrement()) @id
+model CustomCommand {
+  id                 Int      @default(autoincrement()) @id
   /// The guild id where this custom command was created
-  guildID String
+  guildID            String
   /// The name of the custom command
-  name    String
+  name               String
   /// The text string for this custom command.
-  content String
+  content            String
+  /// Whether this custom command is enabled.
+  enabled            Boolean  @default(true)
+  /// The users who are not allowed to use this.
+  disabledUserIDs    String[]
+  /// The roles who are not allowed to use this.
+  disabledRoleIDs    String[]
+  /// The channels where this command can not run.
+  disabledChannelIDs String[]
+  /// The users who are allowed to use this.
+  enabledUserIDs     String[]
+  /// The roles that are allowed to use this.
+  enabledRoleIDs     String[]
+  /// The channels that are allowed to use this.
+  enabledChannelIDs  String[]
 }

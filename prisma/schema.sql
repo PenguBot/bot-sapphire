@@ -128,9 +128,9 @@ CREATE TABLE IF NOT EXISTS "Client" (
 	"blockedUserIDs" VARCHAR(19)[] DEFAULT ARRAY[]::TEXT[] NOT NULL,
 );
 
--- Create the Commands table if not available
+-- Create the CustomCommands table if not available
 
-CREATE TABLE IF NOT EXISTS "Commands" (
+CREATE TABLE IF NOT EXISTS "CustomCommands" (
   "id" SERIAL PRIMARY KEY NOT NULL,
 	"guildID" VARCHAR(19) NOT NULL,
 	"name" TEXT NOT NULL,
