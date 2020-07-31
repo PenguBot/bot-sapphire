@@ -75,7 +75,7 @@ model Guild {
   starboardRequired  Int    @default(3)
 
   /// Inhibitors
-  disabledCommandsGroups String[]
+  disabledCommands String[]
 
   /// Welcome & Leave
   joinMessage  String @default("Welcome {MENTION} to {GUILD_NAME}, we hope you enjoy your stay!")

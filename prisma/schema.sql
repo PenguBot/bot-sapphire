@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS "Guilds" (
   "starboardRequired" INTEGER NOT NULL DEFAULT 3,
 
 -- Inhibitors
-	"disabledCommandsGroups" TEXT[] DEFAULT ARRAY[]::TEXT[] NOT NULL,
+	"disabledCommands" TEXT[] DEFAULT ARRAY[]::TEXT[] NOT NULL,
 
 -- Welcome & Leave
 	"joinMessage" TEXT NOT NULL DEFAULT "Welcome {MENTION} to {GUILD_NAME}, we hope you enjoy your stay!",
