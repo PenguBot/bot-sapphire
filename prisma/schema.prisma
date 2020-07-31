@@ -1,0 +1,132 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id     Int    @default(autoincrement()) @id
+  /// The user ID
+  userID String @unique
+
+  daily       Int      @default(0)
+  xp          Int      @default(0)
+  snowflakes  Int      @default(0)
+  level       Int      @default(0)
+  profilebg   String   @default("default")
+  backgrounds String[]
+  reps        Int      @default(0)
+  repcooldown Int      @default(0)
+  title       String   @default("No Title Set")
+  lastUpvote  Int      @default(0)
+
+  /// AFK
+  time   Int
+  reason String
+
+  /// Patreon
+  paying   Boolean  @default(false)
+  guildIDs String[]
+  pledged  Int      @default(0)
+  current  Int      @default(0)
+  tokens   Int      @default(0)
+}
+
+model Member {
+  id      Int    @default(autoincrement()) @id
+  /// The user ID
+  userID  String @unique
+  /// The guild id
+  guildID String
+  /// The members xp
+  xp      Int    @default(0)
+  /// The members level
+  level   Int    @default(0)
+}
+
+model Client {
+  id             Int      @default(autoincrement()) @id
+  /// The user ID
+  pGuildIDs      String[]
+  /// Total counter overall
+  totalCounter   Int      @default(0)
+  /// Total commands counter
+  totalCommands  Int      @default(0)
+  /// The patron guild ids
+  patronGuildIDs String[]
+  /// The patron user ids
+  patronUserIDs  String[]
+}
+
+model Guild {
+  id             Int     @default(autoincrement()) @id
+  guildID        String  @unique
+  /// Server logs
+  joinLogs       Boolean @default(false)
+  leaveLogs      Boolean @default(false)
+  moderationLogs Boolean @default(false)
+  channelsLogs   Boolean @default(false)
+  messagesLogs   Boolean @default(false)
+  automodLogs    Boolean @default(false)
+  rolesLogs      Boolean @default(false)
+
+  /// Starboard
+  starboardChannelId String
+  starboardRequired  Int    @default(3)
+
+  /// Inhibitors
+  disabledCommandsGroups String[]
+
+  /// Welcome & Leave
+  joinMessage  String @default("Welcome {MENTION} to {GUILD_NAME}, we hope you enjoy your stay!")
+  leaveMessage String @default("It's sad to see you leave {USERNAME}, hope to see you again.")
+
+  /// Patreon
+  premium Boolean @default(false)
+  patron  String
+
+  /// Misc
+  leveluptype String @default("guild")
+  volume      Int    @default(100)
+
+  /// Channels
+  modlogsChannelID String
+  joinChannelID    String
+  leaveChannelID   String
+  logsChannelID    String
+
+  /// Toggles
+  joinmsg     Boolean @default(true)
+  leavemsg    Boolean @default(true)
+  autoroles   Boolean @default(true)
+  perspective Boolean @default(false)
+  customcmds  Boolean @default(true)
+  starboard   Boolean @default(true)
+  levelroles  Boolean @default(true)
+  modlogs     Boolean @default(true)
+  djmode      Boolean @default(false)
+  levelup     Boolean @default(false)
+  staffbypass Boolean @default(true)
+  selfroles   Boolean @default(true)
+
+  /// Permissions
+  adminIDs String[]
+  modIDs   String[]
+  staffIDs String[]
+  djIDs    String[]
+
+  /// Roles
+  autoRoleIDs String[]
+  selfRoleIDs String[]
+  adminRole   String
+  modRole     String
+  staffRole   String
+  djRole      String
+  mutedRole   String
+}
