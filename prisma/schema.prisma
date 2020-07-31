@@ -15,16 +15,15 @@ model User {
   /// The user ID
   userID String @unique
 
-  daily       Int      @default(0)
-  xp          Int      @default(0)
-  snowflakes  Int      @default(0)
-  level       Int      @default(0)
-  profilebg   String   @default("default")
-  backgrounds String[]
-  reps        Int      @default(0)
-  repcooldown Int      @default(0)
-  title       String   @default("No Title Set")
-  lastUpvote  Int      @default(0)
+  dailyTime           Int      @default(0)
+  xp                  Int      @default(0)
+  snowflakes          Int      @default(0)
+  level               Int      @default(0)
+  profileBackground   String   @default("default")
+  unlockedBackgrounds String[]
+  reputationPoints    Int      @default(0)
+  repcooldown         Int      @default(0)
+  lastUpvote          Int      @default(0)
 
   /// AFK
   afkTime   Int
@@ -83,8 +82,7 @@ model Guild {
   leaveMessage String @default("It's sad to see you leave {USERNAME}, hope to see you again.")
 
   /// Misc
-  leveluptype String @default("guild")
-  volume      Int    @default(100)
+  musicVolume Int    @default(100)
   prefix      String @default("p!")
   language    String @default("en_US")
 
@@ -120,7 +118,7 @@ model Guild {
   adminIDs String[]
   modIDs   String[]
   staffIDs String[]
-  djIDs    String[]
+  musicDJs String[]
 
   /// Roles
   autoRoleIDs String[]
@@ -128,7 +126,7 @@ model Guild {
   adminRole   String
   modRole     String
   staffRole   String
-  djRole      String
+  musicDJRole String[]
   mutedRole   String
 }
 
