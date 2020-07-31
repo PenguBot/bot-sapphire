@@ -51,22 +51,17 @@ model Member {
 }
 
 model Client {
-  id             Int      @default(autoincrement()) @id
-  /// The user ID
-  pGuildIDs      String[]
-  /// Total counter overall
-  totalCounter   Int      @default(0)
-  /// Total commands counter
-  totalCommands  Int      @default(0)
-  /// The patron guild ids
-  patronGuildIDs String[]
-  /// The patron user ids
-  patronUserIDs  String[]
+  id                  Int      @default(autoincrement()) @id
+  /// The blacklisted guild ids
+  blacklistedGuildIDs String[]
+  /// The blacklisted user ids
+  blacklistedUserIDs  String[]
 }
 
 model Guild {
-  id             Int     @default(autoincrement()) @id
-  guildID        String  @unique
+  id      Int    @default(autoincrement()) @id
+  guildID String @unique
+
   /// Server logs
   joinLogs       Boolean @default(false)
   leaveLogs      Boolean @default(false)
@@ -94,6 +89,8 @@ model Guild {
   /// Misc
   leveluptype String @default("guild")
   volume      Int    @default(100)
+  prefix      String @default("p!")
+  language    String @default("en_US")
 
   /// Channels
   modlogsChannelID String
@@ -102,18 +99,26 @@ model Guild {
   logsChannelID    String
 
   /// Toggles
-  joinmsg     Boolean @default(true)
-  leavemsg    Boolean @default(true)
-  autoroles   Boolean @default(true)
-  perspective Boolean @default(false)
-  customcmds  Boolean @default(true)
-  starboard   Boolean @default(true)
-  levelroles  Boolean @default(true)
-  modlogs     Boolean @default(true)
-  djmode      Boolean @default(false)
-  levelup     Boolean @default(false)
-  staffbypass Boolean @default(true)
-  selfroles   Boolean @default(true)
+  joinmsg                     Boolean @default(true)
+  leavemsg                    Boolean @default(true)
+  autoroles                   Boolean @default(true)
+  perspective                 Boolean @default(false)
+  customcmds                  Boolean @default(true)
+  starboard                   Boolean @default(true)
+  levelroles                  Boolean @default(true)
+  modlogs                     Boolean @default(true)
+  djmode                      Boolean @default(false)
+  levelup                     Boolean @default(false)
+  staffbypass                 Boolean @default(true)
+  selfroles                   Boolean @default(true)
+  invites                     Boolean @default(false)
+  perspectiveToxicity         Boolean @default(false)
+  perspectiveSeverToxicity    Boolean @default(false)
+  perspectiveThreat           Boolean @default(true)
+  perspectiveSpam             Boolean @default(true)
+  perspectiveObscene          Boolean @default(false)
+  perspectiveSexuallyExplicit Boolean @default(false)
+  perspectiveProfanity        Boolean @default(false)
 
   /// Permissions
   adminIDs String[]
@@ -129,4 +134,14 @@ model Guild {
   staffRole   String
   djRole      String
   mutedRole   String
+}
+
+model Command {
+  id      Int    @default(autoincrement()) @id
+  /// The guild id where this custom command was created
+  guildID String
+  /// The name of the custom command
+  name    String
+  /// The text string for this custom command.
+  content String
 }

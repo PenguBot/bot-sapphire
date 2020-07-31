@@ -38,6 +38,8 @@ CREATE TABLE IF NOT EXISTS "Guilds" (
 -- Misc
 	"leveluptype" TEXT NOT NULL DEFAULT "guild",
   "volume" INTEGER NOT NULL DEFAULT 100,
+  "prefix" VARCHAR(10) NOT NULL DEFAULT "p!"
+  "language" VARCHAR(10) NOT NULL DEFAULT "en_US"
 
 -- Channels
   "modlogsChannelID" VARCHAR(19) NOT NULL,
@@ -58,6 +60,14 @@ CREATE TABLE IF NOT EXISTS "Guilds" (
   "levelup" BOOLEAN NOT NULL DEFAULT false,
   "staffbypass" BOOLEAN NOT NULL DEFAULT true,
   "selfroles" BOOLEAN NOT NULL DEFAULT true,
+  "invites" BOOLEAN NOT NULL DEFAULT false,
+  "perspectiveToxicity" BOOLEAN NOT NULL DEFAULT false,
+  "perspectiveSeverToxicity" BOOLEAN NOT NULL DEFAULT false,
+  "perspectiveThreat" BOOLEAN NOT NULL DEFAULT true,
+  "perspectiveSpam" BOOLEAN NOT NULL DEFAULT true,
+  "perspectiveObscene" BOOLEAN NOT NULL DEFAULT false,
+  "perspectiveSexuallyExplicit" BOOLEAN NOT NULL DEFAULT false,
+  "perspectiveProfanity" BOOLEAN NOT NULL DEFAULT false,
 
 -- Permissions
 	"adminIDs" VARCHAR(19)[] DEFAULT ARRAY[]::TEXT[] NOT NULL,
@@ -118,13 +128,17 @@ CREATE TABLE IF NOT EXISTS "Members" (
 CREATE TABLE IF NOT EXISTS "Client" (
   "id" SERIAL PRIMARY KEY NOT NULL,
   "botID" VARCHAR(19) NOT NULL,
-	"pGuildIDs" VARCHAR(19)[] DEFAULT ARRAY[]::TEXT[] NOT NULL,
 
--- Stats
-	"totalCounter" INTEGER NOT NULL DEFAULT 0,
-	"totalCommands" INTEGER NOT NULL DEFAULT 0,
+-- Blocked
+	"blockedGuildIDs" VARCHAR(19)[] DEFAULT ARRAY[]::TEXT[] NOT NULL,
+	"blockedUserIDs" VARCHAR(19)[] DEFAULT ARRAY[]::TEXT[] NOT NULL,
+);
 
--- Patrons
-	"patronGuildIDs" VARCHAR(19)[] DEFAULT ARRAY[]::TEXT[] NOT NULL,
-	"patronUserIDs" VARCHAR(19)[] DEFAULT ARRAY[]::TEXT[] NOT NULL,
+-- Create the Commands table if not available
+
+CREATE TABLE IF NOT EXISTS "Commands" (
+  "id" SERIAL PRIMARY KEY NOT NULL,
+	"guildID" VARCHAR(19) NOT NULL,
+	"name" TEXT NOT NULL,
+  "content" TEXT NOT NULL,
 );
