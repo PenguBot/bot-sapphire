@@ -3,7 +3,7 @@ import "module-alias/register";
 import { ShardingManager } from "kurasuta";
 import { ClientOptions } from "discord.js";
 import { join } from "path";
-import { PenguClient } from "@lib/structures/PenguClient";
+import { PenguClient } from "@lib/PenguClient";
 
 import {
     TOKEN,
