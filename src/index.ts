@@ -1,3 +1,5 @@
+import "module-alias/register";
+
 import { ShardingManager } from "kurasuta";
 import { ClientOptions } from "discord.js";
 import { join } from "path";
@@ -31,7 +33,7 @@ const clientOptions: KlasaClientOptions = {
     typing: false
 };
 
-const manager = new ShardingManager(join(__dirname, "dist", "src", "lib", "structures", "BaseCluster"), {
+const manager = new ShardingManager(join(__dirname, "lib", "structures", "BaseCluster"), {
     token: TOKEN,
     client: PenguClient,
     shardCount: "auto",
