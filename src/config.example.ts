@@ -8,7 +8,7 @@ export const OWNERS = [""];
 export const PREFIX = "pd!";
 export const SHARDS = "auto";
 
-export const clientOptions: AnteiClientOptions = {
+export const CLIENTOPTIONS: AnteiClientOptions = {
     shards: SHARDS,
     messageSweepInterval: 480,
     messageCacheLifetime: 120,
