@@ -1,0 +1,13 @@
+{
+    "extends": "@pengubot/eslint-config",
+    "compilerOptions": {
+		"useDefineForClassFields": true,
+		"resolveJsonModule": true,
+		"allowJs": true,
+		"checkJs": true,
+		"target": "ESNext"
+	},
+	"include": [
+		"src"
+	]
+}
