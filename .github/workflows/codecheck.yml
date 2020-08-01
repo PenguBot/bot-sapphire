@@ -1,4 +1,4 @@
-name: "Code Check"
+name: "Code Checking"
 
 on:
   push:
@@ -8,9 +8,9 @@ on:
 
 jobs:
   eslint:
-    name: ESLint
+    name: "Linting - ESLint"
     runs-on: ubuntu-latest
-    if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip codecheck]') || contains(github.event.head_commit.message, '[skip codecheck eslint]'))"
+    if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip codechecking]') || contains(github.event.head_commit.message, '[skip codechecking eslint]'))"
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
@@ -22,16 +22,17 @@ jobs:
         uses: actions/cache@v1
         with:
           path: node_modules
-          key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-14-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
-        run: yarn --ignore-scripts --frozen-lockfile
+        run: |
+          yarn --frozen-lockfile
       - name: Run ESLint
         uses: icrawl/action-eslint@v1
 
-  tsc:
-    name: TSC
+  editorconfig:
+    name: "Formatting - EditorConfig"
     runs-on: ubuntu-latest
-    if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip codecheck]') || contains(github.event.head_commit.message, '[skip codecheck tsc]'))"
+    if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip codechecking]') || contains(github.event.head_commit.message, '[skip codechecking eclint]'))"
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
@@ -43,9 +44,29 @@ jobs:
         uses: actions/cache@v1
         with:
           path: node_modules
-          key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-14-${{ hashFiles('**/yarn.lock') }}
+      - name: Run EditorConfigLint
+        run: npx eclint fix src scripts .github
+
+  tsc:
+    name: "Compiling - TSC"
+    runs-on: ubuntu-latest
+    if: "!(contains(github.event.head_commit.message, '[skip ci]') || contains(github.event.head_commit.message, '[skip codechecking]') || contains(github.event.head_commit.message, '[skip codechecking tsc]'))"
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Install NodeJS v14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Restore CI Cache
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-14-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
-        run: yarn --ignore-scripts --frozen-lockfile
+        run: |
+          yarn --frozen-lockfile
       - name: Copy Configuration
         run: |
           pushd src &&
