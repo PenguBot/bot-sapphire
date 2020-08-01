@@ -6,6 +6,6 @@
 files: [
   {
     "source" : "/src/languages/en-US/**/*.json",
-    "translation" : "/src/languages/%two_letters_code%/**/%original_file_name%"
+    "translation" : "/src/languages/%locale%/**/%original_file_name%"
   }
 ]
