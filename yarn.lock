@@ -166,7 +166,7 @@
   resolved "https://registry.yarnpkg.com/@commitlint/types/-/types-9.1.1.tgz#d97ebc35d20eed6d8458361cbca5c7cb85d45184"
   integrity sha512-SXY8bCQ1qacJ8AUTUxjabY8G6OjSmMPLN9MBCzGaKOjpPNX6z8zbXTbk9oU3GHZLtcxweWLCi2n49IRS4iQlwg==
 
-"@discordjs/collection@^0.1.3", "@discordjs/collection@^0.1.5":
+"@discordjs/collection@^0.1.5":
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/@discordjs/collection/-/collection-0.1.6.tgz#9e9a7637f4e4e0688fd8b2b5c63133c91607682c"
   integrity sha512-utRNxnd9kSS2qhyivo9lMlt5qgAUasH2gb7BEOn6p0efFh24gjGomHzWKMAPn2hEReOPQZCJaRKoURwRotKucQ==
@@ -185,38 +185,6 @@
   resolved "https://registry.yarnpkg.com/@klasa/cache/-/cache-0.0.3.tgz#824595f247fbd6204a6278eae988d22eb783d00b"
   integrity sha512-8+V14gY0soYSd9j5NKel+gKpoEccwFnKYPEL2XALx+SOHzVMAmmfVBqO4cd3QzPdIW3770jklLY2SeXeEv9xvA==
 
-"@klasa/querybuilder@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@klasa/querybuilder/-/querybuilder-0.0.1.tgz#66d2b99cb919933ec0fdc43f697590d9b57d0c82"
-  integrity sha512-DpMlgu9NHvOisRWbG0l1vHFi3f5SFowjKAIYAjl1hk9bn+N1RdpnH126YDoyeK8TsxZwszlLrPpoIS0Uoy4Q0A==
-  dependencies:
-    "@klasa/utils" "^0.0.1"
-
-"@klasa/request-handler@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@klasa/request-handler/-/request-handler-0.0.3.tgz#ed72de611ece3dd99725cb797fc13e07bb05e618"
-  integrity sha512-Z1O+Aa2kW/I4Uos4EZalByveIuQKRfuRx+JCsgsogDBd95N5Ub47AH+LEd5i+uzjnJ6iDHfodpVlaHojJ4Q+ZQ==
-
-"@klasa/settings-gateway@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@klasa/settings-gateway/-/settings-gateway-0.0.10.tgz#aff30bb639d6a64861efbe6602fb2ef0d382c182"
-  integrity sha512-bz+b0I2qmcfA75RY4Cjzgig9+5Bw/EhE4g7bAETjBQXkxea1ed7rWQHgQiIVAErm9sgy69/7NIK5JoFXZZs68A==
-  dependencies:
-    "@discordjs/collection" "^0.1.3"
-    "@klasa/querybuilder" "^0.0.1"
-    "@klasa/request-handler" "^0.0.3"
-    "@klasa/utils" "^0.0.4"
-
-"@klasa/utils@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@klasa/utils/-/utils-0.0.1.tgz#af20aa4ea24fdd83c41e9afb07f829194dea6363"
-  integrity sha512-UOGHPXnbitN/fHIGODZYv8IVlpojVmMMyRYLlanN41QP+IC9oZfqihT41cBbaFtMbqF0gcw6/5mr2P6NpCV8Mg==
-
-"@klasa/utils@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@klasa/utils/-/utils-0.0.4.tgz#4bf010b09d0f93b39245523ed22a09571d56508c"
-  integrity sha512-9gZSGN/As3sxZumZ9ZwyQ+KcNSenzY8tR1orRakv8HKK0WH0gG7QrsP/1O2TD4uHxUyr8dysCjt73RYPfzuDWQ==
-
 "@pengubot/antei@github:pengubot/antei":
   version "0.0.1"
   resolved "https://codeload.github.com/pengubot/antei/tar.gz/0c0c7b35f80f2caa547b467cfb078155a69afb45"
@@ -231,18 +199,6 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@pengubot/eslint-config/-/eslint-config-1.0.0.tgz#9c5e9c51052d69ef42235db65ccbcceea484799c"
   integrity sha512-2J4m0cwiHmOQ5D3PBS7lqQvr9lp9coe6j8Q35d14bABsor5DfMcoM8p67c/kflYW1qu+vrOPzyEHCRtISWBtYw==
-
-"@prisma/cli@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@prisma/cli/-/cli-2.3.0.tgz#ddc89de63c2fcb88199fdd1b490a7616a2d32de1"
-  integrity sha512-S84VeeUR3I2Z1fkBh3x42KmVyFgiX4USzIN5N5EDyoWC8BSlMVs2eHeLlhHOtx68sDz5oNo/YEIM2bkU8cUZKA==
-
-"@prisma/client@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.3.0.tgz#3979d973e0eececad5387c791aa1dd63316fc690"
-  integrity sha512-mlXV/VdOKjEEoZPOmFOy7KJPecYGV5XSVXGsti0F1kkShpGcMvhPkpKhNOwIb/8muUTeN5NoNqEGqKDD5XKw3w==
-  dependencies:
-    pkg-up "^3.1.0"
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
@@ -2892,13 +2848,6 @@ pkg-dir@^4.2.0:
   integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   dependencies:
     find-up "^4.0.0"
-
-pkg-up@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/pkg-up/-/pkg-up-3.1.0.tgz#100ec235cc150e4fd42519412596a28512a0def5"
-  integrity sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==
-  dependencies:
-    find-up "^3.0.0"
 
 please-upgrade-node@^3.2.0:
   version "3.2.0"
