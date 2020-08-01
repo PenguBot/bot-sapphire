@@ -59,7 +59,8 @@
 		}
 	},
 	"publishConfig": {
-		"access": "public"
+    "access": "public"
+  },
   "_moduleAliases": {
 		"@lib": "dist/lib",
 		"@root": "dist"
