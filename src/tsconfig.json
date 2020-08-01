@@ -1,4 +1,4 @@
-  
+
 {
 	"extends": "../tsconfig.base.json",
 	"compilerOptions": {
@@ -6,6 +6,7 @@
 		"rootDir": ".",
 		"baseUrl": ".",
 		"paths": {
+			"@orm/*": ["lib/orm/*"],
 			"@utils/*": ["lib/util/*"],
 			"@lib/*": ["lib/*"],
 			"@root/*": ["*"]
