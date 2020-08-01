@@ -12,13 +12,18 @@
         "test": "eslint --ext ts src",
         "build": "tsc -b src",
         "watch": "tsc -b src -w",
-        "clean": "tsc -b src --clean"
+        "clean": "tsc -b src --clean",
+        "typeorm": "node -r module-alias/register ./node_modules/typeorm/cli.js"
     },
     "dependencies": {
         "@pengubot/antei": "github:pengubot/antei",
         "discord.js": "^12.2.0",
         "kurasuta": "^2.1.0",
-        "module-alias": "^2.2.2"
+        "module-alias": "^2.2.2",
+        "pg": "^8.3.0",
+        "tsyringe": "^4.3.0",
+        "typeorm": "^0.2.25",
+        "typeorm-naming-strategies": "^1.1.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^9.1.1",
