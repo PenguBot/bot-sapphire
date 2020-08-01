@@ -3,3 +3,4 @@ config.ts
 dist
 .env
 yarn-error.log
+package-lock.json
