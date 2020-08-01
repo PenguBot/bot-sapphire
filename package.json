@@ -66,6 +66,8 @@
         "access": "public"
     },
     "_moduleAliases": {
+		"@orm": "dist/lib/orm",
+		"@utils": "dist/lib/util",
         "@lib": "dist/lib",
         "@root": "dist"
     }
