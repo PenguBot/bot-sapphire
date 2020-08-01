@@ -1,3 +1,11 @@
-files:
-  - source: /src/languages/en-US/**/*.json
-    translation: /src/languages/%two_letters_code%/**/%original_file_name%
+"base_path" : "."
+"base_url" : "https://crowdin.com"
+
+"commit_message": "[ci skip]"
+
+files: [
+  {
+    "source" : "/src/languages/en-US/**/*.json",
+    "translation" : "/src/languages/%two_letters_code%/**/%original_file_name%"
+  }
+]
