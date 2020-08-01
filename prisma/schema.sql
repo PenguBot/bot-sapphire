@@ -134,3 +134,18 @@ CREATE TABLE IF NOT EXISTS "CustomCommands" (
 	"name" TEXT NOT NULL,
   "content" TEXT NOT NULL,
 );
+
+-- Create the Pets table if not available
+
+CREATE TABLE IF NOT EXISTS "Pets" (
+  "id" SERIAL PRIMARY KEY NOT NULL,
+	"userID" VARCHAR(19) NOT NULL,
+  "items" TEXT[] DEFAULT ARRAY[]::TEXT[] NOT NULL,
+	"items" TEXT NOT NULL,
+  "hunger" INTEGER NOT NULL DEFAULT 0,
+  "xp" INTEGER NOT NULL DEFAULT 0,
+  "level" INTEGER NOT NULL DEFAULT 0,
+  "lastActiveTimestamp" INTEGER NOT NULL DEFAULT 0,
+  "lastFeedTimestamp" INTEGER NOT NULL DEFAULT 0,
+  "birthTimestamp" INTEGER NOT NULL DEFAULT 0,
+);

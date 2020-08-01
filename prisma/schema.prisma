@@ -10,7 +10,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User {
+model Users {
   id     Int    @default(autoincrement()) @id
   /// The user ID
   userID String @unique
@@ -37,7 +37,7 @@ model User {
   tokens   Int      @default(0)
 }
 
-model Member {
+model Members {
   id      Int    @default(autoincrement()) @id
   /// The user ID
   userID  String @unique
@@ -49,7 +49,7 @@ model Member {
   level   Int    @default(0)
 }
 
-model Client {
+model Clients {
   id                  Int      @default(autoincrement()) @id
   /// The blacklisted guild ids
   blacklistedGuildIDs String[]
@@ -57,7 +57,7 @@ model Client {
   blacklistedUserIDs  String[]
 }
 
-model Guild {
+model Guilds {
   id      Int    @default(autoincrement()) @id
   guildID String @unique
 
@@ -128,7 +128,7 @@ model Guild {
   mutedRole      String
 }
 
-model CustomCommand {
+model CustomCommands {
   id                 Int      @default(autoincrement()) @id
   /// The guild id where this custom command was created
   guildID            String
@@ -150,4 +150,24 @@ model CustomCommand {
   enabledRoleIDs     String[]
   /// The channels that are allowed to use this.
   enabledChannelIDs  String[]
+}
+
+model Pets {
+  id                  Int      @default(autoincrement()) @id
+  /// The user id for the user who owns this pet
+  userID              String
+  /// The items that this pet has been given.
+  items               String[]
+  /// The amount of hunger this pet has.
+  hunger              Int
+  /// The xp this pet has
+  xp                  Int
+  /// The level of this pet
+  level               Int
+  /// The last time this pet was active
+  lastActiveTimestamp Int
+  /// The last time this pet was fed.
+  lastFeedTimestamp   Int
+  /// The time this pet was born.
+  birthTimestamp      Int
 }
