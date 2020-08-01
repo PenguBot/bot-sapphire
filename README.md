@@ -21,6 +21,8 @@ PenguBot is a Multi-Purpose Discord Bot with Entertainment, Social, Music, Image
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
+[![](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/images/0)](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/links/0)[![](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/images/1)](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/links/1)[![](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/images/2)](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/links/2)[![](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/images/3)](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/links/3)[![](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/images/4)](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/links/4)[![](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/images/5)](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/links/5)[![](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/images/6)](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/links/6)[![](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/images/7)](https://sourcerer.io/fame/QuantumlyTangled/pengubot/bot/links/7)
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
