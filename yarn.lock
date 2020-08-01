@@ -219,11 +219,9 @@
 
 "@pengubot/antei@github:pengubot/antei":
   version "0.0.1"
-  resolved "https://codeload.github.com/pengubot/antei/tar.gz/f05bd51ade669027723de91b8b65db83090c0e9f"
+  resolved "https://codeload.github.com/pengubot/antei/tar.gz/0c0c7b35f80f2caa547b467cfb078155a69afb45"
   dependencies:
     "@klasa/cache" "^0.0.3"
-    "@klasa/querybuilder" "^0.0.1"
-    "@klasa/settings-gateway" "^0.0.10"
     discord.js "^12.2.0"
     fs-nextra "^0.5.1"
     i18next "^19.6.3"
