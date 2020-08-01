@@ -1,6 +1,6 @@
   
 {
-	"extends": "../tsconfig.eslint.json",
+	"extends": "../tsconfig.base.json",
 	"compilerOptions": {
 		"outDir": "../dist",
 		"rootDir": ".",
@@ -13,5 +13,7 @@
 		"composite": true,
 		"declaration": true
 	},
-	"include": ["."]
+	"include": [
+		"."
+	]
 }

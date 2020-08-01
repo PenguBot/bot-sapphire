@@ -18,7 +18,8 @@
     "@pengubot/antei": "github:pengubot/antei",
     "@prisma/client": "^2.3.0",
     "discord.js": "^12.2.0",
-    "kurasuta": "^2.1.0"
+    "kurasuta": "^2.1.0",
+    "module-alias": "^2.2.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
@@ -59,5 +60,8 @@
 	},
 	"publishConfig": {
 		"access": "public"
+  "_moduleAliases": {
+		"@lib": "dist/lib",
+		"@root": "dist"
 	}
 }
