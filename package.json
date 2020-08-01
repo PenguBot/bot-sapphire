@@ -7,13 +7,6 @@
   "author": "Aditya N. Tripathi <adityatripathidelhi@gmail.com>",
   "license": "Apache-2.0",
   "private": true,
-  "dependencies": {
-    "@pengubot/antei": "github:pengubot/antei",
-    "@prisma/client": "^2.3.0",
-    "discord.js": "^12.2.0",
-    "kurasuta": "^2.1.0",
-    "module-alias": "^2.2.2"
-  },
   "scripts": {
     "lint": "eslint --fix --ext ts src",
     "test": "eslint --ext ts src",
@@ -21,16 +14,52 @@
     "watch": "tsc -b src -w",
     "clean": "tsc -b src --clean"
   },
+  "dependencies": {
+    "@pengubot/antei": "github:pengubot/antei",
+    "@prisma/client": "^2.3.0",
+    "discord.js": "^12.2.0",
+    "kurasuta": "^2.1.0",
+    "module-alias": "^2.2.2"
+  },
   "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
     "@pengubot/eslint-config": "^1.0.0",
     "@prisma/cli": "^2.3.0",
     "@types/node": "^14.0.27",
     "@types/ws": "^7.2.6",
     "@typescript-eslint/eslint-plugin": "^3.7.0",
     "@typescript-eslint/parser": "^3.7.0",
+    "cz-conventional-changelog": "^3.2.0",
     "eslint": "^7.5.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "standard-version": "^8.0.2",
     "typescript": "^3.9.7"
   },
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"pre-commit": "yarn lint-staged"
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"lint-staged": {
+		"*.ts": [
+			"eslint --fix --ext ts"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
   "_moduleAliases": {
 		"@lib": "dist/lib",
 		"@root": "dist"
