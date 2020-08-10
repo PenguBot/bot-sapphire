@@ -1,13 +1,9 @@
-import { AnteiClient, AnteiClientOptions } from "@pengubot/antei";
-import { PrismaClient } from "@prisma/client";
+import { KlasaClient, KlasaClientOptions } from "klasa";
 
-export class PenguClient extends AnteiClient {
+export class PenguClient extends KlasaClient {
 
-    public prisma: PrismaClient;
-
-    public constructor(options?: AnteiClientOptions) {
+    public constructor(options?: KlasaClientOptions) {
         super({ ...options });
 
-        this.prisma = new PrismaClient();
     }
 }

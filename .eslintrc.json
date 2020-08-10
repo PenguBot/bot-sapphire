@@ -1,3 +1,6 @@
 {
-    "extends": ["@pengubot"]
+    "extends": ["@pengubot"],
+    "rules": {
+        "@typescript-eslint/explicit-member-accessibility": "off"
+    }
 }
