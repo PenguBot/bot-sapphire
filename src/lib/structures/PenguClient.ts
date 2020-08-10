@@ -4,6 +4,5 @@ export class PenguClient extends KlasaClient {
 
     public constructor(options?: KlasaClientOptions) {
         super({ ...options });
-
     }
 }
