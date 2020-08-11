@@ -1,8 +1,8 @@
-import { AnteiClient, AnteiClientOptions } from "@pengubot/antei";
+import { KlasaClient, KlasaClientOptions } from "klasa";
 
-export class PenguClient extends AnteiClient {
+export class PenguClient extends KlasaClient {
 
-    public constructor(options?: AnteiClientOptions) {
+    public constructor(options?: KlasaClientOptions) {
         super({ ...options });
     }
 }

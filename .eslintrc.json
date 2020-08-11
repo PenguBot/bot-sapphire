@@ -1,6 +1,7 @@
 {
     "extends": ["@pengubot"],
     "rules": {
+        "@typescript-eslint/explicit-member-accessibility": "off",
         "no-process-env": "off"
     }
 }
