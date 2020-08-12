@@ -10,7 +10,7 @@
     "scripts": {
         "lint": "eslint --fix --ext ts src",
         "test": "eslint --ext ts src",
-        "build": "tsc -b src && cp src/i18n dist/i18n",
+        "build": "tsc -b src && cp src/i18n -r dist/i18n",
         "watch": "tsc -b src -w",
         "clean": "tsc -b src --clean",
         "typeorm": "node -r module-alias/register ./node_modules/typeorm/cli.js"
