@@ -54,10 +54,10 @@
     "INHIBITOR_RUNIN_NONE": "The ${name} command is not configured to run in any channel.",
     "COMMAND_BLACKLIST_DESCRIPTION": "Blacklists or un-blacklists users and guilds from the bot.",
     "COMMAND_BLACKLIST_SUCCESS": [
-        "**Users Added**\n${usersAdded.join(', ')}",
-        "**Users Removed**\n${usersRemoved.join(', ')}",
-        "**Guilds Added**\n${guildsAdded.join(', ')}",
-        "**Guilds Removed**\n${guildsRemoved.join(', ')}"
+        "**Users Added**\n${util.codeBlock('', usersAdded.join(', '))}",
+        "**Users Removed**\n${util.codeBlock('', usersRemoved.join(', '))}",
+        "**Guilds Added**\n${util.codeBlock('', guildsAdded.join(', '))}",
+        "**Guilds Removed**\n${util.codeBlock('', guildsRemoved.join(', '))}"
     ],
     "COMMAND_EVAL_DESCRIPTION": "Evaluates arbitrary Javascript. Reserved for bot owner.",
     "COMMAND_EVAL_EXTENDEDHELP": [
