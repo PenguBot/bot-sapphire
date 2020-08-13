@@ -54,17 +54,11 @@
     "INHIBITOR_RUNIN_NONE": "The ${name} command is not configured to run in any channel.",
     "COMMAND_BLACKLIST_DESCRIPTION": "Blacklists or un-blacklists users and guilds from the bot.",
     "COMMAND_BLACKLIST_SUCCESS": [
-    usersAdded.length
-      ? "**Users Added**\n${util.codeBlock('', usersAdded.join(', '))}": "",
-    usersRemoved.length
-      ? "**Users Removed**\n${util.codeBlock('', usersRemoved.join(', '))}": "",
-    guildsAdded.length
-      ? "**Guilds Added**\n${util.codeBlock('', guildsAdded.join(', '))}": "",
-    guildsRemoved.length
-      ? "**Guilds Removed**\n${util.codeBlock('', guildsRemoved.join(', '))}": ""
-    ]
-    .filter(valval !== "")
-    .join("\n"),
+        "**Users Added**\n${usersAdded.join(', ')}",
+        "**Users Removed**\n${usersRemoved.join(', ')}",
+        "**Guilds Added**\n${guildsAdded.join(', ')}",
+        "**Guilds Removed**\n${guildsRemoved.join(', ')}"
+    ],
     "COMMAND_EVAL_DESCRIPTION": "Evaluates arbitrary Javascript. Reserved for bot owner.",
     "COMMAND_EVAL_EXTENDEDHELP": [
         "The eval command evaluates code as-in, any error thrown from it will be handled.",
@@ -74,7 +68,7 @@
         "The --async flag will wrap the code into an async function where you can enjoy the use of await, however, if you want to return something, you will need the return keyword.",
         "The --showHidden flag will enable the showHidden option in util.inspect.",
         "If the output is too large, it'll send the output as a file, or in the console if the bot does not have the ATTACH_FILES permission."
-    ].join("\n"),
+    ],
     "COMMAND_EVAL_ERROR": "**Error**:${output}\n**Type**:${type}\n${time}",
     "COMMAND_EVAL_OUTPUT": "**Output**:${output}\n**Type**:${type}\n${time}",
     "COMMAND_EVAL_SENDFILE": "Output was too long... sent the result as a file.\n**Type**:${type}\n${time}",
@@ -103,14 +97,11 @@
     "COMMAND_INVITE": [
         "To add ${this.client.user.username} to your discord guild:",
         "<${this.client.invite}>",
-    util.codeBlock(
-      "",
         [
             "The above link is generated requesting the minimum permissions required to use every command currently.",
             "I know not all permissions are right for every guild, so don't be afraid to uncheck any of the boxes.",
             "If you try to use a command that requires more permissions than the bot is granted, it will let you know."
-        ].join(" ")
-    ),
+        ],
         "Please file an issue at <https://github.com/dirigeants/klasa> if you find any bugs."
     ],
     "COMMAND_INVITE_DESCRIPTION": "Displays the invite link of the bot, to invite it to your guild.",
