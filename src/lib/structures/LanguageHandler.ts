@@ -1,7 +1,7 @@
 import { Cache } from "@klasa/cache";
 import { promises } from "fs";
 import i18next, { TFunction } from "i18next";
-import * as Backend from "i18next-node-fs-backend";
+import Backend from "i18next-node-fs-backend";
 import * as path from "path";
 import { PenguClient } from "./PenguClient";
 

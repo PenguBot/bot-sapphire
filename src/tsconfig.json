@@ -7,12 +7,12 @@
 		"baseUrl": ".",
 		"paths": {
 			"@orm/*": ["lib/orm/*"],
-			"@utils/*": ["lib/util/*"],
 			"@lib/*": ["lib/*"],
 			"@root/*": ["*"]
 		},
 		"composite": true,
-		"declaration": true
+		"declaration": true,
+		"esModuleInterop": true
 	},
 	"include": [
 		"."
