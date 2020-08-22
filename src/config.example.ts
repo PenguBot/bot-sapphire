@@ -2,7 +2,6 @@
 
 import { KlasaClientOptions } from "klasa";
 
-
 export const DEV = "DEV" in process.env ? process.env.DEV === "true" : !("PM2_HOME" in process.env);
 
 export const TOKEN = "";
@@ -27,10 +26,13 @@ export const CLIENTOPTIONS: KlasaClientOptions = {
     production: PRODUCTION,
     prefixCaseInsensitive: true,
     noPrefixDM: true,
+    language: "en-US",
     console: { useColor: true },
     pieceDefaults: {
-        commands: { deletable: true, quotedStringSupport: true, bucket: 2 }
+        commands: { deletable: true, quotedStringSupport: true, bucket: 2 },
+        monitors: { ignoreOthers: false }
     },
+    disabledCorePieces: ["commands"],
     createPiecesFolders: false,
     commandEditing: true,
     regexPrefix: /^((?:Hey |Ok )?Pengu(?:,|!| ))/i,
