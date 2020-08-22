@@ -2,29 +2,25 @@
   "name": "pengubot",
   "version": "3.0.0",
   "description": "",
-  "license": "",
+  "license": "Apache-2.0",
+  "private": true,
   "author": {
-    "name": "@pengubot",
-    "url": "https://github.com/PenguBot"
+    "name": "Aditya Nath Tripathi",
+    "url": "https://github.com/AdityaTD",
+    "email": "adityatripathidelhi@gmail.com"
   },
   "contributors": [
     {
-      "name": "Aditya Nath Tripathi",
-      "url": "https://github.com/AdityaTD"
-    },
-    {
       "name": "Nejc Drobnic",
-      "url": "https://github.com/QuantumlyTangled"
+      "url": "https://github.com/QuantumlyTangled",
+      "email": "yo@quantumlytangled.com"
     }
   ],
   "maintainers": [
     {
-      "name": "Aditya Nath Tripathi",
-      "url": "https://github.com/AdityaTD"
-    },
-    {
       "name": "Nejc Drobnic",
-      "url": "https://github.com/QuantumlyTangled"
+      "url": "https://github.com/QuantumlyTangled",
+      "email": "yo@quantumlytangled.com"
     }
   ],
   "keywords": [
@@ -35,6 +31,7 @@
     "bot",
     "discord"
   ],
+  "main": "dist/index.js",
   "dependencies": {
     "@sapphire/framework": "sapphire-project/framework#build",
     "@sapphire/pieces": "sapphire-project/pieces#build",
@@ -67,5 +64,32 @@
     "lint-staged": "^10.2.11",
     "standard-version": "^9.0.0",
     "typescript": "^4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn lint-staged"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix --ext ts"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "_moduleAliases": {
+    "@orm": "dist/lib/orm",
+    "@utils": "dist/lib/util",
+    "@lib": "dist/lib",
+    "@root": "dist"
   }
 }

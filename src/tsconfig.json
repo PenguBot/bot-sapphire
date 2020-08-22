@@ -1,0 +1,20 @@
+{
+	"extends": "../tsconfig.base.json",
+	"compilerOptions": {
+		"outDir": "../dist",
+		"rootDir": ".",
+		"baseUrl": ".",
+		"paths": {
+			"@orm/*": ["lib/orm/*"],
+			"@utils/*": ["lib/utils/*"],
+			"@lib/*": ["lib/*"],
+			"@root/*": ["*"]
+		},
+		"composite": true,
+		"declaration": true,
+		"esModuleInterop": true
+	},
+	"include": [
+		"."
+	]
+}
