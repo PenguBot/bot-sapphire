@@ -1,4 +1,40 @@
 {
+  "name": "pengubot",
+  "version": "3.0.0",
+  "description": "",
+  "license": "",
+  "author": {
+    "name": "@pengubot",
+    "url": "https://github.com/PenguBot"
+  },
+  "contributors": [
+    {
+      "name": "Aditya Nath Tripathi",
+      "url": "https://github.com/AdityaTD"
+    },
+    {
+      "name": "Nejc Drobnic",
+      "url": "https://github.com/QuantumlyTangled"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "Aditya Nath Tripathi",
+      "url": "https://github.com/AdityaTD"
+    },
+    {
+      "name": "Nejc Drobnic",
+      "url": "https://github.com/QuantumlyTangled"
+    }
+  ],
+  "keywords": [
+    "pengubot",
+    "pengu",
+    "bot",
+    "discord",
+    "bot",
+    "discord"
+  ],
   "dependencies": {
     "@sapphire/framework": "sapphire-project/framework#build",
     "@sapphire/pieces": "sapphire-project/pieces#build",
