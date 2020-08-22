@@ -341,3 +341,5 @@ modules.xml
 
 
 # End of https://www.toptal.com/developers/gitignore/api/typings,node,visualstudiocode,webstorm,webstorm+all,webstorm+iml
+
+src/config.ts
