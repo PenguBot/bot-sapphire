@@ -14,15 +14,15 @@ export class PenguClient extends SapphireClient {
         super(options);
 
         this.prefix = new Prefix(this);
-    }
 
-    // eslint-disable-next-line @typescript-eslint/no-invalid-this, no-invalid-this
-    public fetchPrefix = (message: Message) => this.prefix.ensurePrefix(message.id);
+        this.fetchPrefix = (message: Message) => this.prefix.ensurePrefix(message.id);
+    }
 
 }
 
 declare module "discord.js" {
     interface Client {
         redis: IRedis;
+        prefix: Prefix;
     }
 }
