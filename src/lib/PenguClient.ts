@@ -22,6 +22,8 @@ export class PenguClient extends SapphireClient {
         this.fetchPrefix = (message: Message) => this.prefix.ensurePrefix(message.id);
 
         container.registerInstance(PenguClient, this);
+
+        throw Error("eyyy");
     }
 
 }

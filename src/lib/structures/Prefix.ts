@@ -17,9 +17,10 @@ export class Prefix {
 
     public async ensurePrefixCache(id: string) {
         const { guilds } = await DbSet.connect();
-        const { prefix } = await guilds.ensure(id);
-        await this.client.redis.set(`${Prefix.KEY_PREFIX}${id}`, prefix);
-        return prefix;
+        const settings = await guilds.ensure(id);
+        await this.client.redis.set(`${Prefix.KEY_PREFIX}${id}`, settings.prefix);
+        await settings.save();
+        return settings.prefix;
     }
 
     // eslint-disable-next-line @typescript-eslint/naming-convention
