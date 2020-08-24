@@ -39,4 +39,3 @@ declare global {
         }
     }
 }
-
