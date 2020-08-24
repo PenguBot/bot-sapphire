@@ -1,6 +1,7 @@
 {
     "extends": "@pengubot",
     "rules": {
-        "no-warning-comments": 0
+        "no-warning-comments": 0,
+        "no-process-env": 0
     }
 }
