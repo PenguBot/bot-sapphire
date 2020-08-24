@@ -1,21 +1,27 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { SapphireClient } from "@sapphire/framework";
-import { Message, ClientOptions } from "discord.js";
+import { ClientOptions, Message } from "discord.js";
 import Redis, { Redis as IRedis } from "ioredis";
+import { join } from "path";
+import { container } from "tsyringe";
+import { LanguageHandler } from "./structures/LanguageHandler";
 import { Prefix } from "./structures/Prefix";
 
 export class PenguClient extends SapphireClient {
 
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     public readonly redis: IRedis = new Redis();
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     public readonly prefix: Prefix;
+    public readonly languages: LanguageHandler;
 
-    public constructor(options: ClientOptions) {
+    public constructor(options?: ClientOptions) {
         super(options);
 
         this.prefix = new Prefix(this);
+        this.languages = new LanguageHandler(join(__dirname, "..", "languages"));
 
         this.fetchPrefix = (message: Message) => this.prefix.ensurePrefix(message.id);
+
+        container.registerInstance(PenguClient, this);
     }
 
 }
