@@ -33,16 +33,17 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-		"start": "node dist/index.js",
+    "start": "node dist/index.js",
     "compile": "yarn build && yarn build:move:languages",
     "build": "tsc -b src",
     "build:move:languages": "copyfiles ./src/languages/**/*.json --up 1 ./dist/",
-		"dev": "yarn compile && yarn start",
+    "dev": "yarn compile && yarn start",
     "typeorm": "node -r module-alias/register ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
     "@sapphire/framework": "sapphire-project/framework#build",
     "@sapphire/pieces": "sapphire-project/pieces#build",
+    "@sentry/integrations": "^5.21.3",
     "@sentry/node": "^5.21.3",
     "colorette": "^1.2.1",
     "discord.js": "^12.3.1",
@@ -53,6 +54,7 @@
     "node-fetch": "^2.6.0",
     "pg": "^8.3.2",
     "reflect-metadata": "^0.1.13",
+    "tslib": "^2.0.1",
     "tsyringe": "^4.3.0",
     "typeorm": "^0.2.25",
     "typeorm-naming-strategies": "^1.1.0"

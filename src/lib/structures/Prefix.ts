@@ -1,5 +1,5 @@
 import { PenguClient } from "@lib/PenguClient";
-import { DbSet } from "./DBSet";
+import { DbSet } from "@lib/structures/DBSet";
 
 export class Prefix {
     // eslint-disable-next-line @typescript-eslint/naming-convention

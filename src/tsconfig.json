@@ -12,7 +12,10 @@
 		},
 		"composite": true,
 		"declaration": true,
-		"esModuleInterop": true
+		"sourceMap": true,
+		"inlineSources": true,
+		"esModuleInterop": true,
+		"removeComments": true
 	},
 	"include": [
 		"."

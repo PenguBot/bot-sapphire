@@ -4,8 +4,8 @@ import { ClientOptions, Message } from "discord.js";
 import Redis, { Redis as IRedis } from "ioredis";
 import { join } from "path";
 import { container } from "tsyringe";
-import { LanguageHandler } from "./structures/LanguageHandler";
-import { Prefix } from "./structures/Prefix";
+import { LanguageHandler } from "@lib/structures/LanguageHandler";
+import { Prefix } from "@lib/structures/Prefix";
 
 export class PenguClient extends SapphireClient {
 
