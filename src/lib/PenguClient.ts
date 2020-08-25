@@ -23,6 +23,8 @@ export class PenguClient extends SapphireClient {
 
         this.fetchPrefix = (message: Message) => this.prefix.ensurePrefix(message.id);
 
+        this.commands.registerPath(join(__dirname, "..", "commands"));
+
         container.registerInstance(PenguClient, this);
     }
 
