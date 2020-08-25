@@ -19,12 +19,8 @@ Structures.extend("Message", Message => {
         }
 
         public async fetchLanguage() {
-            if (this.guild) {
-                const { guilds } = await DbSet.connect();
-                const { language } = await guilds.ensure(this.guild.id);
-                return language;
-            }
-            return "en-US";
+            const { guilds } = await DbSet.connect();
+            return (await guilds.findOne(this.guild?.id))?.language ?? "en-US";
         }
     }
 
