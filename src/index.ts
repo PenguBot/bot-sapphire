@@ -3,7 +3,7 @@ import "reflect-metadata";
 import { PenguClient } from "@lib/PenguClient";
 import { BOT_TOKEN, TOKENS } from "@root/config";
 import * as Sentry from "@sentry/node";
-import { DbSet } from "@lib/structures/DBSet";
+import { DbSet } from "@lib/structures/DbSet";
 import { Dedupe, ExtraErrorData, RewriteFrames } from "@sentry/integrations";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention

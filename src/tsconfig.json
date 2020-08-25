@@ -10,7 +10,6 @@
 			"@lib/*": ["lib/*"],
 			"@root/*": ["*"]
 		},
-		"mapRoot": "https://raw.githubusercontent.com/PenguBot/bot/build/dist/",
 		"composite": true,
 		"declaration": true,
 		"sourceMap": true,

@@ -1,5 +1,5 @@
 import { PenguClient } from "@lib/PenguClient";
-import { DbSet } from "@lib/structures/DBSet";
+import { DbSet } from "@lib/structures/DbSet";
 
 export class Prefix {
     // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -19,7 +19,6 @@ export class Prefix {
         const { guilds } = await DbSet.connect();
         const settings = await guilds.ensure(id);
         await this.client.redis.set(`${Prefix.KEY_PREFIX}${id}`, settings.prefix);
-        await settings.save();
         return settings.prefix;
     }
 

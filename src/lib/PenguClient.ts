@@ -7,6 +7,8 @@ import { container } from "tsyringe";
 import { LanguageHandler } from "@lib/structures/LanguageHandler";
 import { Prefix } from "@lib/structures/Prefix";
 
+import "./extensions/PenguMessage";
+
 export class PenguClient extends SapphireClient {
 
     public readonly redis: IRedis = new Redis();
@@ -22,8 +24,6 @@ export class PenguClient extends SapphireClient {
         this.fetchPrefix = (message: Message) => this.prefix.ensurePrefix(message.id);
 
         container.registerInstance(PenguClient, this);
-
-        throw Error("eyyy");
     }
 
 }
@@ -32,5 +32,6 @@ declare module "discord.js" {
     interface Client {
         redis: IRedis;
         prefix: Prefix;
+        languages: LanguageHandler;
     }
 }
