@@ -1,0 +1,10 @@
+{
+    "DEFAULT": "{{key}} ka hin-IN me anuvaad uplabd nahi hai.",
+    "PREFIX": {
+        "GUILD": "The prefix for this guild is: {{prefix}}",
+        "GENERAL": "The prefix to use PenguBot is: {{prefix}}"
+    },
+    "COMMAND_PING": "Ping?",
+    "COMMAND_PING_DESCRIPTION": "Runs a connection test to Discord.",
+    "COMMAND_PINGPONG": "Pong! (Roundtrip took: {{diff}}ms. Heartbeat: {{ping}}ms.)"
+}
