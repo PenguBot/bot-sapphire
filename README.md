@@ -10,6 +10,7 @@ PenguBot is a Multi-Purpose Discord Bot with Entertainment, Social, Music, Image
 [![Twitter Follow](https://img.shields.io/twitter/follow/PenguBot?label=Follow%20@PenguBot&logo=twitter&colorB=1DA1F2&style=flat-square)](https://twitter.com/PenguBot/follow)
 [![Patreon Support](https://img.shields.io/badge/patreon-donate-brightgreen.svg?label=Support%20on%20Patreon&logo=patreon&colorB=F96854&style=flat-square&link=https://patreon.com/PenguBot)](https://patreon.com/PenguBot)
 [![PayPal Donate](https://img.shields.io/badge/paypal-donate-brightgreen.svg?label=Donate%20with%20Paypal&logo=paypal&colorB=00457C&style=flat-square&link=https://paypal.me/adityatripathid)](https://paypal.me/adityatripathid)
+[![Crowdin](https://badges.crowdin.net/pengu-bot/localized.svg)](https://translate.pengubot.com/project/pengu-bot)
 [![Discord Bots](https://top.gg/api/widget/servers/303181184718995457.svg)](https://pengubot.com)
 [![Discord Bots](https://top.gg/api/widget/status/303181184718995457.svg)](https://pengubot.com)
 [![Discord Bots](https://top.gg/api/widget/upvotes/303181184718995457.svg)](https://top.gg/bot/303181184718995457/vote)
