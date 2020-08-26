@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { LanguageHandler } from "@lib/structures/LanguageHandler";
-import { Prefix } from "@lib/structures/Prefix";
+import { CacheManager } from "@lib/structures/CacheManager";
 import { PREFIX } from "@root/config";
 import { SapphireClient } from "@sapphire/framework";
 import { ClientOptions, Message } from "discord.js";
@@ -13,16 +13,16 @@ import "./extensions/PenguMessage";
 export class PenguClient extends SapphireClient {
 
     public readonly redis: IRedis = new Redis();
-    public readonly prefix: Prefix;
+    public readonly cache: CacheManager;
     public readonly languages: LanguageHandler;
 
     public constructor(options?: ClientOptions) {
         super(options);
 
-        this.prefix = new Prefix(this);
+        this.cache = new CacheManager(this);
         this.languages = new LanguageHandler(join(__dirname, "..", "languages"));
 
-        this.fetchPrefix = (message: Message) => message.guild ? this.prefix.ensurePrefix(message.guild.id) : PREFIX;
+        this.fetchPrefix = (message: Message) => message.guild ? this.cache.getPrefix(message.guild.id) : PREFIX;
 
         this.events.registerPath(join(__dirname, "..", "events"));
         this.commands.registerPath(join(__dirname, "..", "commands"));
@@ -35,7 +35,7 @@ export class PenguClient extends SapphireClient {
 declare module "discord.js" {
     interface Client {
         redis: IRedis;
-        prefix: Prefix;
+        cache: CacheManager;
         languages: LanguageHandler;
     }
 }
