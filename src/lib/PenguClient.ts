@@ -24,6 +24,7 @@ export class PenguClient extends SapphireClient {
 
         this.fetchPrefix = (message: Message) => message.guild ? this.cache.getPrefix(message.guild.id) : PREFIX;
 
+        this.arguments.registerPath(join(__dirname, "..", "arguments"));
         this.commands.registerPath(join(__dirname, "..", "commands"));
         this.events.registerPath(join(__dirname, "..", "events"));
 
