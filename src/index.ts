@@ -1,10 +1,11 @@
 import "module-alias/register";
 import "reflect-metadata";
 import { PenguClient } from "@lib/PenguClient";
-import { BOT_TOKEN, TOKENS } from "@root/config";
-import * as Sentry from "@sentry/node";
 import { DbSet } from "@lib/structures/DbSet";
+import { BOT_TOKEN, TOKENS } from "@root/config";
 import { Dedupe, ExtraErrorData, RewriteFrames } from "@sentry/integrations";
+import * as Sentry from "@sentry/node";
+import { floatPromise } from "@utils/util";
 
 import { inspect } from "util";
 inspect.defaultOptions.depth = 1;
@@ -35,5 +36,4 @@ async function main() {
     await client.login(BOT_TOKEN);
 }
 
-// TODO: Globally log error
-main().catch(console.error);
+floatPromise({ client }, main());

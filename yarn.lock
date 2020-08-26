@@ -217,6 +217,10 @@
   dependencies:
     "@discordjs/collection" "^0.1.6"
 
+"@sapphire/utilities@github:sapphire-project/utilities#build-utilities":
+  version "0.0.1"
+  resolved "https://codeload.github.com/sapphire-project/utilities/tar.gz/23f525f43ed3e6a938a37520f4f318b5eefd03d6"
+
 "@sentry/apm@5.21.4":
   version "5.21.4"
   resolved "https://registry.yarnpkg.com/@sentry/apm/-/apm-5.21.4.tgz#bc1e026e36edced3f79fc86869b4b65749e20a2f"

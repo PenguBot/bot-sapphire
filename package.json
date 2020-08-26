@@ -43,6 +43,7 @@
   "dependencies": {
     "@sapphire/framework": "sapphire-project/framework#build",
     "@sapphire/pieces": "sapphire-project/pieces#build",
+    "@sapphire/utilities": "github:sapphire-project/utilities#build-utilities",
     "@sentry/integrations": "^5.21.4",
     "@sentry/node": "^5.21.4",
     "colorette": "^1.2.1",

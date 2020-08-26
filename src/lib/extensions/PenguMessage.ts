@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { MessageOptions, Structures } from "discord.js";
+import { MessageOptions, Structures, StringResolvable } from "discord.js";
 
 Structures.extend("Message", Message => {
     class PenguMessage extends Message {
 
+        public send(content: StringResolvable, options?: MessageOptions) {
+            return this.channel.send(content, options);
+        }
+
         public async sendLocale(key: string, args?: Record<string, unknown>, options?: MessageOptions) {
             const content = await this.translate(key, args);
-            return this.channel.send(content, options);
+            return this.send(content, options);
         }
 
         public async translate(key: string, args?: Record<string, unknown>) {

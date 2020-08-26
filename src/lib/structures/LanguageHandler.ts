@@ -1,3 +1,4 @@
+/* eslint-disable valid-jsdoc */
 import { Collection } from "discord.js";
 import { promises } from "fs";
 import i18next, { TFunction } from "i18next";
@@ -38,7 +39,7 @@ export class LanguageHandler {
 		this.languages = new Collection(languages.map(item => [item, i18next.getFixedT(item)]));
 	}
 
-	/*
+	/**
 	 * @copyright 2020 TypicalBot LLC, Nicholas Sylke and the TypicalBot contributors
 	 * @license Apache-2.0
 	 */
