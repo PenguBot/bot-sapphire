@@ -6,7 +6,8 @@ Structures.extend("Message", Message => {
     class PenguMessage extends Message {
 
         public async sendLocale(key: string, args?: Record<string, unknown>, options?: MessageOptions) {
-            return this.channel.send(await this.fetchLocaledString(key, args), options);
+            const content = await this.fetchLocaledString(key, args);
+            return this.channel.send(content, options);
         }
 
         public async fetchLocaledString(key: string, args?: Record<string, unknown>) {

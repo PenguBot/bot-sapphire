@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { LanguageHandler } from "@lib/structures/LanguageHandler";
+import { Prefix } from "@lib/structures/Prefix";
+import { PREFIX } from "@root/config";
 import { SapphireClient } from "@sapphire/framework";
 import { ClientOptions, Message } from "discord.js";
 import Redis, { Redis as IRedis } from "ioredis";
 import { join } from "path";
 import { container } from "tsyringe";
-import { LanguageHandler } from "@lib/structures/LanguageHandler";
-import { Prefix } from "@lib/structures/Prefix";
 
 import "./extensions/PenguMessage";
 
@@ -21,8 +22,9 @@ export class PenguClient extends SapphireClient {
         this.prefix = new Prefix(this);
         this.languages = new LanguageHandler(join(__dirname, "..", "languages"));
 
-        this.fetchPrefix = (message: Message) => this.prefix.ensurePrefix(message.id);
+        this.fetchPrefix = (message: Message) => message.guild ? this.prefix.ensurePrefix(message.guild.id) : PREFIX;
 
+        this.events.registerPath(join(__dirname, "..", "events"));
         this.commands.registerPath(join(__dirname, "..", "commands"));
 
         container.registerInstance(PenguClient, this);

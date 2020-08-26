@@ -204,7 +204,7 @@
 
 "@sapphire/framework@sapphire-project/framework#build":
   version "0.0.1"
-  resolved "https://codeload.github.com/sapphire-project/framework/tar.gz/8b3e83fea84d295796f07ddbd4eaa3e078eff3b8"
+  resolved "https://codeload.github.com/sapphire-project/framework/tar.gz/c44c8f28a5b6d07df71da0de9bdee52ba1ea8999"
   dependencies:
     "@klasa/ratelimits" "^0.1.0"
     "@klasa/utils" "^0.1.0"
@@ -213,7 +213,7 @@
 
 "@sapphire/pieces@github:sapphire-project/pieces#build", "@sapphire/pieces@sapphire-project/pieces#build":
   version "1.0.0"
-  resolved "https://codeload.github.com/sapphire-project/pieces/tar.gz/aaaebd7e528e58eebaf9e76af49dbd52aaac1a6b"
+  resolved "https://codeload.github.com/sapphire-project/pieces/tar.gz/6eb6b851a6b71f65aff263ff3ce117ac72b3d691"
   dependencies:
     "@discordjs/collection" "^0.1.6"
 
@@ -4207,15 +4207,15 @@ trim-off-newlines@^1.0.0:
   resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
 
-tslib@1.9.3:
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
-  integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
-
 tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
+
+tslib@~1.9.3:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
+  integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 
 tsutils@^3.17.1:
   version "3.17.1"

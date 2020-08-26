@@ -15,7 +15,7 @@ export class LanguageHandler {
 		this.kDirectory = directory;
 		this.kOptions = {
 			jsonIndent: 2,
-			loadPath: path.resolve(this.kDirectory, path.sep, "{{lng}}", path.sep, "{{ns}}.json"),
+			loadPath: path.join(this.kDirectory, "{{lng}}", "{{ns}}.json"),
 			addPath: this.kDirectory
 		};
 	}
@@ -23,12 +23,13 @@ export class LanguageHandler {
 	public async init() {
 		const { namespaces, languages } = await this.walkLanguageDirectory(this.kDirectory);
 
-		i18next.use(Backend);
-
+        i18next.use(Backend);
 		await i18next.init({
 			backend: this.kOptions,
 			debug: false,
-			fallbackLng: "en-US",
+            fallbackLng: "en-US",
+            initImmediate: false,
+            interpolation: { escapeValue: false },
 			load: "all",
 			ns: namespaces,
 			preload: languages

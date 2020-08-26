@@ -6,6 +6,9 @@ import * as Sentry from "@sentry/node";
 import { DbSet } from "@lib/structures/DbSet";
 import { Dedupe, ExtraErrorData, RewriteFrames } from "@sentry/integrations";
 
+import { inspect } from "util";
+inspect.defaultOptions.depth = 1;
+
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const __rootdir = __dirname || process.cwd();
 
