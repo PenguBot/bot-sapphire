@@ -24,8 +24,8 @@ export class PenguClient extends SapphireClient {
 
         this.fetchPrefix = (message: Message) => message.guild ? this.cache.getPrefix(message.guild.id) : PREFIX;
 
-        this.events.registerPath(join(__dirname, "..", "events"));
         this.commands.registerPath(join(__dirname, "..", "commands"));
+        this.events.registerPath(join(__dirname, "..", "events"));
 
         container.registerInstance(PenguClient, this);
     }
@@ -34,8 +34,8 @@ export class PenguClient extends SapphireClient {
 
 declare module "discord.js" {
     interface Client {
-        redis: IRedis;
-        cache: CacheManager;
-        languages: LanguageHandler;
+        readonly redis: IRedis;
+        readonly cache: CacheManager;
+        readonly languages: LanguageHandler;
     }
 }
