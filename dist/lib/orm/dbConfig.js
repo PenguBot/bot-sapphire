@@ -34,4 +34,4 @@ exports.connect = () => {
         return typeorm_1.createConnection(exports.config);
     }
 };
-//# sourceMappingURL=https://raw.githubusercontent.com/PenguBot/bot/build/dist/lib/orm/dbConfig.js.map
+//# sourceMappingURL=dbConfig.js.map

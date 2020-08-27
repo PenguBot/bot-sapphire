@@ -13,4 +13,4 @@ exports.TOKENS = {
     BOT_TOKEN: exports.BOT_TOKEN,
     SENTRY_DNS: ""
 };
-//# sourceMappingURL=https://raw.githubusercontent.com/PenguBot/bot/build/dist/config.js.map
+//# sourceMappingURL=config.js.map

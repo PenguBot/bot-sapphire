@@ -4,10 +4,13 @@ const tslib_1 = require("tslib");
 require("module-alias/register");
 require("reflect-metadata");
 const PenguClient_1 = require("@lib/PenguClient");
+const DbSet_1 = require("@lib/structures/DbSet");
 const config_1 = require("@root/config");
-const Sentry = tslib_1.__importStar(require("@sentry/node"));
-const DBSet_1 = require("@lib/structures/DBSet");
 const integrations_1 = require("@sentry/integrations");
+const Sentry = tslib_1.__importStar(require("@sentry/node"));
+const util_1 = require("@utils/util");
+const util_2 = require("util");
+util_2.inspect.defaultOptions.depth = 1;
 const __rootdir = __dirname || process.cwd();
 if (config_1.TOKENS.SENTRY_DNS) {
     Sentry.init({
@@ -26,8 +29,8 @@ if (config_1.TOKENS.SENTRY_DNS) {
 }
 const client = new PenguClient_1.PenguClient();
 async function main() {
-    await DBSet_1.DbSet.connect();
+    await DbSet_1.DbSet.connect();
     await client.login(config_1.BOT_TOKEN);
 }
-main().catch(console.error);
-//# sourceMappingURL=https://raw.githubusercontent.com/PenguBot/bot/build/dist/index.js.map
+util_1.floatPromise({ client }, main());
+//# sourceMappingURL=index.js.map

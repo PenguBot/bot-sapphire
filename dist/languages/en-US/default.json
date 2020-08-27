@@ -2,6 +2,6 @@
     "DEFAULT": "{{key}} has not been localized for en-US yet.",
     "PREFIX": {
         "GUILD": "The prefix for this guild is: {{prefix}}",
-        "GENERAL": "The prefix to use PenguBot is: {{prefix}}"
+        "BASE": "The prefix to use PenguBot is: {{prefix}}"
     }
 }

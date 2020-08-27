@@ -18,4 +18,4 @@ GuildRepository = tslib_1.__decorate([
     typeorm_1.EntityRepository(GuildEntity_1.GuildEntity)
 ], GuildRepository);
 exports.GuildRepository = GuildRepository;
-//# sourceMappingURL=https://raw.githubusercontent.com/PenguBot/bot/build/dist/lib/orm/repositories/GuildRepository.js.map
+//# sourceMappingURL=GuildRepository.js.map

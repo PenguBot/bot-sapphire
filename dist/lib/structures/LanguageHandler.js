@@ -15,7 +15,7 @@ class LanguageHandler {
         this.kDirectory = directory;
         this.kOptions = {
             jsonIndent: 2,
-            loadPath: path.resolve(this.kDirectory, path.sep, "{{lng}}", path.sep, "{{ns}}.json"),
+            loadPath: path.join(this.kDirectory, "{{lng}}", "{{ns}}.json"),
             addPath: this.kDirectory
         };
     }
@@ -26,6 +26,8 @@ class LanguageHandler {
             backend: this.kOptions,
             debug: false,
             fallbackLng: "en-US",
+            initImmediate: false,
+            interpolation: { escapeValue: false },
             load: "all",
             ns: namespaces,
             preload: languages
@@ -52,4 +54,4 @@ class LanguageHandler {
     }
 }
 exports.LanguageHandler = LanguageHandler;
-//# sourceMappingURL=https://raw.githubusercontent.com/PenguBot/bot/build/dist/lib/structures/LanguageHandler.js.map
+//# sourceMappingURL=LanguageHandler.js.map
