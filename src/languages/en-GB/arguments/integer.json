@@ -1,6 +1,6 @@
 {
-    "ARGUMENT_INTEGER_INVALID_NUMBER": "",
-    "ARGUMENT_INTEGER_TOO_SMALL": "",
-    "ARGUMENT_INTEGER_TOO_BIG": ""
+    "ARGUMENT_INTEGER_INVALID_NUMBER": "The argument did not resolve to an integer.",
+    "ARGUMENT_INTEGER_TOO_SMALL": "The integer is too small.",
+    "ARGUMENT_INTEGER_TOO_BIG": "The integer is too big."
 }
 
