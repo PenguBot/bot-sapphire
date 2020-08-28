@@ -22,7 +22,8 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", Object)
 ], GuildEntity.prototype, "language", void 0);
 GuildEntity = tslib_1.__decorate([
-    typeorm_1.Entity("guild", { schema: "public" })
+    typeorm_1.Entity("guild", { schema: "public" }),
+    typeorm_1.Check(`"prefix"::text <> ''::text`)
 ], GuildEntity);
 exports.GuildEntity = GuildEntity;
 //# sourceMappingURL=GuildEntity.js.map
