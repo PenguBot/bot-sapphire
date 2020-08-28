@@ -199,7 +199,7 @@
 
 "@sapphire/framework@sapphire-project/framework#build":
   version "0.0.1"
-  resolved "https://codeload.github.com/sapphire-project/framework/tar.gz/a849c8c4cdc6dd8a671f553f08cefa4499b17c01"
+  resolved "https://codeload.github.com/sapphire-project/framework/tar.gz/5c3772cb2907b79d48e9297aaa2be0165b14c92f"
   dependencies:
     "@klasa/ratelimits" "^0.1.0"
     "@sapphire/pieces" "github:sapphire-project/pieces#build"
