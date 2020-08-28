@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const discord_js_1 = require("discord.js");
 const fs_1 = require("fs");
 const i18next_1 = tslib_1.__importDefault(require("i18next"));
-const i18next_node_fs_backend_1 = tslib_1.__importDefault(require("i18next-node-fs-backend"));
+const i18next_fs_backend_1 = tslib_1.__importDefault(require("i18next-fs-backend"));
 const path = tslib_1.__importStar(require("path"));
 class LanguageHandler {
     languages;
@@ -14,14 +14,13 @@ class LanguageHandler {
     constructor(directory) {
         this.kDirectory = directory;
         this.kOptions = {
-            jsonIndent: 2,
             loadPath: path.join(this.kDirectory, "{{lng}}", "{{ns}}.json"),
             addPath: this.kDirectory
         };
     }
     async init() {
         const { namespaces, languages } = await this.walkLanguageDirectory(this.kDirectory);
-        i18next_1.default.use(i18next_node_fs_backend_1.default);
+        i18next_1.default.use(i18next_fs_backend_1.default);
         await i18next_1.default.init({
             backend: this.kOptions,
             debug: false,

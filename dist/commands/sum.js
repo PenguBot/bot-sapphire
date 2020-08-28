@@ -4,9 +4,8 @@ exports.SumCommand = void 0;
 const framework_1 = require("@sapphire/framework");
 class SumCommand extends framework_1.Command {
     async run(message, args) {
-        const a = await args.pick("integer");
-        const b = await args.pick("integer");
-        return message.channel.send(`Sum is ${a + b}`);
+        const ints = await args.repeat("number");
+        return message.channel.send(`Sum is ${ints.reduce((a, b) => a + b, 0)}`);
     }
 }
 exports.SumCommand = SumCommand;

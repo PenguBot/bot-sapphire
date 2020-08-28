@@ -10,10 +10,3 @@ export declare class PenguClient extends SapphireClient {
     readonly languages: LanguageHandler;
     constructor(options?: ClientOptions);
 }
-declare module "discord.js" {
-    interface Client {
-        readonly redis: IRedis;
-        readonly cache: CacheManager;
-        readonly languages: LanguageHandler;
-    }
-}

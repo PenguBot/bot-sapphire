@@ -8,7 +8,7 @@ class PenguArgument extends framework_1.Argument {
     }
     async run(argument, context) {
         const parsed = Number(argument);
-        if (!Number.isInteger(parsed)) {
+        if (!Number.isSafeInteger(parsed)) {
             return framework_1.err(new framework_1.UserError("ArgumentIntegerInvalidNumber", await context.message.translate("arguments/integer:ARGUMENT_INTEGER_INVALID_NUMBER")));
         }
         if (typeof context.minimum === "number" && parsed < context.minimum) {
