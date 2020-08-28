@@ -2,7 +2,7 @@
 import { Collection } from "discord.js";
 import { promises } from "fs";
 import i18next, { TFunction } from "i18next";
-import Backend from "i18next-node-fs-backend";
+import Backend, { i18nextFsBackend } from "i18next-fs-backend";
 import * as path from "path";
 
 export class LanguageHandler {
@@ -10,12 +10,11 @@ export class LanguageHandler {
 	public languages!: Collection<string, TFunction>;
 
 	public readonly kDirectory!: string;
-	private readonly kOptions: i18nextNodeFsBackEnd.i18nextNodeFsBackEndOptions;
+	private readonly kOptions: i18nextFsBackend.i18nextFsBackendOptions;
 
 	public constructor(directory: string) {
 		this.kDirectory = directory;
 		this.kOptions = {
-			jsonIndent: 2,
 			loadPath: path.join(this.kDirectory, "{{lng}}", "{{ns}}.json"),
 			addPath: this.kDirectory
 		};

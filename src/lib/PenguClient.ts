@@ -32,11 +32,3 @@ export class PenguClient extends SapphireClient {
     }
 
 }
-
-declare module "discord.js" {
-    interface Client {
-        readonly redis: IRedis;
-        readonly cache: CacheManager;
-        readonly languages: LanguageHandler;
-    }
-}

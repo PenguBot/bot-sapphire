@@ -1,0 +1,6 @@
+{
+    "ARGUMENT_FLOAT_INVALID_NAN": "The argument is not a valid number.",
+    "ARGUMENT_FLOAT_INVALID_DECIMAL": "The argument did not resolve to a float.",
+    "ARGUMENT_FLOAT_TOO_SMALL": "The argument is too small.",
+    "ARGUMENT_FLOAT_TOO_BIG": "The argument is too big."
+}
