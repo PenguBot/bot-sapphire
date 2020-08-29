@@ -18,7 +18,7 @@ export class ServerListEntity extends BaseEntity {
     @Column("varchar", { name: "invite", length: 128 })
     public invite!: string;
 
-    @Column("boolean", { name: "invite", default: true })
+    @Column("boolean", { name: "discoverable", default: true })
     public discoverable = true;
 
     @Column("varchar", { name: "category", length: 256, nullable: true })
