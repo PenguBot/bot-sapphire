@@ -35,7 +35,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", String)
 ], ServerListEntity.prototype, "invite", void 0);
 tslib_1.__decorate([
-    typeorm_1.Column("boolean", { name: "invite", default: true }),
+    typeorm_1.Column("boolean", { name: "discoverable", default: true }),
     tslib_1.__metadata("design:type", Object)
 ], ServerListEntity.prototype, "discoverable", void 0);
 tslib_1.__decorate([
