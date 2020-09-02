@@ -3,5 +3,6 @@
     "PREFIX": {
         "GUILD": "The prefix for this guild is: {{prefix}}",
         "BASE": "The prefix to use PenguBot is: {{prefix}}"
-    }
+    },
+    "BASIC_ERROR": "I have come across an issue trying to do that, please try again."
 }

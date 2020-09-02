@@ -1,7 +1,7 @@
 import { Command } from "@sapphire/framework";
-import { Message } from "discord.js";
+import { Message, MessageEmbed } from "discord.js";
 
-export class PingCommand extends Command {
+export class PenguCommand extends Command {
 
     public readonly images: Array<string> = [
         "http://i.imgur.com/Urfp335.png", "http://i.imgur.com/gC8v9fp.jpg", "http://i.imgur.com/DZ6YtvT.jpg",
@@ -16,6 +16,10 @@ export class PingCommand extends Command {
 
     public run(message: Message) {
         const randomImage = this.images[Math.floor(Math.random() * this.images.length)];
-        return message.channel.send({ files: [randomImage] });
+        return message.send(new MessageEmbed()
+            .setFooter("© PenguBot.com")
+            .setTimestamp()
+            .setColor("RANDOM")
+            .setImage(randomImage));
     }
 }

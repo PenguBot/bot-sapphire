@@ -27,6 +27,7 @@ export class PenguClient extends SapphireClient {
         this.arguments.registerPath(join(__dirname, "..", "arguments"));
         this.commands.registerPath(join(__dirname, "..", "commands"));
         this.events.registerPath(join(__dirname, "..", "events"));
+        this.preconditions.registerPath(join(__dirname, "..", "preconditions"));
 
         container.registerInstance(PenguClient, this);
     }
