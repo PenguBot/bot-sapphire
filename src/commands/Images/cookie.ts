@@ -12,7 +12,7 @@ export class PenguCommand extends Command {
         "https://i.imgur.com/ctHwqVL.png", "https://i.imgur.com/yUaCPvC.png", "https://i.imgur.com/IUM6Z8F.png"
     ];
 
-    public run(message: Message, args: Args) {
+    public async run(message: Message, args: Args) {
         const randomImage = this.images[Math.floor(Math.random() * this.images.length)];
         const embed = new MessageEmbed()
             .setFooter("© PenguBot.com")
@@ -21,6 +21,6 @@ export class PenguCommand extends Command {
             .setImage(randomImage);
 
         // @todo placeholder till we make a user/memeber argument
-        return message.send(message.translate("commands/images:COOKIE", { by: message.author.username, to: args.pick("string") }), { embed });
+        return message.channel.send(await message.fetchLanguageKey("commands/images:COOKIE", { by: message.author.username, to: args.pick("string") }), { embed });
     }
 }
