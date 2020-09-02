@@ -16,6 +16,7 @@ export class PenguCommand extends Command {
 
     public run(message: Message) {
         const randomImage = this.images[Math.floor(Math.random() * this.images.length)];
+
         return message.channel.send(new MessageEmbed()
             .setFooter("© PenguBot.com")
             .setTimestamp()
