@@ -44,6 +44,7 @@
     "@sapphire/framework": "sapphire-project/framework#build",
     "@sapphire/pieces": "sapphire-project/pieces#build",
     "@sapphire/utilities": "github:sapphire-project/utilities#build-utilities",
+    "@scp/in17n": "sapphirecommunityplugins/in17n#build",
     "@sentry/integrations": "~5.21",
     "@sentry/node": "~5.21",
     "colorette": "^1.2.1",
