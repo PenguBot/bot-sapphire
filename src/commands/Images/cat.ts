@@ -2,14 +2,14 @@ import { Command } from "@sapphire/framework";
 import { Message, MessageEmbed } from "discord.js";
 import { fetch } from "@utils/util";
 
-export class CatCommand extends Command {
+export class PenguCommand extends Command {
 
     public async run(message: Message) {
         const { fact } = await fetch("https://catfact.ninja/fact");
-        if (!fact) return message.channel.send(await message.fetchLanguageKey("default:BASIC_ERROR"));
+        if (!fact) return message.sendTranslated("default:BASIC_ERROR");
 
         return message.channel.send(new MessageEmbed()
-            .setFooter("© PenguBot.com")
+            .setFooter("© PenguBot.com - Powered by catfact.ninja")
             .setTimestamp()
             .setColor("RANDOM")
             .setDescription(`**${(await message.fetchLanguageKey("commands/images:CAT_TITLE"))}**\n${fact}`)
