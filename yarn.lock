@@ -233,10 +233,11 @@
   resolved "https://codeload.github.com/sapphire-project/utilities/tar.gz/1e1c60bedcca111f483dc4ddff2d5c167bfe0618"
 
 "@scp/in17n@sapphirecommunityplugins/in17n#build":
-  version "1.0.0"
-  resolved "https://codeload.github.com/sapphirecommunityplugins/in17n/tar.gz/bb1e401359d8d8688b622587f43794cb1caf4cb6"
+  version "0.1.0"
+  resolved "https://codeload.github.com/sapphirecommunityplugins/in17n/tar.gz/45cbf9c4d626b3cb9f8f4ad591e824fa49fdcff2"
   dependencies:
     "@sapphire/utilities" sapphire-project/utilities#build-utilities
+    "@types/i18next-fs-backend" "^1.0.0"
     i18next "^19.7.0"
     i18next-fs-backend "^1.0.7"
     tslib "^2.0.1"
@@ -4281,9 +4282,9 @@ typedarray@^0.0.6:
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
 typeorm-naming-strategies@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/typeorm-naming-strategies/-/typeorm-naming-strategies-1.1.0.tgz#29ce8ce1804bc0e4a56302d54e6a746561a94088"
-  integrity sha512-Nu1E4M8lclapX3rdQhQcJKkBjTtmTV4HLWg3M2wouS1ucvnjLPQE1XapOipfmX90LJEVeBwIVh1iPvtf4C5htA==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/typeorm-naming-strategies/-/typeorm-naming-strategies-1.2.0.tgz#d3e53537ee3e93f2edde9d19b3697b4a3c569995"
+  integrity sha512-VfPXzn9kDeFwxRJCFOkYdGqhRa4uRGRF1AS4suIhSLrqaHYQgU1gvbdW0UzPgikxZq6FRsc/qqYZ4+Ah2xOcKw==
 
 typeorm@^0.2.25:
   version "0.2.25"
