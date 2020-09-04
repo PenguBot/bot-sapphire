@@ -233,10 +233,11 @@
   resolved "https://codeload.github.com/sapphire-project/utilities/tar.gz/1e1c60bedcca111f483dc4ddff2d5c167bfe0618"
 
 "@scp/in17n@sapphirecommunityplugins/in17n#build":
-  version "1.0.0"
-  resolved "https://codeload.github.com/sapphirecommunityplugins/in17n/tar.gz/bb1e401359d8d8688b622587f43794cb1caf4cb6"
+  version "0.2.0"
+  resolved "https://codeload.github.com/sapphirecommunityplugins/in17n/tar.gz/dae52cbe0b969689b5eed4f67b1f219d74f049b0"
   dependencies:
     "@sapphire/utilities" sapphire-project/utilities#build-utilities
+    "@types/i18next-fs-backend" "^1.0.0"
     i18next "^19.7.0"
     i18next-fs-backend "^1.0.7"
     tslib "^2.0.1"

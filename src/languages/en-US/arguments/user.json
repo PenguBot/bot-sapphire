@@ -1,0 +1,4 @@
+{
+    "NOT_PROVIDED": "You must mention a user for this command to work.",
+    "NOT_FOUND": "That user was not found, please try a different one."
+}

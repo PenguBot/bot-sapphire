@@ -13,6 +13,7 @@ export class PenguCommand extends Command {
     ];
 
     public async run(message: Message, args: Args) {
+        const mentioned = await args.pick("user");
         const randomImage = this.images[Math.floor(Math.random() * this.images.length)];
         const embed = new MessageEmbed()
             .setFooter("© PenguBot.com")
@@ -20,7 +21,6 @@ export class PenguCommand extends Command {
             .setColor("RANDOM")
             .setImage(randomImage);
 
-        // @todo placeholder till we make a user/memeber argument
-        return message.channel.send(await message.fetchLanguageKey("commands/images:COOKIE", { by: message.author.username, to: args.pick("string") }), { embed });
+        return message.channel.send(await message.fetchLanguageKey("commands/images:COOKIE", { FROM: `${message.author}`, TO: `${mentioned}` }), { embed });
     }
 }

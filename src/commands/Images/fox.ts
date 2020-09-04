@@ -5,7 +5,7 @@ import { fetch } from "@utils/util";
 export class PenguCommand extends Command {
 
     public async run(message: Message) {
-        const body: DogAPIResult = await fetch("https://randomfox.ca/floof/");
+        const body: FoxAPIResult = await fetch("https://randomfox.ca/floof/");
         if (!body.image) return message.sendTranslated("default:BASIC_ERROR");
 
         return message.channel.send(new MessageEmbed()
@@ -17,7 +17,7 @@ export class PenguCommand extends Command {
 
 }
 
-interface DogAPIResult {
+interface FoxAPIResult {
     image: string
     link: string
 }
