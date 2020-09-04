@@ -377,10 +377,10 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*", "@types/node@^14.6.0":
-  version "14.6.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.2.tgz#264b44c5a28dfa80198fc2f7b6d3c8a054b9491f"
-  integrity sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A==
+"@types/node@*", "@types/node@^14.6.3":
+  version "14.6.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.3.tgz#cc4f979548ca4d8e7b90bc0180052ab99ee64224"
+  integrity sha512-pC/hkcREG6YfDfui1FBmj8e20jFU5Exjw4NYDm8kEdrW+mOh0T1Zve8DWKnS7ZIZvgncrctcNCXF4Q2I+loyww==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -4281,10 +4281,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeorm-naming-strategies@^1.1.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/typeorm-naming-strategies/-/typeorm-naming-strategies-1.2.0.tgz#d3e53537ee3e93f2edde9d19b3697b4a3c569995"
-  integrity sha512-VfPXzn9kDeFwxRJCFOkYdGqhRa4uRGRF1AS4suIhSLrqaHYQgU1gvbdW0UzPgikxZq6FRsc/qqYZ4+Ah2xOcKw==
+typeorm-naming-strategies@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/typeorm-naming-strategies/-/typeorm-naming-strategies-1.3.0.tgz#82dd4e063bf6cc22fc3da1ce0d29854899c89c76"
+  integrity sha512-dxauvlpG7vhngNlgf9aTXlMeAA6IMxNkoaaffpP1EYF5rCy69tZGo0G9Y5P7ZaWqzlY2zx/ep3ilODdIFuqjPA==
 
 typeorm@^0.2.25:
   version "0.2.25"
