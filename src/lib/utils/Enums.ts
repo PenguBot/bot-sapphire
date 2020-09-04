@@ -8,6 +8,7 @@ export const enum Events {
 }
 
 export const enum Emojis {
-    PenguCross = "<:penguCross:432966551746904071>",
-    PenguCheck = "<:penguCheck1:431440099675209738>"
+    PenguCross = "<:penguError:435712890884849664>",
+    PenguCheck = "<:penguSuccess:435712876506775553>",
+    PenguLoading = "<a:penguLoad:435712860744581120>"
 }
