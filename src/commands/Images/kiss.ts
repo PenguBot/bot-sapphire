@@ -8,7 +8,7 @@ export class PenguCommand extends Command {
         const mentioned = await args.pick("user");
 
         const { url } = await fetch("https://nekos.life/api/v2/img/kiss");
-        if (!url) return message.sendTranslated("default:BASIC_ERROR");
+        if (!url) return message.sendTranslated("BASIC_ERROR");
 
         const embed = new MessageEmbed()
             .setFooter("© PenguBot.com")
