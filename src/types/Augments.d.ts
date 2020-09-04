@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { CacheManager } from "@lib/structures/CacheManager";
-import { Redis as IRedis } from "ioredis";
-import { User } from "discord.js";
-import { Events } from "@utils/Enums";
+import type { CacheManager } from "@lib/structures/CacheManager";
+import type { Redis as IRedis } from "ioredis";
+import type { User } from "discord.js";
+import type { Events } from "@utils/Enums";
 
 declare module "discord.js" {
     interface Client {
