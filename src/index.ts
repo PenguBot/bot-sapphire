@@ -7,12 +7,6 @@ import { Dedupe, ExtraErrorData, RewriteFrames } from "@sentry/integrations";
 import * as Sentry from "@sentry/node";
 import { floatPromise } from "@utils/util";
 
-import { inspect } from "util";
-inspect.defaultOptions.depth = 1;
-
-// eslint-disable-next-line @typescript-eslint/naming-convention
-const __rootdir = __dirname || process.cwd();
-
 if (TOKENS.SENTRY_DNS) {
     Sentry.init({
         dsn: TOKENS.SENTRY_DNS,
@@ -23,8 +17,8 @@ if (TOKENS.SENTRY_DNS) {
             new Sentry.Integrations.Console(),
             new Sentry.Integrations.Http({ breadcrumbs: true, tracing: true }),
             new Dedupe(),
-            new ExtraErrorData({ depth: 2 }),
-            new RewriteFrames({ root: __rootdir })
+            new ExtraErrorData({ depth: 3 }),
+            new RewriteFrames({ root: __dirname || process.cwd() })
         ]
     });
 }

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { PenguClient } from "@lib/PenguClient";
 import { DbSet } from "@lib/structures/DbSet";
-import { CacheKey } from "@lib/types/Enums";
+import { CacheKey } from "@utils/Enums";
 
 export class CacheManager {
     private readonly client: PenguClient;
@@ -51,19 +51,6 @@ export class CacheManager {
         const { guilds } = await DbSet.connect();
         return guilds.ensure(id);
     }
-
-    /* public async ensurePrefix(id: string) {
-        const prefix = await this.client.redis.get(`${Prefix.KEY_PREFIX}${id}`);
-        if (prefix !== null) return prefix;
-        return this.ensurePrefixCache(id);
-    }
-
-    public async ensurePrefixCache(id: string) {
-        const { guilds } = await DbSet.connect();
-        const settings = await guilds.ensure(id);
-        await this.client.redis.set(`${Prefix.KEY_PREFIX}${id}`, settings.prefix);
-        return settings.prefix;
-    } */
 
     public static readonly SEPERATOR = "_";
 

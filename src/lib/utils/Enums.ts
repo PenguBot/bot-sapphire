@@ -6,3 +6,8 @@ export const enum CacheKey {
 export const enum Events {
     ArgumentErrorMessage = "argumentErrorMessage"
 }
+
+export const enum Emojis {
+    PenguCross = "<:penguCross:432966551746904071>",
+    PenguCheck = "<:penguCheck1:431440099675209738>"
+}
