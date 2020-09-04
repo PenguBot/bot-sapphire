@@ -1,15 +1,15 @@
 {
-    "CAT_TITLE": "Cat Image and Fact",
-    "COOKIE": "{{to}}, you just got a cookie by {{from}}!",
-    "CUDDLE": "{{to}}, you just got cuddled by {{from}}!",
-    "FEED": "{{to}}, you just got fed by {{from}}!",
-    "HUG": "{{from}} just gave you a hug {{to}}!",
-    "KISS": "{{from}} just gave you a kiss {{to}}!",
-    "PAT": "{{from}} just patted you {{to}}!",
-    "POKE": "{{from}} just poked you {{to}}!",
-    "PUNCH": "{{from}} just punched you {{to}}!",
-    "SLAP": "{{to}}, you have been slapped by {{from}}!",
-    "TICKLE": "{{from}} just tickled you {{to}}!",
+    "cat_title": "Cat Image and Fact",
+    "cookie": "{{to}}, you just got a cookie by {{from}}!",
+    "cuddle": "{{to}}, you just got cuddled by {{from}}!",
+    "feed": "{{to}}, you just got fed by {{from}}!",
+    "hug": "{{from}} just gave you a hug {{to}}!",
+    "kiss": "{{from}} just gave you a kiss {{to}}!",
+    "pat": "{{from}} just patted you {{to}}!",
+    "poke": "{{from}} just poked you {{to}}!",
+    "punch": "{{from}} just punched you {{to}}!",
+    "slap": "{{to}}, you have been slapped by {{from}}!",
+    "tickle": "{{from}} just tickled you {{to}}!",
     "comic": {
         "embedTitle": "Random Comic"
     }
