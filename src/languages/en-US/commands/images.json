@@ -1,4 +1,13 @@
 {
     "CAT_TITLE": "Cat Image and Fact",
-    "COOKIE": "{{FROM}} just gave you a cookie {{TO}}!"
+    "COOKIE": "{{to}}, you just got a cookie by {{from}}!",
+    "CUDDLE": "{{to}}, you just got cuddled by {{from}}!",
+    "FEED": "{{to}}, you just got fed by {{from}}!",
+    "HUG": "{{from}} just gave you a hug {{to}}!",
+    "KISS": "{{from}} just gave you a kiss {{to}}!",
+    "PAT": "{{from}} just patted you {{to}}!",
+    "POKE": "{{from}} just poked you {{to}}!",
+    "PUNCH": "{{from}} just punched you {{to}}!",
+    "SLAP": "{{to}}, you have been slapped by {{from}}!",
+    "TICKLE": "{{from}} just tickled you {{to}}!"
 }
