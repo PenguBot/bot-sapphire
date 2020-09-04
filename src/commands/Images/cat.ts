@@ -6,7 +6,7 @@ export class PenguCommand extends Command {
 
     public async run(message: Message) {
         const { fact } = await fetch("https://catfact.ninja/fact");
-        if (!fact) return message.sendTranslated("default:BASIC_ERROR");
+        if (!fact) return message.sendTranslated("BASIC_ERROR");
 
         return message.channel.send(new MessageEmbed()
             .setFooter("© PenguBot.com - Powered by catfact.ninja")
