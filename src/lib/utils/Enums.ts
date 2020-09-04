@@ -4,7 +4,6 @@ export const enum CacheKey {
 }
 
 export const enum Events {
-    UserError = "userError"
 }
 
 export const enum Emojis {

@@ -1,6 +1,5 @@
 import "module-alias/register";
 import "reflect-metadata";
-import "@lib/structures/UserError";
 import { PenguClient } from "@lib/PenguClient";
 import { DbSet } from "@lib/structures/DbSet";
 import { BOT_TOKEN, TOKENS } from "@root/config";

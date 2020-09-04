@@ -2,7 +2,7 @@
 import type { CacheManager } from "@lib/structures/CacheManager";
 import type { Redis as IRedis } from "ioredis";
 import type { User } from "discord.js";
-import type { Events } from "@utils/Enums";
+// import type { Events } from "@utils/Enums";
 
 declare module "discord.js" {
     interface Client {
@@ -11,7 +11,6 @@ declare module "discord.js" {
     }
 
     interface ClientEvents {
-        [Events.UserError]: [string, string]
     }
 }
 
