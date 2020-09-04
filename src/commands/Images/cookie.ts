@@ -22,6 +22,6 @@ export class PenguCommand extends Command {
             .setColor("RANDOM")
             .setImage(randomImage);
 
-        return message.channel.send(await message.fetchLanguageKey("commands/images:COOKIE", { from: `${message.author}`, to: `${mentioned}` }), { embed });
+        return message.channel.send(await message.fetchLanguageKey("commands/images:cookie", { from: `${message.author}`, to: `${mentioned}` }), { embed });
     }
 }

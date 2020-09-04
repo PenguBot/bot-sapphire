@@ -6,7 +6,7 @@ export class PenguCommand extends Command {
 
     public async run(message: Message) {
         const body: DogAPIResult = await fetch("https://dog.ceo/api/breeds/image/random");
-        if (body.status !== "success") return message.sendTranslated("BASIC_ERROR");
+        if (body.status !== "success") return message.sendTranslated("basicError");
 
         return message.channel.send(new MessageEmbed()
             .setFooter("© PenguBot.com - Powered by dog.ceo")

@@ -8,7 +8,7 @@ export class PenguCommand extends Command {
         const mentioned = await args.pick("user");
 
         const { url } = await fetch("https://nekos.life/api/v2/img/tickle");
-        if (!url) return message.sendTranslated("BASIC_ERROR");
+        if (!url) return message.sendTranslated("basicError");
 
         const embed = new MessageEmbed()
             .setFooter("© PenguBot.com")
@@ -16,6 +16,6 @@ export class PenguCommand extends Command {
             .setColor("RANDOM")
             .setImage(url);
 
-        return message.channel.send(await message.fetchLanguageKey("commands/images:TICKLE", { from: `${message.author}`, to: `${mentioned}` }), { embed });
+        return message.channel.send(await message.fetchLanguageKey("commands/images:tickle", { from: `${message.author}`, to: `${mentioned}` }), { embed });
     }
 }

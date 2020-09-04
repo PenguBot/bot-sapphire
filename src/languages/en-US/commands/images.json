@@ -1,5 +1,5 @@
 {
-    "cat_title": "Cat Image and Fact",
+    "catTitle": "Cat Image and Fact",
     "cookie": "{{to}}, you just got a cookie by {{from}}!",
     "cuddle": "{{to}}, you just got cuddled by {{from}}!",
     "feed": "{{to}}, you just got fed by {{from}}!",

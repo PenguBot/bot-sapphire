@@ -6,12 +6,12 @@ export class PenguCommand extends Command {
 
     public async run(message: Message) {
         const body: xkcdResult = await fetch("https://xkcd.com/info.0.json");
-        if (!body.num) return message.sendTranslated("BASIC_ERROR");
+        if (!body.num) return message.sendTranslated("basicError");
 
         const randomNum = Math.floor(Math.random() * body.num) + 1;
 
         const res: xkcdResult = await fetch(`https://xkcd.com/${randomNum}/info.0.json`);
-        if (!res.img) return message.sendTranslated("BASIC_ERROR");
+        if (!res.img) return message.sendTranslated("basicError");
 
         const embed = new MessageEmbed()
             .setFooter(`© PenguBot.com - ${await message.fetchLanguageKey("poweredBy")} xkcd.com`)
