@@ -6,7 +6,7 @@ import { container } from "tsyringe";
 const oldConstructor = UserError.prototype.constructor;
 
 UserError.prototype.constructor = function constructor(type: string, message: string) {
-    oldConstructor(type, message);
+    oldConstructor.call(this, type, message);
 
     const client = container.resolve(PenguClient);
     client.emit(Events.UserError, type, message);
