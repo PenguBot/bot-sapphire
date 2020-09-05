@@ -1,5 +1,5 @@
 {
-    "ARGUMENT_INTEGER_INVALID_NUMBER": "",
-    "ARGUMENT_INTEGER_TOO_SMALL": "",
-    "ARGUMENT_INTEGER_TOO_BIG": ""
+    "argumentIntegerInvalidNumber": "",
+    "argumentIntegerTooSmall": "",
+    "argumentIntegerTooBig": ""
 }
