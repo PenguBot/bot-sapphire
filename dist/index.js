@@ -9,9 +9,6 @@ const config_1 = require("@root/config");
 const integrations_1 = require("@sentry/integrations");
 const Sentry = tslib_1.__importStar(require("@sentry/node"));
 const util_1 = require("@utils/util");
-const util_2 = require("util");
-util_2.inspect.defaultOptions.depth = 1;
-const __rootdir = __dirname || process.cwd();
 if (config_1.TOKENS.SENTRY_DNS) {
     Sentry.init({
         dsn: config_1.TOKENS.SENTRY_DNS,
@@ -22,8 +19,8 @@ if (config_1.TOKENS.SENTRY_DNS) {
             new Sentry.Integrations.Console(),
             new Sentry.Integrations.Http({ breadcrumbs: true, tracing: true }),
             new integrations_1.Dedupe(),
-            new integrations_1.ExtraErrorData({ depth: 2 }),
-            new integrations_1.RewriteFrames({ root: __rootdir })
+            new integrations_1.ExtraErrorData({ depth: 3 }),
+            new integrations_1.RewriteFrames({ root: __dirname || process.cwd() })
         ]
     });
 }

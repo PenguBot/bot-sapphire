@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PingCommand = void 0;
+exports.PenguCommand = void 0;
 const framework_1 = require("@sapphire/framework");
-class PingCommand extends framework_1.Command {
+const discord_js_1 = require("discord.js");
+class PenguCommand extends framework_1.Command {
     images = [
         "http://i.imgur.com/Urfp335.png", "http://i.imgur.com/gC8v9fp.jpg", "http://i.imgur.com/DZ6YtvT.jpg",
         "http://i.imgur.com/LdWARAL.jpg", "http://i.imgur.com/7uF0u9Q.jpg", "http://i.imgur.com/0vgVnpr.png",
@@ -15,8 +16,12 @@ class PingCommand extends framework_1.Command {
     ];
     run(message) {
         const randomImage = this.images[Math.floor(Math.random() * this.images.length)];
-        return message.channel.send({ files: [randomImage] });
+        return message.channel.send(new discord_js_1.MessageEmbed()
+            .setFooter("© PenguBot.com")
+            .setTimestamp()
+            .setColor("RANDOM")
+            .setImage(randomImage));
     }
 }
-exports.PingCommand = PingCommand;
+exports.PenguCommand = PenguCommand;
 //# sourceMappingURL=pengu.js.map

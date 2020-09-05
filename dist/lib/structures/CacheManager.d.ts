@@ -1,5 +1,5 @@
 import { PenguClient } from "@lib/PenguClient";
-import { CacheKey } from "@lib/types/Enums";
+import { CacheKey } from "@utils/Enums";
 export declare class CacheManager {
     private readonly client;
     constructor(client: PenguClient);

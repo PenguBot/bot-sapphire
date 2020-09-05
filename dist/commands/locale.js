@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LocaleCommand = void 0;
+exports.PenguCommand = void 0;
 const framework_1 = require("@sapphire/framework");
-class LocaleCommand extends framework_1.Command {
+class PenguCommand extends framework_1.Command {
     async run(message, args) {
-        return message.sendLocale(await args.pick("string"), { key: "test" });
+        return message.sendTranslated(await args.pick("string"));
     }
 }
-exports.LocaleCommand = LocaleCommand;
+exports.PenguCommand = PenguCommand;
 //# sourceMappingURL=locale.js.map

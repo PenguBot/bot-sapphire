@@ -9,13 +9,13 @@ class PenguArgument extends framework_1.Argument {
     async run(argument, context) {
         const parsed = Number(argument);
         if (!Number.isSafeInteger(parsed)) {
-            return framework_1.err(new framework_1.UserError("ArgumentIntegerInvalidNumber", await context.message.translate("arguments/integer:ARGUMENT_INTEGER_INVALID_NUMBER")));
+            return framework_1.err(new framework_1.UserError("ArgumentIntegerInvalidNumber", await context.message.fetchLanguageKey("arguments/integer:argumentIntegerInvalidNumber")));
         }
         if (typeof context.minimum === "number" && parsed < context.minimum) {
-            return framework_1.err(new framework_1.UserError("ArgumentIntegerTooSmall", await context.message.translate("arguments/integer:ARGUMENT_INTEGER_TOO_SMALL")));
+            return framework_1.err(new framework_1.UserError("ArgumentIntegerTooSmall", await context.message.fetchLanguageKey("arguments/integer:argumentIntegerTooSmall")));
         }
         if (typeof context.maximum === "number" && parsed > context.maximum) {
-            return framework_1.err(new framework_1.UserError("ArgumentIntegerTooBig", await context.message.translate("arguments/integer:ARGUMENT_INTEGER_TOO_BIG")));
+            return framework_1.err(new framework_1.UserError("ArgumentIntegerTooBig", await context.message.fetchLanguageKey("arguments/integer:argumentIntegerTooBig")));
         }
         return framework_1.ok(parsed);
     }
