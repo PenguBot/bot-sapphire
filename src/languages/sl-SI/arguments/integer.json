@@ -1,5 +1,5 @@
 {
-    "ARGUMENT_INTEGER_INVALID_NUMBER": "Podani argument ni številka.",
-    "ARGUMENT_INTEGER_TOO_SMALL": "Številka je premala.",
-    "ARGUMENT_INTEGER_TOO_BIG": "Številka je prevelika."
+    "argumentIntegerInvalidNumber": "",
+    "argumentIntegerTooSmall": "",
+    "argumentIntegerTooBig": ""
 }
