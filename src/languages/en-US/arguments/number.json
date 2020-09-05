@@ -1,5 +1,5 @@
 {
-    "ARGUMENT_NUMBER_INVALID": "The argument did not resolve to a number.",
-    "ARGUMENT_NUMBER_TOO_SMALL": "The argument is too small.",
-    "ARGUMENT_NUMBER_TOO_BIG": "The argument is too big."
+    "argumentNumberInvalid": "The argument did not resolve to a number.",
+    "argumentNumberTooSmall": "The argument is too small.",
+    "argumentNumberTooBig": "The argument is too big."
 }

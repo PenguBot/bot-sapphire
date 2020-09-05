@@ -1,4 +1,4 @@
 {
-    "ARGUMENT_STRING_TOO_SHORT": "The argument is too short.",
-    "ARGUMENT_STRING_TOO_LONG": "The argument is too long."
+    "argumentStringTooShort": "The argument is too short.",
+    "argumentStringTooLong": "The argument is too long."
 }
