@@ -1,7 +1,9 @@
 {
-    "DEFAULT": "{{key}} ka hin-IN me anuvaad uplabd nahi hai.",
-    "PREFIX": {
-        "GUILD": "",
-        "BASE": ""
-    }
+    "default": "",
+    "prefix": {
+        "guild": "",
+        "base": ""
+    },
+    "basicError": "",
+    "poweredBy": ""
 }
