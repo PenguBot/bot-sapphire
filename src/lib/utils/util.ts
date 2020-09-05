@@ -2,7 +2,7 @@
 import { PenguClient } from "@lib/PenguClient";
 import { Events } from "@sapphire/framework";
 import { isThenable } from "@sapphire/utilities";
-import { ValueTransformer } from "typeorm";
+import { ValueTransformer, Timestamp } from "typeorm";
 import nodeFetch, { RequestInit, Response } from "node-fetch";
 import { URL } from "url";
 
@@ -65,5 +65,53 @@ export async function fetch(url: URL | string, options?: RequestInit | FetchResu
 			return result.text();
 		default:
 			throw new Error(`Unknown type ${type}`);
+	}
+}
+
+export async function fetchSubreddit(subreddit: string, type?: "top"|"hot"|"controversial"|"new"|"rising"): Promise<RedditResult> {
+	const res: RedditResult = await fetch(`https://www.reddit.com/r/${subreddit}${type?.length ? `/${type}` : ""}/.json?limit=100`);
+    return res;
+}
+
+export async function randomSubredditItem(subreddit: string, type?: "top"|"hot"|"controversial"|"new"|"rising"): Promise<RedditResultItem> {
+	const res: RedditResult = await fetchSubreddit(subreddit, type);
+	const random: RedditResultItem = res.data.children[Math.floor(Math.random() * res.data.children.length)];
+	return random;
+}
+
+// Note: This is not all the data that reddit returns.
+interface RedditResult {
+	kind: string
+	data: {
+		modhash: string;
+		dist: number;
+		children: RedditResultItem[]
+	}
+}
+
+interface RedditResultItem {
+	kind: "t1" | "t2" | "t3" | "t4" | "t5" | "t6";
+	data: {
+		subreddit: string;
+		selftext: string;
+		author_fullname: string;
+		title: string;
+		hidden: boolean;
+		name: string;
+		quarantine: boolean;
+		upvote_ratio: number;
+		subreddit_type: "public" | "private";
+		ups: number;
+		is_original_content: boolean;
+		is_reddit_media_domain: boolean;
+		created: Timestamp;
+		over_18: boolean;
+		media_only: boolean;
+		author: string;
+		permalink: string;
+		url: string;
+		created_utc: Timestamp;
+		thumbnail?: string;
+		url_overridden_by_dest?: string;
 	}
 }

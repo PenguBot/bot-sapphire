@@ -12,5 +12,13 @@
     "tickle": "{{from}} just tickled you {{to}}!",
     "comic": {
         "embedTitle": "Random Comic"
+    },
+    "reddit": {
+        "title": "Title",
+        "link": "Link",
+        "nsfwPost": "This meme is marked NSFW, please change your channel type to NSFW in order to recieve it."
+    },
+    "wholesome": {
+        "nsfwPost": "Unfortunately this wholesome post is not so wholesome. Please try again."
     }
 }
