@@ -1,5 +1,5 @@
 {
-    "ARGUMENT_NUMBER_INVALID": "",
-    "ARGUMENT_NUMBER_TOO_SMALL": "",
-    "ARGUMENT_NUMBER_TOO_BIG": ""
+    "argumentNumberInvalid": "",
+    "argumentNumberTooSmall": "",
+    "argumentNumberTooBig": ""
 }
