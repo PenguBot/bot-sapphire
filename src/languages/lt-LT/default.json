@@ -1,7 +1,9 @@
 {
-    "DEFAULT": "",
-    "PREFIX": {
-        "GUILD": "",
-        "BASE": ""
-    }
+    "default": "",
+    "prefix": {
+        "guild": "",
+        "base": ""
+    },
+    "basicError": "",
+    "poweredBy": ""
 }
