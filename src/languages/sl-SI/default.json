@@ -1,7 +1,9 @@
 {
-    "DEFAULT": "{{key}} še ni lokaliziran za sl-SI.",
-    "PREFIX": {
-        "GUILD": "",
-        "BASE": ""
-    }
+    "default": "",
+    "prefix": {
+        "guild": "",
+        "base": ""
+    },
+    "basicError": "",
+    "poweredBy": ""
 }
