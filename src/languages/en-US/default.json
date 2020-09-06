@@ -1,9 +1,9 @@
 {
     "default": "{{key}} has not been localized for en-US yet.",
     "prefix": {
-        "guild": "The prefix for this guild is: {{prefix}}",
+        "guild": "The prefix for this server is: {{prefix}}",
         "base": "The prefix to use PenguBot is: {{prefix}}"
     },
-    "basicError": "I have come across an issue trying to do that, please try again.",
+    "basicError": "I have come across an issue, please try again.",
     "poweredBy": "Powered by"
 }

@@ -215,26 +215,31 @@
 
 "@sapphire/framework@sapphire-project/framework#build":
   version "0.0.1"
-  resolved "https://codeload.github.com/sapphire-project/framework/tar.gz/0e49f82211d485c1e5fba79f459c34fcbc742a35"
+  resolved "https://codeload.github.com/sapphire-project/framework/tar.gz/f01a4e10e86df225ce345de46ce5fea2cb67bed7"
   dependencies:
     "@klasa/ratelimits" "^0.1.0"
     "@sapphire/pieces" "github:sapphire-project/pieces#build"
-    "@sapphire/utilities" "github:sapphire-project/utilities#build-utilities"
+    "@sapphire/utilities" "^1.0.0"
     lexure "^0.17.0"
 
 "@sapphire/pieces@github:sapphire-project/pieces#build", "@sapphire/pieces@sapphire-project/pieces#build":
   version "1.0.0"
-  resolved "https://codeload.github.com/sapphire-project/pieces/tar.gz/2d41d3ba729e51b763a5e607cfe371528903bef3"
+  resolved "https://codeload.github.com/sapphire-project/pieces/tar.gz/776249c686e3a606fb5bfd7c9014c8f734de8418"
   dependencies:
     "@discordjs/collection" "^0.1.6"
 
+"@sapphire/utilities@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@sapphire/utilities/-/utilities-1.0.0.tgz#94370e43a9fd50864fcbe3bc8a8ecf24bb39c3e9"
+  integrity sha512-iea3Zeot7omiaeBln7kjvpXT8KdQ0j23Ns0ljNDr8/yF/t0drrZMuWkihAnjiUNHXGYnSShwW72mnxoUQr0o1g==
+
 "@sapphire/utilities@github:sapphire-project/utilities#build-utilities", "@sapphire/utilities@sapphire-project/utilities#build-utilities":
-  version "0.0.1"
-  resolved "https://codeload.github.com/sapphire-project/utilities/tar.gz/1e1c60bedcca111f483dc4ddff2d5c167bfe0618"
+  version "1.0.0"
+  resolved "https://codeload.github.com/sapphire-project/utilities/tar.gz/f77a422c8f96d774a979e2ffe8d28161716af15c"
 
 "@scp/in17n@sapphirecommunityplugins/in17n#build":
-  version "0.1.0"
-  resolved "https://codeload.github.com/sapphirecommunityplugins/in17n/tar.gz/45cbf9c4d626b3cb9f8f4ad591e824fa49fdcff2"
+  version "0.3.1"
+  resolved "https://codeload.github.com/sapphirecommunityplugins/in17n/tar.gz/678ac80ce4bac3f5aad24a40c790745dd229e784"
   dependencies:
     "@sapphire/utilities" sapphire-project/utilities#build-utilities
     "@types/i18next-fs-backend" "^1.0.0"
@@ -347,7 +352,11 @@
   dependencies:
     i18next "^19.7.0"
 
+<<<<<<< HEAD
 "@types/ioredis@^4.17.4":
+=======
+"@types/ioredis@^4.17.3":
+>>>>>>> 8e7b136... feat: osu command
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.17.4.tgz#e4c2d8d51ecb1f4752b660f8e19b88b1c5329b2e"
   integrity sha512-kb5+thmQJ7HHyOAnCOeqRJlF2fyvadHghnLLLKZzCNyShStJeIQtNGGDjA30gWqj6UFSDAWBfGEMKrFDrGfvzQ==
@@ -1445,9 +1454,9 @@ dot-prop@^3.0.0:
     is-obj "^1.0.0"
 
 dot-prop@^5.1.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-5.2.0.tgz#c34ecc29556dc45f1f4c22697b6f4904e0cc4fcb"
-  integrity sha512-uEUyaDKoSQ1M4Oq8l45hSE26SnTxL6snNnqvK/VWx5wJhmff5z0FUVJDKDanor/6w3kzE3i7XZOk+7wC0EXr1A==
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-5.3.0.tgz#90ccce708cd9cd82cc4dc8c3ddd9abdd55b20e88"
+  integrity sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==
   dependencies:
     is-obj "^2.0.0"
 
@@ -2880,6 +2889,11 @@ module-alias@^2.2.2:
   resolved "https://registry.yarnpkg.com/module-alias/-/module-alias-2.2.2.tgz#151cdcecc24e25739ff0aa6e51e1c5716974c0e0"
   integrity sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==
 
+moment@^2.27.0:
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
+  integrity sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -2931,7 +2945,11 @@ neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+<<<<<<< HEAD
 node-fetch@^2.6.0, node-fetch@^2.6.1:
+=======
+node-fetch@^2.6.0:
+>>>>>>> 8e7b136... feat: osu command
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
@@ -3648,9 +3666,9 @@ run-async@^2.2.0:
   integrity sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==
 
 rxjs@^6.4.0, rxjs@^6.6.2:
-  version "6.6.2"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.2.tgz#8096a7ac03f2cc4fe5860ef6e572810d9e01c0d2"
-  integrity sha512-BHdBMVoWC2sL26w//BCu3YzKT4s2jip/WhwsGEDmeKYBhKDZeYezVUnHatYB7L85v5xs0BAQmg6BEYJEKxBabg==
+  version "6.6.3"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.3.tgz#8ca84635c4daa900c0d3967a6ee7ac60271ee552"
+  integrity sha512-trsQc+xYYXZ3urjOiJOuCOa5N3jAZ3eiSpQB5hIT8zGlL2QfnHLJ2r7GMkBGuIausdJN1OneaI6gQlsqNHHmZQ==
   dependencies:
     tslib "^1.9.0"
 
@@ -4313,9 +4331,9 @@ typescript@^4.0.2:
   integrity sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
 
 uglify-js@^3.1.4:
-  version "3.10.3"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.10.3.tgz#f0d2f99736c14de46d2d24649ba328be3e71c3bf"
-  integrity sha512-Lh00i69Uf6G74mvYpHCI9KVVXLcHW/xu79YTvH7Mkc9zyKUeSPz0owW0dguj0Scavns3ZOh3wY63J0Zb97Za2g==
+  version "3.10.4"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.10.4.tgz#dd680f5687bc0d7a93b14a3482d16db6eba2bfbb"
+  integrity sha512-kBFT3U4Dcj4/pJ52vfjCSfyLyvG9VYYuGYPmrPvAxRw/i7xHiT4VvCev+uiEMcEEiu6UNB6KgWmGtSUYIWScbw==
 
 union-value@^1.0.0:
   version "1.0.1"

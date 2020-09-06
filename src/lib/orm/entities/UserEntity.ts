@@ -15,6 +15,9 @@ export class UserEntity extends BaseEntity {
     @Column("bigint", { name: "vault", default: 0, transformer: kBigIntTransformer })
 	public vault = 0;
 
+	@Column("varchar", { name: "gametag_osu", length: 16 })
+	public gametag_osu!: string;
+
     private _balance: number | null;
     private _vault: number | null;
 

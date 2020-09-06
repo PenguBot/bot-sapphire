@@ -30,3 +30,7 @@ export const TOKENS = {
     BOT_TOKEN,
     SENTRY_DNS: ""
 };
+
+export const API_KEYS = {
+    OSU: ""
+};

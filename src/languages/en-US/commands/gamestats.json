@@ -1,0 +1,16 @@
+{
+    "osu": {
+        "embed": {
+            "totalScore": "Total Score",
+            "rankedScore": "Ranked Score",
+            "level": "Level",
+            "count": "Count",
+            "rank": "Rank",
+            "globalRank": "Global Rank",
+            "accuracy": "Accuracy",
+            "timePlayed": "Time Played"
+        },
+        "noGamerTag": "You need to provide a username to check your statistics or save a default one by using `--save YourUsername` with the command.",
+        "notFound": "I could not find a user corresponding to that username, please try a different one."
+    }
+}
