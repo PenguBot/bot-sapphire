@@ -1,0 +1,24 @@
+{
+    "catTitle": "",
+    "cookie": "",
+    "cuddle": "",
+    "feed": "",
+    "hug": "",
+    "kiss": "",
+    "pat": "",
+    "poke": "",
+    "punch": "",
+    "slap": "",
+    "tickle": "",
+    "comic": {
+        "embedTitle": ""
+    },
+    "reddit": {
+        "title": "",
+        "link": "",
+        "nsfwPost": ""
+    },
+    "wholesome": {
+        "nsfwPost": ""
+    }
+}
