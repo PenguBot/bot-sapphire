@@ -1,5 +1,5 @@
 import { Command, Args } from "@sapphire/framework";
-import { Message, MessageEmbed } from "discord.js";
+import { Message, MessageEmbed, User } from "discord.js";
 import { fetch } from "@utils/util";
 import { API_KEYS } from "@root/config";
 import moment from "moment";
@@ -8,11 +8,13 @@ import { DbSet } from "@lib/structures/DbSet";
 export class PenguCommand extends Command {
 
     public async run(message: Message, args: Args) {
-        const username = args.pick("string") ? args.pick("string") : await this.getGameTag(message.author.id);
+        const username = args.pick("string") ? args.pick("string") : await this.fetchGametag(message.author);
         if (!username) return message.sendTranslated("commands/gamestats:osu.noGamerTag");
 
         const res: OSUResponseData[] = await fetch(`https://osu.ppy.sh/api/get_user?k=${API_KEYS.OSU}&u=${encodeURIComponent(await username)}`);
         if (!res || !res[0]) return message.sendTranslated("commands/gamestats:osu.notFound");
+
+        // @todo save flag to save username
 
         const data = res[0];
         return message.channel.send(new MessageEmbed()
@@ -36,11 +38,11 @@ export class PenguCommand extends Command {
             .addField(await message.fetchLanguageKey("commands/gamestats:osu.embed.timePlayed"), moment.duration(Number(data.total_seconds_played), "seconds").humanize(), true));
     }
 
-    public async getGameTag(id: string) {
+    public async fetchGametag(author: User) {
         const { users } = await DbSet.connect();
-        const settings = await users.ensure(id);
+        const gametagData = await users.fetchGametag<OSUGametagData>(this.name, author);
 
-        return settings.gametag_osu;
+        return gametagData.data?.username;
     }
 
 }
@@ -76,4 +78,8 @@ interface OSUEvent {
     beatmapset_id: string;
     data: string;
     epicfactor: string;
+}
+
+interface OSUGametagData {
+    username?: string;
 }
