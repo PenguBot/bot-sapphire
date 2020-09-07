@@ -8,9 +8,27 @@
             "rank": "Rank",
             "globalRank": "Global Rank",
             "accuracy": "Accuracy",
-            "timePlayed": "Time Played"
+            "timePlayed": "Time Played",
+            "hours": "Hours"
         },
-        "noGamerTag": "You need to provide a username to check your statistics or save a default one by using `--save YourUsername` with the command.",
-        "notFound": "I could not find a user corresponding to that username, please try a different one."
+        "noGamerTag": "You need to provide a user to check statistics. You can save a default by using the flag `--save` with this command.",
+        "notFound": "I could not find a user corresponding to that user, please try a different one."
+    },
+    "fortnite": {
+        "embed": {
+            "winRate": "Win Rate",
+            "level": "Level",
+            "progress": "Progress",
+            "kills": "Kills",
+            "kdr": "Kill Death Ratio",
+            "matchesPlayed": "Matches Played",
+            "timePlayed": "Time Played",
+            "wins": "Wins",
+            "score": "Score",
+            "hours": "Hours"
+        },
+        "noGamerTag": "You need to provide a username to check statistics. You can save a default by using the flag `--save` with this command.",
+        "userNotFound": "I could not find a user corresponding to that username, please try a different one.",
+        "statsNotFound": "No statistical data could be found for that username, please try a different one."
     }
 }

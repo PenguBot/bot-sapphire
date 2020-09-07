@@ -8,17 +8,18 @@ import { DbSet } from "@lib/structures/DbSet";
 export class PenguCommand extends Command {
 
     public async run(message: Message, args: Args) {
-        const username = args.pick("string") ? args.pick("string") : await this.fetchGametag(message.author);
+        let username: string|undefined|null = await args.pick("string").catch(() => null);
+        if (!username) username = await this.fetchGametag(message.author);
         if (!username) return message.sendTranslated("commands/gamestats:osu.noGamerTag");
 
-        const res: OSUResponseData[] = await fetch(`https://osu.ppy.sh/api/get_user?k=${API_KEYS.OSU}&u=${encodeURIComponent(await username)}`);
+        const res: OSUResponseData[] = await fetch(`https://osu.ppy.sh/api/get_user?k=${API_KEYS.OSU}&u=${encodeURIComponent(username as string)}`);
         if (!res || !res[0]) return message.sendTranslated("commands/gamestats:osu.notFound");
 
         // @todo save flag to save username
 
         const data = res[0];
         return message.channel.send(new MessageEmbed()
-            .setFooter(`© PenguBot.com - ${await message.fetchLanguageKey("poweredBy")} osu.ppy.sh`)
+            .setFooter(`PenguBot.com - ${await message.fetchLanguageKey("poweredBy")} osu.ppy.sh`)
             .setTimestamp()
             .setThumbnail(`https://a.ppy.sh/${data.user_id}`)
             .setColor("#EF5E9F")
@@ -35,7 +36,7 @@ export class PenguCommand extends Command {
             .addField(`S ${await message.fetchLanguageKey("commands/gamestats:osu.embed.rank")}`, Number(data.count_rank_s).toLocaleString(), true)
             .addField(`A ${await message.fetchLanguageKey("commands/gamestats:osu.embed.rank")}`, Number(data.count_rank_a).toLocaleString(), true)
             .addField(await message.fetchLanguageKey("commands/gamestats:osu.embed.accuracy"), `${Number(data.accuracy).toFixed(2)}%`, true)
-            .addField(await message.fetchLanguageKey("commands/gamestats:osu.embed.timePlayed"), moment.duration(Number(data.total_seconds_played), "seconds").humanize(), true));
+            .addField(await message.fetchLanguageKey("commands/gamestats:osu.embed.timePlayed"), `${moment.duration(Number(data.total_seconds_played), "seconds").asHours().toLocaleString()} ${await message.fetchLanguageKey("commands/gamestats:osu.embed.hours")}`, true));
     }
 
     public async fetchGametag(author: User) {
