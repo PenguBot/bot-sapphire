@@ -35,5 +35,13 @@
         "lastMatchKills": "Last Match Kills",
         "timePlayed": "Time Played",
         "hours": "hours"
+    },
+    "coc": {
+        "trophies": "Trophies",
+        "warStars": "War Stars",
+        "bestTrophies": "Best Trophies",
+        "troopLevels": "Troop Levels",
+        "spellLevels": "Spell Levels",
+        "heroLevels": "Hero Levels"
     }
 }

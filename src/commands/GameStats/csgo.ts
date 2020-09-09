@@ -14,7 +14,7 @@ export class PenguCommand extends Command {
         if (!username) return message.sendTranslated("commands/gamestats:noGamerTag");
 
         const res: CSGOPlayerSearchData = await fetch(`https://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${API_KEYS.CSGO}&vanityurl=${username}`);
-        if (!res || !res.response.success) return message.sendTranslated("commands/gamestats:userNotFound");
+        if (!res || !res.response.success) return message.sendTranslated("commands/gamestats:notFound");
 
         const data: CSGOPlayerStats = await fetch(`https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?key=${API_KEYS.CSGO}&steamid=${res.response.steamid}&appid=730`);
         if (!data || !data.playerstats) return message.sendTranslated("commands/gamestats:statsNotFound");

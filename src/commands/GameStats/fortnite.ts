@@ -13,7 +13,7 @@ export class PenguCommand extends Command {
         if (!username) return message.sendTranslated("commands/gamestats:noGamerTag");
 
         const res: FortnitePlayerSearchData = await fetch(`https://fortniteapi.io/v1/lookup?username=${username}`, { headers: { Authorization: API_KEYS.FORTNITE } });
-        if (!res.result) return message.sendTranslated("commands/gamestats:userNotFound");
+        if (!res.result) return message.sendTranslated("commands/gamestats:notFound");
 
         const stats: FortnitePlayerStats = await fetch(`https://fortniteapi.io/v1/stats?account=${res.account_id}`, { headers: { Authorization: API_KEYS.FORTNITE } });
         if (!stats.result || !stats.global_stats) return message.sendTranslated("commands/gamestats:statsNotFound");
