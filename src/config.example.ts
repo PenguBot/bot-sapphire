@@ -33,5 +33,6 @@ export const TOKENS = {
 
 export const API_KEYS = {
     OSU: "",
-    FORTNITE: ""
+    FORTNITE: "",
+    CSGO: ""
 };

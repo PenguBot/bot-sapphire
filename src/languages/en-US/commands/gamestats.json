@@ -1,34 +1,39 @@
 {
+    "noGamerTag": "You need to provide a username to check statistics. You can save a default by using the flag `--save` with this command.",
+    "notFound": "I could not find a user corresponding to that user, please try a different one.",
+    "statsNotFound": "No statistical data could be found for that username, please try a different one.",
     "osu": {
-        "embed": {
-            "totalScore": "Total Score",
-            "rankedScore": "Ranked Score",
-            "level": "Level",
-            "count": "Count",
-            "rank": "Rank",
-            "globalRank": "Global Rank",
-            "accuracy": "Accuracy",
-            "timePlayed": "Time Played",
-            "hours": "Hours"
-        },
-        "noGamerTag": "You need to provide a user to check statistics. You can save a default by using the flag `--save` with this command.",
-        "notFound": "I could not find a user corresponding to that user, please try a different one."
+        "totalScore": "Total Score",
+        "rankedScore": "Ranked Score",
+        "level": "Level",
+        "count": "Count",
+        "rank": "Rank",
+        "globalRank": "Global Rank",
+        "accuracy": "Accuracy",
+        "timePlayed": "Time Played",
+        "hours": "Hours"
     },
     "fortnite": {
-        "embed": {
-            "winRate": "Win Rate",
-            "level": "Level",
-            "progress": "Progress",
-            "kills": "Kills",
-            "kdr": "Kill Death Ratio",
-            "matchesPlayed": "Matches Played",
-            "timePlayed": "Time Played",
-            "wins": "Wins",
-            "score": "Score",
-            "hours": "Hours"
-        },
-        "noGamerTag": "You need to provide a username to check statistics. You can save a default by using the flag `--save` with this command.",
-        "userNotFound": "I could not find a user corresponding to that username, please try a different one.",
-        "statsNotFound": "No statistical data could be found for that username, please try a different one."
+        "winRate": "Win Rate",
+        "level": "Level",
+        "progress": "Progress",
+        "kills": "Kills",
+        "kdr": "Kill Death Ratio",
+        "matchesPlayed": "Matches Played",
+        "timePlayed": "Time Played",
+        "wins": "Wins",
+        "score": "Score",
+        "hours": "Hours"
+    },
+    "csgo": {
+        "kdr": "Kill Death Ratio",
+        "kills": "Kills",
+        "deaths": "Deaths",
+        "wins": "Wins",
+        "knifeKills": "Knife Kills",
+        "bombsPlanted": "Bombs Planted",
+        "lastMatchKills": "Last Match Kills",
+        "timePlayed": "Time Played",
+        "hours": "hours"
     }
 }

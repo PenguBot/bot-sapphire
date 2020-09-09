@@ -10,13 +10,13 @@ export class PenguCommand extends Command {
     public async run(message: Message, args: Args) {
         let username: string|undefined|null = await args.pick("string").catch(() => null);
         if (!username) username = await this.fetchGametag(message.author);
-        if (!username) return message.sendTranslated("commands/gamestats:fortnite.noGamerTag");
+        if (!username) return message.sendTranslated("commands/gamestats:noGamerTag");
 
         const res: FortnitePlayerSearchData = await fetch(`https://fortniteapi.io/v1/lookup?username=${username}`, { headers: { Authorization: API_KEYS.FORTNITE } });
-        if (!res.result) return message.sendTranslated("commands/gamestats:fortnite.userNotFound");
+        if (!res.result) return message.sendTranslated("commands/gamestats:userNotFound");
 
         const stats: FortnitePlayerStats = await fetch(`https://fortniteapi.io/v1/stats?account=${res.account_id}`, { headers: { Authorization: API_KEYS.FORTNITE } });
-        if (!stats.result || !stats.global_stats) return message.sendTranslated("commands/gamestats:fortnite.statsNotFound");
+        if (!stats.result || !stats.global_stats) return message.sendTranslated("commands/gamestats:statsNotFound");
 
         // @todo save flag to save account id
 
@@ -26,15 +26,15 @@ export class PenguCommand extends Command {
             .setThumbnail("https://i.imgur.com/FD0xslx.png")
             .setColor("#63CBF0")
             .setAuthor(stats.name, "https://i.imgur.com/FD0xslx.png", "https://pengubot.com")
-            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.embed.winRate"), ((stats.global_stats.duo.winrate + stats.global_stats.solo.winrate + stats.global_stats.squad.winrate) / 3).toPrecision(2), true)
-            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.embed.level"), stats.account.level, true)
-            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.embed.progress"), `${stats.account.progress_pct}%`, true)
-            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.embed.kills"), (stats.global_stats.duo.kills + stats.global_stats.solo.kills + stats.global_stats.squad.kills).toLocaleString(), true)
-            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.embed.kdr"), ((stats.global_stats.duo.kd + stats.global_stats.solo.kd + stats.global_stats.squad.kd) / 3).toPrecision(2), true)
-            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.embed.matchesPlayed"), (stats.global_stats.duo.matchesplayed + stats.global_stats.solo.matchesplayed + stats.global_stats.squad.matchesplayed).toLocaleString(), true)
-            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.embed.timePlayed"), `${moment.duration((stats.global_stats.duo.minutesplayed + stats.global_stats.solo.minutesplayed + stats.global_stats.squad.minutesplayed), "minutes").asHours().toLocaleString()} ${await message.fetchLanguageKey("commands/gamestats:fortnite.embed.hours")}`, true)
-            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.embed.wins"), (stats.global_stats.duo.placetop1 + stats.global_stats.solo.placetop1 + stats.global_stats.squad.placetop1).toLocaleString(), true)
-            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.embed.score"), (stats.global_stats.duo.score + stats.global_stats.solo.score + stats.global_stats.squad.score).toLocaleString(), true));
+            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.winRate"), ((stats.global_stats.duo.winrate + stats.global_stats.solo.winrate + stats.global_stats.squad.winrate) / 3).toPrecision(2), true)
+            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.level"), stats.account.level, true)
+            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.progress"), `${stats.account.progress_pct}%`, true)
+            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.kills"), (stats.global_stats.duo.kills + stats.global_stats.solo.kills + stats.global_stats.squad.kills).toLocaleString(), true)
+            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.kdr"), ((stats.global_stats.duo.kd + stats.global_stats.solo.kd + stats.global_stats.squad.kd) / 3).toPrecision(2), true)
+            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.matchesPlayed"), (stats.global_stats.duo.matchesplayed + stats.global_stats.solo.matchesplayed + stats.global_stats.squad.matchesplayed).toLocaleString(), true)
+            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.timePlayed"), `${moment.duration((stats.global_stats.duo.minutesplayed + stats.global_stats.solo.minutesplayed + stats.global_stats.squad.minutesplayed), "minutes").asHours().toLocaleString()} ${await message.fetchLanguageKey("commands/gamestats:fortnite.hours")}`, true)
+            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.wins"), (stats.global_stats.duo.placetop1 + stats.global_stats.solo.placetop1 + stats.global_stats.squad.placetop1).toLocaleString(), true)
+            .addField(await message.fetchLanguageKey("commands/gamestats:fortnite.score"), (stats.global_stats.duo.score + stats.global_stats.solo.score + stats.global_stats.squad.score).toLocaleString(), true));
     }
 
     public async fetchGametag(author: User) {
