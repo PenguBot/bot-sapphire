@@ -35,5 +35,6 @@ export const API_KEYS = {
     OSU: "",
     FORTNITE: "",
     CSGO: "",
-    COC: ""
+    COC: "",
+    TRACKER: ""
 };
