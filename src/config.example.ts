@@ -26,15 +26,15 @@ export const CLIENT_OPTIONS: ClientOptions = {
     }
 };
 
-export const TOKENS = {
-    BOT_TOKEN,
-    SENTRY_DNS: ""
-};
-
 export const API_KEYS = {
     OSU: "",
     FORTNITE: "",
     CSGO: "",
     COC: "",
     TRACKER: ""
+};
+
+export const TOKENS = {
+    BOT_TOKEN,
+    SENTRY_DNS: ""
 };

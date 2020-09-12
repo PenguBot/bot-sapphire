@@ -12,23 +12,20 @@ export class PenguCommand extends Command {
         if (!username) username = await this.fetchGametag(message.author);
         if (!username) return message.sendTranslated("commands/gamestats:noGamerTag");
 
-        const res = await fetch(`https://api.clashofclans.com/v1/players/${encodeURIComponent(username.toUpperCase())}`, { headers: { Authorization: API_KEYS.COC } })
-            .then(data => data as ClashOfClansRes)
-            .catch(() => null);
-
+        const res: ClashOfClansRes = await fetch(`https://api.clashofclans.com/v1/players/${encodeURIComponent(username.toUpperCase())}`, { headers: { Authorization: API_KEYS.COC } });
         if (!res) return message.sendTranslated("commands/gamestats:notFound");
 
         // @todo save flag to save account tag
 
         const embed = new MessageEmbed()
-        .setFooter(`PenguBot.com`)
-        .setTimestamp()
-        .setThumbnail(`https://coc.guide/static/imgs/other/town-hall-${res.townHallLevel}.png`)
-        .setColor("#FCCF6E")
-        .setAuthor(`${res.name} ${res.league ? `| ${res.league.name}` : ""}`, res.league ? res.league.iconUrls.small : "", "https://pengubot.com")
-        .addField(await message.fetchLanguageKey("commands/gamestats:coc.trophies"), res.trophies.toLocaleString(), true)
-        .addField(await message.fetchLanguageKey("commands/gamestats:coc.warStars"), res.warStars.toLocaleString(), true)
-        .addField(await message.fetchLanguageKey("commands/gamestats:coc.bestTrophies"), res.bestTrophies.toLocaleString(), true);
+            .setFooter(`PenguBot.com`)
+            .setTimestamp()
+            .setThumbnail(`https://coc.guide/static/imgs/other/town-hall-${res.townHallLevel}.png`)
+            .setColor("#FCCF6E")
+            .setAuthor(`${res.name} ${res.league ? `| ${res.league.name}` : ""}`, res.league ? res.league.iconUrls.small : "", "https://pengubot.com")
+            .addField(await message.fetchLanguageKey("commands/gamestats:coc.trophies"), res.trophies.toLocaleString(), true)
+            .addField(await message.fetchLanguageKey("commands/gamestats:coc.warStars"), res.warStars.toLocaleString(), true)
+            .addField(await message.fetchLanguageKey("commands/gamestats:coc.bestTrophies"), res.bestTrophies.toLocaleString(), true);
 
         if (res.clan) embed.setFooter(`PenguBot.com | ${toTitleCase(res.role)} - ${res.clan.name}\u200e ${res.clan.tag}`, res.clan.badgeUrls.small);
 

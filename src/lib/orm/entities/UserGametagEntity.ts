@@ -13,7 +13,6 @@ export class UserGametagEntity<T> extends BaseEntity {
 	public data?: T;
 
 	@ManyToOne(() => UserEntity, { onDelete: "CASCADE" })
-
 	@JoinColumn()
 	public user?: UserEntity;
 }
