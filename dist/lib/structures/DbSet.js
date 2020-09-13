@@ -4,6 +4,7 @@ exports.DbSet = void 0;
 const dbConfig_1 = require("@orm/dbConfig");
 const GuildRepository_1 = require("@orm/repositories/GuildRepository");
 const UserRepository_1 = require("@orm/repositories/UserRepository");
+const UserGametagEntity_1 = require("@orm/entities/UserGametagEntity");
 class DbSet {
     connection;
     constructor(connection) {
@@ -14,6 +15,9 @@ class DbSet {
     }
     get users() {
         return this.connection.getCustomRepository(UserRepository_1.UserRepository);
+    }
+    get userGametagEntities() {
+        return this.connection.getRepository(UserGametagEntity_1.UserGametagEntity);
     }
     static async connect() {
         return new DbSet(await dbConfig_1.connect());

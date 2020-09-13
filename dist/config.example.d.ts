@@ -8,6 +8,13 @@ export declare const PGSQL_DATABASE_USER = "";
 export declare const PGSQL_DATABASE_PORT = 5432;
 export declare const PGSQL_DATABASE_HOST = "localhost";
 export declare const CLIENT_OPTIONS: ClientOptions;
+export declare const API_KEYS: {
+    OSU: string;
+    FORTNITE: string;
+    CSGO: string;
+    COC: string;
+    TRACKER: string;
+};
 export declare const TOKENS: {
     BOT_TOKEN: string;
     SENTRY_DNS: string;

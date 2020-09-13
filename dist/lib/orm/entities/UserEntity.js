@@ -6,10 +6,12 @@ const PenguClient_1 = require("@lib/PenguClient");
 const util_1 = require("@utils/util");
 const tsyringe_1 = require("tsyringe");
 const typeorm_1 = require("typeorm");
+const UserGametagEntity_1 = require("./UserGametagEntity");
 let UserEntity = class UserEntity extends typeorm_1.BaseEntity {
     id;
     balance = 0;
     vault = 0;
+    gametagEntity;
     _balance;
     _vault;
     constructor() {
@@ -49,6 +51,10 @@ tslib_1.__decorate([
     typeorm_1.Column("bigint", { name: "vault", default: 0, transformer: util_1.kBigIntTransformer }),
     tslib_1.__metadata("design:type", Object)
 ], UserEntity.prototype, "vault", void 0);
+tslib_1.__decorate([
+    typeorm_1.OneToMany(() => UserGametagEntity_1.UserGametagEntity, ge => ge.user, { cascade: true }),
+    tslib_1.__metadata("design:type", Array)
+], UserEntity.prototype, "gametagEntity", void 0);
 tslib_1.__decorate([
     typeorm_1.AfterLoad(),
     tslib_1.__metadata("design:type", Function),

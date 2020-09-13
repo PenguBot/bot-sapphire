@@ -24,8 +24,10 @@ async function fetch(url, options, type) {
         type = 0;
     }
     const result = await node_fetch_1.default(url, options);
-    if (!result.ok)
-        throw new Error(`${url}\n${result.statusText}\n${await result.text()}`);
+    if (!result.ok) {
+        console.error(new Error(`${url}\n${result.statusText}\n${await result.text()}`));
+        return null;
+    }
     switch (type) {
         case 3:
             return result;
