@@ -1,0 +1,47 @@
+{
+    "noGamerTag": "",
+    "notFound": "",
+    "statsNotFound": "",
+    "osu": {
+        "totalScore": "",
+        "rankedScore": "",
+        "level": "",
+        "count": "",
+        "rank": "",
+        "globalRank": "",
+        "accuracy": "",
+        "timePlayed": "",
+        "hours": ""
+    },
+    "fortnite": {
+        "winRate": "",
+        "level": "",
+        "progress": "",
+        "kills": "",
+        "kdr": "",
+        "matchesPlayed": "",
+        "timePlayed": "",
+        "wins": "",
+        "score": "",
+        "hours": ""
+    },
+    "csgo": {
+        "kdr": "",
+        "kills": "",
+        "deaths": "",
+        "wins": "",
+        "knifeKills": "",
+        "bombsPlanted": "",
+        "lastMatchKills": "",
+        "timePlayed": "",
+        "hours": ""
+    },
+    "coc": {
+        "trophies": "",
+        "warStars": "",
+        "bestTrophies": "",
+        "troopLevels": "",
+        "spellLevels": "",
+        "heroLevels": ""
+    }
+}
