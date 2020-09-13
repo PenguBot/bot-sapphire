@@ -52,7 +52,10 @@ export async function fetch(url: URL | string, options?: RequestInit | FetchResu
 	}
 
 	const result: Response = await nodeFetch(url, options);
-	if (!result.ok) throw new Error(`${url}\n${result.statusText}\n${await result.text()}`);
+	if (!result.ok) {
+		console.error(new Error(`${url}\n${result.statusText}\n${await result.text()}`));
+		return null;
+	}
 
 	switch (type) {
 		case FetchResultTypes.Result:

@@ -2,7 +2,8 @@
 import { PenguClient } from "@lib/PenguClient";
 import { kBigIntTransformer } from "@utils/util";
 import { container } from "tsyringe";
-import { AfterInsert, AfterLoad, AfterRemove, AfterUpdate, BaseEntity, Column, Entity, PrimaryColumn } from "typeorm";
+import { AfterInsert, AfterLoad, AfterRemove, AfterUpdate, BaseEntity, Column, Entity, PrimaryColumn, OneToMany } from "typeorm";
+import { UserGametagEntity } from "./UserGametagEntity";
 
 @Entity("user", { schema: "public" })
 export class UserEntity extends BaseEntity {
@@ -14,6 +15,9 @@ export class UserEntity extends BaseEntity {
 
     @Column("bigint", { name: "vault", default: 0, transformer: kBigIntTransformer })
 	public vault = 0;
+
+	@OneToMany(() => UserGametagEntity, ge => ge.user, { cascade: true })
+	public gametagEntity?: UserGametagEntity<unknown>[];
 
     private _balance: number | null;
     private _vault: number | null;
