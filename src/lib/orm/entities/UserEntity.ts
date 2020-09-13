@@ -28,7 +28,7 @@ export class UserEntity extends BaseEntity {
         this._vault = null;
     }
 
-    // @ts-expect-error 6133
+    // @ts-expect-error 'client' is declared but its value is never read. ts(6133)
     private get client() {
 		return container.resolve(PenguClient);
 	}
