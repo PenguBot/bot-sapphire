@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Emojis } from "@utils/Enums";
 import { ClientOptions } from "discord.js";
 
 export const DEV = "DEV" in process.env ? process.env.DEV === "true" : !("PM2_HOME" in process.env);
@@ -13,18 +12,7 @@ export const PGSQL_DATABASE_USER = "";
 export const PGSQL_DATABASE_PORT = 5432;
 export const PGSQL_DATABASE_HOST = "localhost";
 
-export const CLIENT_OPTIONS: ClientOptions = {
-    i18n: {
-        i18next: {
-            interpolation: {
-                defaultVariables: {
-                    pCross: Emojis.PenguCross,
-                    pCheck: Emojis.PenguCheck
-                }
-            }
-        }
-    }
-};
+export const CLIENT_OPTIONS: ClientOptions = { };
 
 export const API_KEYS = {
     OSU: "",
