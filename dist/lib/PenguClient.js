@@ -5,6 +5,8 @@ const tslib_1 = require("tslib");
 const CacheManager_1 = require("@lib/structures/CacheManager");
 const config_1 = require("@root/config");
 const framework_1 = require("@sapphire/framework");
+const utilities_1 = require("@sapphire/utilities");
+const constants_1 = require("@utils/constants");
 const ioredis_1 = tslib_1.__importDefault(require("ioredis"));
 const path_1 = require("path");
 const tsyringe_1 = require("tsyringe");
@@ -13,7 +15,7 @@ class PenguClient extends framework_1.SapphireClient {
     redis = new ioredis_1.default();
     cache;
     constructor(options) {
-        super(options);
+        super(utilities_1.mergeDefault(constants_1.CLIENT_OPTIONS, options));
         this.cache = new CacheManager_1.CacheManager(this);
         this.fetchPrefix = (message) => message.guild ? this.cache.getPrefix(message.guild.id) : config_1.PREFIX;
         this.fetchLanguage = (message) => message.guild ? this.cache.getLanguage(message.guild.id) : "en-US";

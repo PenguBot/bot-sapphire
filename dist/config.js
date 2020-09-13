@@ -9,18 +9,7 @@ exports.PGSQL_DATABASE_PASSWORD = "";
 exports.PGSQL_DATABASE_USER = "";
 exports.PGSQL_DATABASE_PORT = 5432;
 exports.PGSQL_DATABASE_HOST = "localhost";
-exports.CLIENT_OPTIONS = {
-    i18n: {
-        i18next: {
-            interpolation: {
-                defaultVariables: {
-                    pCross: "<:penguError:435712890884849664>",
-                    pCheck: "<:penguSuccess:435712876506775553>"
-                }
-            }
-        }
-    }
-};
+exports.CLIENT_OPTIONS = {};
 exports.API_KEYS = {
     OSU: "",
     FORTNITE: "",

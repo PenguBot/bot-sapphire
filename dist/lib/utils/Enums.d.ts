@@ -4,6 +4,10 @@ export declare const enum CacheKey {
 }
 export declare const enum Events {
 }
+export declare const enum PenguFormatters {
+    AndList = "andList",
+    OrList = "orList"
+}
 export declare const enum Emojis {
     PenguCross = "<:penguError:435712890884849664>",
     PenguCheck = "<:penguSuccess:435712876506775553>",

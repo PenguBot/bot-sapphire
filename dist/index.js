@@ -24,7 +24,7 @@ if (config_1.TOKENS.SENTRY_DNS) {
         ]
     });
 }
-const client = new PenguClient_1.PenguClient();
+const client = new PenguClient_1.PenguClient(config_1.CLIENT_OPTIONS);
 async function main() {
     await DbSet_1.DbSet.connect();
     await client.login(config_1.BOT_TOKEN);
