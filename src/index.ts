@@ -2,7 +2,7 @@ import "module-alias/register";
 import "reflect-metadata";
 import { PenguClient } from "@lib/PenguClient";
 import { DbSet } from "@lib/structures/DbSet";
-import { BOT_TOKEN, TOKENS } from "@root/config";
+import { BOT_TOKEN, CLIENT_OPTIONS, TOKENS } from "@root/config";
 import { Dedupe, ExtraErrorData, RewriteFrames } from "@sentry/integrations";
 import * as Sentry from "@sentry/node";
 import { floatPromise } from "@utils/util";
@@ -23,7 +23,7 @@ if (TOKENS.SENTRY_DNS) {
     });
 }
 
-const client = new PenguClient();
+const client = new PenguClient(CLIENT_OPTIONS);
 
 async function main() {
     await DbSet.connect();

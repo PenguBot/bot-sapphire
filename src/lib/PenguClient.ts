@@ -3,6 +3,8 @@
 import { CacheManager } from "@lib/structures/CacheManager";
 import { PREFIX } from "@root/config";
 import { SapphireClient } from "@sapphire/framework";
+import { mergeDefault } from "@sapphire/utilities";
+import { CLIENT_OPTIONS as CLIENT_OPTIONS_BASE } from "@utils/constants";
 import { ClientOptions, Message } from "discord.js";
 import Redis, { Redis as IRedis } from "ioredis";
 import { join } from "path";
@@ -16,7 +18,8 @@ export class PenguClient extends SapphireClient {
     public readonly cache: CacheManager;
 
     public constructor(options?: ClientOptions) {
-        super(options);
+        // @ts-expect-error Type instantiation is excessively deep and possibly infinite. ts(2589)
+        super(mergeDefault(CLIENT_OPTIONS_BASE, options));
 
         this.cache = new CacheManager(this);
 
