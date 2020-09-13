@@ -8,7 +8,8 @@ export const CLIENT_OPTIONS: ClientOptions = {
             interpolation: {
                 defaultVariables: {
                     pCross: Emojis.PenguCross,
-                    pCheck: Emojis.PenguCheck
+                    pCheck: Emojis.PenguCheck,
+                    pLoading: Emojis.PenguLoading
                 }
             }
         }
