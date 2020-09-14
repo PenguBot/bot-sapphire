@@ -41,6 +41,7 @@
     "typeorm": "node -r module-alias/register ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
+    "@sapphire/decorators": "^1.0.0",
     "@sapphire/framework": "sapphire-project/framework#build",
     "@sapphire/pieces": "sapphire-project/pieces#build",
     "@sapphire/utilities": "^1.0.0",
@@ -51,8 +52,8 @@
     "discord.js": "^12.3.1",
     "ioredis": "^4.17.3",
     "module-alias": "^2.2.2",
-    "node-fetch": "^2.6.1",
     "moment": "^2.27.0",
+    "node-fetch": "^2.6.1",
     "pg": "^8.3.2",
     "reflect-metadata": "^0.1.13",
     "tslib": "~1.9",

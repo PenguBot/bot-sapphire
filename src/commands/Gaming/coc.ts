@@ -1,10 +1,16 @@
-import { Command, Args } from "@sapphire/framework";
+import { Command, Args, CommandOptions } from "@sapphire/framework";
 import { Message, MessageEmbed, User } from "discord.js";
 import { fetch } from "@utils/util";
 import { API_KEYS } from "@root/config";
 import { DbSet } from "@lib/structures/DbSet";
 import { toTitleCase } from "@sapphire/utilities";
+import { ApplyOptions } from "@sapphire/decorators";
 
+@ApplyOptions<CommandOptions>({
+    description: "commands/gaming:coc.description",
+    detailedDescription: "commands/gaming:coc.detailedDescription",
+    aliases: ["clashofclans"]
+})
 export class PenguCommand extends Command {
 
     public async run(message: Message, args: Args) {

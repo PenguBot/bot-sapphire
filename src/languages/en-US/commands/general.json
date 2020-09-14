@@ -1,0 +1,6 @@
+{
+    "ping": {
+        "description": "Get a response from PenguBot to see if it's online.",
+        "response": "{{pCheck}} Pong!"
+    }
+}
