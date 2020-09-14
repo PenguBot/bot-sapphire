@@ -7,11 +7,30 @@ import { UserEntity } from "./UserEntity";
 
 @Entity("user_economy", { schema: "public" })
 export class UserEconomyEntity extends BaseEntity {
-    @Column("bigint", { name: "balance", default: 0, transformer: kBigIntTransformer })
+    @Column("bigint", { name: "balance", transformer: kBigIntTransformer, default: 0 })
     public balance = 0;
 
-    @Column("bigint", { name: "vault", default: 0, transformer: kBigIntTransformer })
+    @Column("bigint", { name: "vault", transformer: kBigIntTransformer, default: 0 })
     public vault = 0;
+
+    // #region Overall balance periodic tax collection
+    @Column("boolean", { name: "collect_taxes", default: false })
+    public collectTaxes = false;
+
+    @Column("timestamp without time zone", { name: "last_tax_collection", nullable: true, default: () => "null" })
+	public lastTaxCollection?: Date | null = null;
+    // #endregion Overall balance periodic tax collection
+
+    // #region Global tax rate offsets
+    @Column("numeric", { name: "tax_offset_general", precision: 8, default: 0 })
+    public toGeneral = 0;
+
+    @Column("numeric", { name: "tax_offset_gambling", precision: 8, default: 0 })
+    public toGambling = 0;
+
+    @Column("numeric", { name: "tax_offset_sales", precision: 8, default: 0 })
+    public toSales = 0;
+    // #endregion Global tax rate offsets
 
     @OneToOne(() => UserEntity, { primary: true, onDelete: "CASCADE" })
 	@JoinColumn()
