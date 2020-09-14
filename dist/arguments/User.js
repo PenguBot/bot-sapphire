@@ -9,11 +9,11 @@ class PenguArgument extends framework_1.Argument {
     }
     async run(argument, context) {
         if (!argument)
-            return framework_1.err(new framework_1.UserError("UserArgument", await context.message.fetchLanguageKey("arguments/user:notProvided")));
+            return framework_1.err(new framework_1.UserError("UserArgument", await context.message.fetchLanguageKey("arguments/user:user.notProvided")));
         const id = this.userIDRegex.exec(argument);
         const user = id ? await this.client.users.fetch(id[1]).catch(() => null) : null;
         if (!user)
-            return framework_1.err(new framework_1.UserError("UserArgument", await context.message.fetchLanguageKey("arguments/user:notFound")));
+            return framework_1.err(new framework_1.UserError("UserArgument", await context.message.fetchLanguageKey("arguments/user:user.notFound")));
         return framework_1.ok(user);
     }
 }

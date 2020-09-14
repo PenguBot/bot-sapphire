@@ -4,6 +4,6 @@
         "guild": "The prefix for this server is: {{prefix}}",
         "base": "The prefix to use PenguBot is: {{prefix}}"
     },
-    "basicError": "I have come across an issue, please try again.",
+    "basicError": "{{pCross}} I have come across an issue, please try again.",
     "poweredBy": "Powered by"
 }

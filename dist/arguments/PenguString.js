@@ -8,10 +8,10 @@ class PenguArgument extends framework_1.Argument {
     }
     async run(argument, context) {
         if (typeof context.minimum === "number" && argument.length < context.minimum) {
-            return framework_1.err(new framework_1.UserError("ArgumentStringTooShort", await context.message.fetchLanguageKey("arguments/string:argumentStringTooShort")));
+            return framework_1.err(new framework_1.UserError("ArgumentStringTooShort", await context.message.fetchLanguageKey("arguments/core:float.tooShort")));
         }
         if (typeof context.maximum === "number" && argument.length > context.maximum) {
-            return framework_1.err(new framework_1.UserError("ArgumentStringTooLong", await context.message.fetchLanguageKey("arguments/string:argumentStringTooLong")));
+            return framework_1.err(new framework_1.UserError("ArgumentStringTooLong", await context.message.fetchLanguageKey("arguments/core:float.tooLong")));
         }
         return framework_1.ok(argument);
     }

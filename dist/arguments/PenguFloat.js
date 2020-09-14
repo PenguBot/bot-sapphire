@@ -9,16 +9,16 @@ class PenguArgument extends framework_1.Argument {
     async run(argument, context) {
         const parsed = Number(argument);
         if (Number.isNaN(parsed)) {
-            return framework_1.err(new framework_1.UserError("ArgumentFloatInvalidNaN", await context.message.fetchLanguageKey("arguments/float:argumentFloatInvalidNaN")));
+            return framework_1.err(new framework_1.UserError("ArgumentFloatInvalidNaN", await context.message.fetchLanguageKey("arguments/core:float.invalidNaN")));
         }
         if (Number.isSafeInteger(parsed)) {
-            return framework_1.err(new framework_1.UserError("ArgumentFloatInvalidDecimal", await context.message.fetchLanguageKey("arguments/float:argumentFloatInvalidDecimal")));
+            return framework_1.err(new framework_1.UserError("ArgumentFloatInvalidDecimal", await context.message.fetchLanguageKey("arguments/core:float.invalidDecimal")));
         }
         if (typeof context.minimum === "number" && parsed < context.minimum) {
-            return framework_1.err(new framework_1.UserError("ArgumentFloatTooSmall", await context.message.fetchLanguageKey("arguments/float:argumentFloatTooSmall")));
+            return framework_1.err(new framework_1.UserError("ArgumentFloatTooSmall", await context.message.fetchLanguageKey("arguments/core:float.tooSmall")));
         }
         if (typeof context.maximum === "number" && parsed > context.maximum) {
-            return framework_1.err(new framework_1.UserError("ArgumentFloatTooBig", await context.message.fetchLanguageKey("arguments/float:argumentFloatTooBig")));
+            return framework_1.err(new framework_1.UserError("ArgumentFloatTooBig", await context.message.fetchLanguageKey("arguments/core:float.tooBig")));
         }
         return framework_1.ok(parsed);
     }
