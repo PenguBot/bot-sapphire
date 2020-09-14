@@ -10,13 +10,13 @@ export class PenguArgument extends Argument {
         const parsed = Number(argument);
 
 		if (Number.isNaN(parsed)) {
-			return err(new UserError("ArgumentNumberInvalid", await context.message.fetchLanguageKey("arguments/number:argumentNumberInvalid")));
+			return err(new UserError("ArgumentNumberInvalid", await context.message.fetchLanguageKey("arguments/core:float.invalid")));
 		}
 		if (typeof context.minimum === "number" && parsed < context.minimum) {
-			return err(new UserError("ArgumentNumberTooSmall", await context.message.fetchLanguageKey("arguments/number:argumentNumberTooSmall")));
+			return err(new UserError("ArgumentNumberTooSmall", await context.message.fetchLanguageKey("arguments/core:float.tooSmall")));
 		}
 		if (typeof context.maximum === "number" && parsed > context.maximum) {
-			return err(new UserError("ArgumentNumberTooBig", await context.message.fetchLanguageKey("arguments/number:argumentNumberTooBig")));
+			return err(new UserError("ArgumentNumberTooBig", await context.message.fetchLanguageKey("arguments/core:float.tooBig")));
 		}
 
 		return ok(parsed);

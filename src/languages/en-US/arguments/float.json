@@ -1,6 +1,0 @@
-{
-    "argumentFloatInvalidNaN": "The argument is not a valid number.",
-    "argumentFloatInvalidDecimal": "The argument did not resolve to a float.",
-    "argumentFloatTooSmall": "The argument is too small.",
-    "argumentFloatTooBig": "The argument is too big."
-}

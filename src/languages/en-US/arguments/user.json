@@ -1,4 +1,6 @@
 {
-    "notProvided": "You must mention a user for this command to work.",
-    "notFound": "That user was not found, please try a different one."
+    "user": {
+        "notProvided": "{{pCross}} You must mention a user for this command to work.",
+        "notFound": "{{pCross}} That user was not found, please try a different one."
+    }
 }
