@@ -1,4 +1,6 @@
 {
-    "notProvided": "",
-    "notFound": ""
+    "user": {
+        "notProvided": "",
+        "notFound": ""
+    }
 }
