@@ -1,9 +1,10 @@
 import { connect } from "@orm/dbConfig";
+import { GuildEconomyEntity } from "@orm/entities/GuildEconomyEntity";
+import { UserEconomyEntity } from "@orm/entities/UserEconomyEntity";
+import { UserGametagEntity } from "@orm/entities/UserGametagEntity";
 import { GuildRepository } from "@orm/repositories/GuildRepository";
 import { UserRepository } from "@orm/repositories/UserRepository";
 import type { Connection } from "typeorm";
-import { UserGametagEntity } from "@orm/entities/UserGametagEntity";
-import { UserEconomyEntity } from "@orm/entities/UserEconomyEntity";
 
 export class DbSet {
 
@@ -14,6 +15,10 @@ export class DbSet {
 
     public get guilds() {
         return this.connection.getCustomRepository(GuildRepository);
+    }
+
+    public get guildEconomyEntities() {
+        return this.connection.getRepository(GuildEconomyEntity);
     }
 
     public get users() {
