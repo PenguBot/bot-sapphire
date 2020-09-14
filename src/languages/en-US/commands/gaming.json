@@ -1,7 +1,7 @@
 {
-    "noGamerTag": "You need to provide a username to check statistics. You can save a default by using the flag `--save` with this command.",
-    "notFound": "I could not find a user corresponding to that user, please try a different one.",
-    "statsNotFound": "No statistical data could be found for that username, please try a different one.",
+    "noGamerTag": "{{pCross}} You need to provide a username to check statistics. You can save a default by using the flag `--save` with this command.",
+    "notFound": "{{pCross}} I could not find a user corresponding to that user, please try a different one.",
+    "statsNotFound": "{{pCross}} No statistical data could be found for that username, please try a different one.",
     "osu": {
         "totalScore": "Total Score",
         "rankedScore": "Ranked Score",

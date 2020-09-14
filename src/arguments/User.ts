@@ -11,12 +11,12 @@ export class PenguArgument extends Argument {
 	}
 
 	public async run(argument: string, context: ArgumentContext): Promise<Result<User, UserError>> {
-        if (!argument) return err(new UserError("UserArgument", await context.message.fetchLanguageKey("arguments/user:notProvided")));
+        if (!argument) return err(new UserError("UserArgument", await context.message.fetchLanguageKey("arguments/user:user.notProvided")));
 
         const id = this.userIDRegex.exec(argument);
         const user = id ? await this.client.users.fetch(id![1]).catch(() => null) : null;
 
-        if (!user) return err(new UserError("UserArgument", await context.message.fetchLanguageKey("arguments/user:notFound")));
+        if (!user) return err(new UserError("UserArgument", await context.message.fetchLanguageKey("arguments/user:user.notFound")));
 		return ok(user);
 	}
 }
