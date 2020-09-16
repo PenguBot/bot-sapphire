@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PenguCommand = void 0;
+const tslib_1 = require("tslib");
 const framework_1 = require("@sapphire/framework");
 const discord_js_1 = require("discord.js");
-class PenguCommand extends framework_1.Command {
+const decorators_1 = require("@sapphire/decorators");
+let PenguCommand = class PenguCommand extends framework_1.Command {
     images = [
         "http://i.imgur.com/Urfp335.png", "http://i.imgur.com/gC8v9fp.jpg", "http://i.imgur.com/DZ6YtvT.jpg",
         "http://i.imgur.com/LdWARAL.jpg", "http://i.imgur.com/7uF0u9Q.jpg", "http://i.imgur.com/0vgVnpr.png",
@@ -17,11 +19,18 @@ class PenguCommand extends framework_1.Command {
     run(message) {
         const randomImage = this.images[Math.floor(Math.random() * this.images.length)];
         return message.channel.send(new discord_js_1.MessageEmbed()
-            .setFooter("© PenguBot.com")
+            .setFooter("PenguBot.com")
             .setTimestamp()
             .setColor("RANDOM")
             .setImage(randomImage));
     }
-}
+};
+PenguCommand = tslib_1.__decorate([
+    decorators_1.ApplyOptions({
+        description: "commands/images:pengu.description",
+        detailedDescription: "noDetailedDescription",
+        preconditions: ["Permissions"]
+    })
+], PenguCommand);
 exports.PenguCommand = PenguCommand;
 //# sourceMappingURL=pengu.js.map

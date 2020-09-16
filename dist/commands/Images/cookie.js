@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PenguCommand = void 0;
+const tslib_1 = require("tslib");
 const framework_1 = require("@sapphire/framework");
 const discord_js_1 = require("discord.js");
-class PenguCommand extends framework_1.Command {
+const decorators_1 = require("@sapphire/decorators");
+let PenguCommand = class PenguCommand extends framework_1.Command {
     images = [
         "http://i.imgur.com/SLwEY66.gif", "http://i.imgur.com/K6VoNp3.gif", "http://i.imgur.com/knVM6Lb.gif",
         "http://i.imgur.com/P1BMly5.gif", "http://i.imgur.com/I8CrTUT.gif", "https://i.imgur.com/0XTueQR.png",
@@ -16,12 +18,19 @@ class PenguCommand extends framework_1.Command {
         const mentioned = await args.pick("user");
         const randomImage = this.images[Math.floor(Math.random() * this.images.length)];
         const embed = new discord_js_1.MessageEmbed()
-            .setFooter("© PenguBot.com")
+            .setFooter("PenguBot.com")
             .setTimestamp()
             .setColor("RANDOM")
             .setImage(randomImage);
-        return message.channel.send(await message.fetchLanguageKey("commands/images:cookie", { from: `${message.author}`, to: `${mentioned}` }), { embed });
+        return message.channel.send(await message.fetchLanguageKey("commands/images:cookie.response", { from: `${message.author}`, to: `${mentioned}` }), { embed });
     }
-}
+};
+PenguCommand = tslib_1.__decorate([
+    decorators_1.ApplyOptions({
+        description: "commands/images:cookie.description",
+        detailedDescription: "commands/images:cookie.detailedDescription",
+        preconditions: ["Permissions"]
+    })
+], PenguCommand);
 exports.PenguCommand = PenguCommand;
 //# sourceMappingURL=cookie.js.map

@@ -8,7 +8,8 @@ const util_1 = require("@utils/util");
 const config_1 = require("@root/config");
 const DbSet_1 = require("@lib/structures/DbSet");
 const moment_1 = tslib_1.__importDefault(require("moment"));
-class PenguCommand extends framework_1.Command {
+const decorators_1 = require("@sapphire/decorators");
+let PenguCommand = class PenguCommand extends framework_1.Command {
     async run(message, args) {
         let username = await args.pick("string").catch(() => null);
         if (!username)
@@ -42,6 +43,14 @@ class PenguCommand extends framework_1.Command {
         const gametagData = await users.fetchGametag(this.name, author);
         return gametagData.data?.username;
     }
-}
+};
+PenguCommand = tslib_1.__decorate([
+    decorators_1.ApplyOptions({
+        description: "commands/gaming:csgo.description",
+        detailedDescription: "commands/gaming:csgo.detailedDescription",
+        aliases: ["counterstrikestats"],
+        preconditions: ["Permissions"]
+    })
+], PenguCommand);
 exports.PenguCommand = PenguCommand;
 //# sourceMappingURL=csgo.js.map

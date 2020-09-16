@@ -1,13 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PenguCommand = void 0;
+const tslib_1 = require("tslib");
 const framework_1 = require("@sapphire/framework");
 const discord_js_1 = require("discord.js");
 const util_1 = require("@utils/util");
 const config_1 = require("@root/config");
 const DbSet_1 = require("@lib/structures/DbSet");
 const utilities_1 = require("@sapphire/utilities");
-class PenguCommand extends framework_1.Command {
+const decorators_1 = require("@sapphire/decorators");
+let PenguCommand = class PenguCommand extends framework_1.Command {
     async run(message, args) {
         let username = await args.pick("string").catch(() => null);
         if (!username)
@@ -52,6 +54,14 @@ class PenguCommand extends framework_1.Command {
         const gametagData = await users.fetchGametag(this.name, author);
         return gametagData.data?.tag;
     }
-}
+};
+PenguCommand = tslib_1.__decorate([
+    decorators_1.ApplyOptions({
+        description: "commands/gaming:coc.description",
+        detailedDescription: "commands/gaming:coc.detailedDescription",
+        aliases: ["clashofclans"],
+        preconditions: ["Permissions"]
+    })
+], PenguCommand);
 exports.PenguCommand = PenguCommand;
 //# sourceMappingURL=coc.js.map

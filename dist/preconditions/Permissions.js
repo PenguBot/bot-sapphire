@@ -9,7 +9,7 @@ class PermissionCondition extends framework_1.Precondition {
         if (!message.member)
             return framework_1.err(new framework_1.UserError("permissions", "Member is null."));
         const clientPermissions = message.member?.permissionsIn(message.channel);
-        return clientPermissions?.has(378944) ? framework_1.ok() : framework_1.err(new framework_1.UserError("permissions", "Missing permissions."));
+        return clientPermissions?.has(379968) ? framework_1.ok() : framework_1.err(new framework_1.UserError("permissions", "Missing permissions."));
     }
 }
 exports.PermissionCondition = PermissionCondition;

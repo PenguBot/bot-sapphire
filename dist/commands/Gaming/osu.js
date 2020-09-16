@@ -8,7 +8,8 @@ const util_1 = require("@utils/util");
 const config_1 = require("@root/config");
 const moment_1 = tslib_1.__importDefault(require("moment"));
 const DbSet_1 = require("@lib/structures/DbSet");
-class PenguCommand extends framework_1.Command {
+const decorators_1 = require("@sapphire/decorators");
+let PenguCommand = class PenguCommand extends framework_1.Command {
     async run(message, args) {
         let username = await args.pick("string").catch(() => null);
         if (!username)
@@ -44,6 +45,14 @@ class PenguCommand extends framework_1.Command {
         const gametagData = await users.fetchGametag(this.name, author);
         return gametagData.data?.username;
     }
-}
+};
+PenguCommand = tslib_1.__decorate([
+    decorators_1.ApplyOptions({
+        description: "commands/gaming:osu.description",
+        detailedDescription: "commands/gaming:osu.detailedDescription",
+        aliases: ["osustats"],
+        preconditions: ["Permissions"]
+    })
+], PenguCommand);
 exports.PenguCommand = PenguCommand;
 //# sourceMappingURL=osu.js.map
