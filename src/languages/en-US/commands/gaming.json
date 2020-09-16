@@ -11,7 +11,9 @@
         "globalRank": "Global Rank",
         "accuracy": "Accuracy",
         "timePlayed": "Time Played",
-        "hours": "Hours"
+        "hours": "Hours",
+        "description": "Get statistics of players from osu! the game.",
+        "detailedDescription": "You need to provide an osu! username of a player to use this command (i.e. p!osu www). To save a default profile, use the --save flag with this command (i.e. p!osu www --save)."
     },
     "fortnite": {
         "winRate": "Win Rate",
@@ -23,7 +25,9 @@
         "timePlayed": "Time Played",
         "wins": "Wins",
         "score": "Score",
-        "hours": "Hours"
+        "hours": "Hours",
+        "description": "Get statistics of players from Fortnite.",
+        "detailedDescription": "You need to provide an Epic Games username of a player to use this command (i.e. p!fortnite Ninja). To save a default profile, use the --save flag with this command (i.e. p!fortnite Ninja --save)."
     },
     "csgo": {
         "kdr": "Kill Death Ratio",
@@ -34,7 +38,9 @@
         "bombsPlanted": "Bombs Planted",
         "lastMatchKills": "Last Match Kills",
         "timePlayed": "Time Played",
-        "hours": "hours"
+        "hours": "hours",
+        "description": "Get statistics of players from Counter Strike: Global Offensive.",
+        "detailedDescription": "You need to provide a steam username of a player to use this command (i.e. p!csgo AdityaTD). The profile statistics should be set to public in order for this to work. To save a default profile, use the --save flag with this command (i.e. p!csgo AdityaTD --save)."
     },
     "coc": {
         "trophies": "Trophies",
@@ -42,6 +48,8 @@
         "bestTrophies": "Best Trophies",
         "troopLevels": "Troop Levels",
         "spellLevels": "Spell Levels",
-        "heroLevels": "Hero Levels"
+        "heroLevels": "Hero Levels",
+        "description": "Get statistics of players from Clash of Clans.",
+        "detailedDescription": "You need to provide a player tag while using this command (i.e. p!coc #8GQPJG2CL). To save a default profile, use the --save flag with this command (i.e. p!coc #8GQPJG2CL --save)."
     }
 }

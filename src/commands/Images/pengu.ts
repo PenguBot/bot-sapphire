@@ -1,6 +1,13 @@
-import { Command } from "@sapphire/framework";
+import { Command, CommandOptions } from "@sapphire/framework";
 import { Message, MessageEmbed } from "discord.js";
+import { ApplyOptions } from "@sapphire/decorators";
+import { PreConditions } from "@lib/types/Types";
 
+@ApplyOptions<CommandOptions>({
+    description: "commands/images:pengu.description",
+    detailedDescription: "noDetailedDescription",
+    preconditions: [PreConditions.Permissions]
+})
 export class PenguCommand extends Command {
 
     public readonly images: Array<string> = [
@@ -18,7 +25,7 @@ export class PenguCommand extends Command {
         const randomImage = this.images[Math.floor(Math.random() * this.images.length)];
 
         return message.channel.send(new MessageEmbed()
-            .setFooter("© PenguBot.com")
+            .setFooter("PenguBot.com")
             .setTimestamp()
             .setColor("RANDOM")
             .setImage(randomImage));

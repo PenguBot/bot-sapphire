@@ -1,10 +1,18 @@
-import { Command, Args } from "@sapphire/framework";
+import { Command, Args, CommandOptions } from "@sapphire/framework";
 import { Message, MessageEmbed, User } from "discord.js";
 import { fetch } from "@utils/util";
 import { API_KEYS } from "@root/config";
 import moment from "moment";
 import { DbSet } from "@lib/structures/DbSet";
+import { ApplyOptions } from "@sapphire/decorators";
+import { PreConditions } from "@lib/types/Types";
 
+@ApplyOptions<CommandOptions>({
+    description: "commands/gaming:osu.description",
+    detailedDescription: "commands/gaming:osu.detailedDescription",
+    aliases: ["osustats"],
+    preconditions: [PreConditions.Permissions]
+})
 export class PenguCommand extends Command {
 
     public async run(message: Message, args: Args) {

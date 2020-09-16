@@ -1,24 +1,79 @@
 {
-    "catTitle": "Cat Image and Fact",
-    "cookie": "{{to}}, you just got a cookie by {{from}}!",
-    "cuddle": "{{to}}, you just got cuddled by {{from}}!",
-    "feed": "{{to}}, you just got fed by {{from}}!",
-    "hug": "{{from}} just gave you a hug {{to}}!",
-    "kiss": "{{from}} just gave you a kiss {{to}}!",
-    "pat": "{{from}} just patted you {{to}}!",
-    "poke": "{{from}} just poked you {{to}}!",
-    "punch": "{{from}} just punched you {{to}}!",
-    "slap": "{{to}}, you have been slapped by {{from}}!",
-    "tickle": "{{from}} just tickled you {{to}}!",
-    "comic": {
-        "embedTitle": "Random Comic"
+    "cat": {
+        "embedTitle": "Cat Image and Fact",
+        "description": "Get a random cat picture along with an interesting fact."
     },
-    "reddit": {
+    "comic": {
+        "embedTitle": "Random Comic",
+        "description": "Sends a random comic picture for your entertainment."
+    },
+    "cookie": {
+        "response": "{{to}}, you just got a cookie by {{from}}!",
+        "description": "Send someone a cookie and make their day.",
+        "detailedDescription": "You must mention another user whom you would like to send a cookie while using this command."
+    },
+    "cuddle": {
+        "response": "{{to}}, you just got cuddled by {{from}}!",
+        "description": "Cuddle someone to make them feel loved.",
+        "detailedDescription": "You must mention another user whom you would like to cuddle while using this command."
+    },
+    "dog": {
+        "description": "Get cute and random dog and puppy pictures."
+    },
+    "feed": {
+        "response": "{{to}}, you just got fed by {{from}}!",
+        "description": "Feed a hungry friend some food using this command.",
+        "detailedDescription": "You must mention another user whom you would like to feed while using this command."
+    },
+    "fox": {
+        "description": "Recieve random fox pictures."
+    },
+    "hug": {
+        "response": "{{from}} just gave you a hug {{to}}!",
+        "description": "Give someone a warm hug using this command.",
+        "detailedDescription": "You must mention another user whom you would like to feed while using this command."
+    },
+    "kiss": {
+        "response": "{{from}} just gave you a kiss {{to}}!",
+        "description": "Send someone a virtual kiss.",
+        "detailedDescription": "You must mention another user whom you would like to kiss while using this command."
+    },
+    "meme": {
         "title": "Title",
         "link": "Link",
-        "nsfwPost": "{{pCross}} This meme is marked NSFW, please change your channel type to NSFW to receive it."
+        "nsfwPost": "{{pCross}} This meme is marked NSFW, please change your channel type to NSFW to receive it.",
+        "description": "Who doesn't like memes? Get hilarious memes straight to your Discord."
+    },
+    "pat": {
+        "response": "{{from}} just patted you {{to}}!",
+        "description": "Pat someone, make them feel appreciated.",
+        "detailedDescription": "You must mention another user whom you would like to pat while using this command."
+    },
+    "pengu": {
+        "description": "Recieve cute and adorable penguin images."
+    },
+    "poke": {
+        "response": "{{from}} just poked you {{to}}!",
+        "description": "Poke someone to get their attention.",
+        "detailedDescription": "You must mention another user whom you would like to poke while using this command."
+    },
+    "punch": {
+        "response": "{{from}} just punched you {{to}}!",
+        "description": "Someone making you angry? Give them a punch.",
+        "detailedDescription": "You must mention another user whom you would like to punch while using this command."
+    },
+    "slap": {
+        "response": "{{to}}, you have been slapped by {{from}}!",
+        "description": "Virtually slap someone using this command.",
+        "detailedDescription": "You must mention another user whom you would like to slap while using this command."
+    },
+    "tickle": {
+        "response": "{{from}} just tickled you {{to}}!",
+        "description": "Tickle someone till they laugh.",
+        "detailedDescription": "You must mention another user whom you would like to tickle while using this command."
     },
     "wholesome": {
-        "nsfwPost": "{{pCross}} Unfortunately, this wholesome post turned out to be not so wholesome. Please try again."
+        "nsfwPost": "{{pCross}} Unfortunately, this wholesome post turned out to be not so wholesome. Please try again.",
+        "description": "Get a very wholesome post that'll bring you a smile."
     }
 }

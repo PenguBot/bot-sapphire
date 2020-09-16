@@ -1,10 +1,17 @@
-import { Command, Args } from "@sapphire/framework";
+import { Command, Args, CommandOptions } from "@sapphire/framework";
 import { Message, MessageEmbed, User } from "discord.js";
 import { fetch } from "@utils/util";
 import { API_KEYS } from "@root/config";
 import { DbSet } from "@lib/structures/DbSet";
 import moment from "moment";
+import { ApplyOptions } from "@sapphire/decorators";
+import { PreConditions } from "@lib/types/Types";
 
+@ApplyOptions<CommandOptions>({
+    description: "commands/gaming:fortnite.description",
+    detailedDescription: "commands/gaming:fortnite.detailedDescription",
+    preconditions: [PreConditions.Permissions]
+})
 export class PenguCommand extends Command {
 
     public async run(message: Message, args: Args) {

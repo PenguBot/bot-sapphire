@@ -213,6 +213,11 @@
   resolved "https://registry.yarnpkg.com/@pengubot/eslint-config/-/eslint-config-1.0.0.tgz#9c5e9c51052d69ef42235db65ccbcceea484799c"
   integrity sha512-2J4m0cwiHmOQ5D3PBS7lqQvr9lp9coe6j8Q35d14bABsor5DfMcoM8p67c/kflYW1qu+vrOPzyEHCRtISWBtYw==
 
+"@sapphire/decorators@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@sapphire/decorators/-/decorators-1.0.0.tgz#92f4c20b6d3b60c0c315fdc9be941696dece45e4"
+  integrity sha512-tIzKByWI10Pa+lV9iDO0c4mqfY31hkmNbeYnuqtXT4Tetb7RkrGKsvEi/1nYrQTlu+R0iuqYhrQr36Bjo7nguA==
+
 "@sapphire/framework@sapphire-project/framework#build":
   version "0.0.1"
   resolved "https://codeload.github.com/sapphire-project/framework/tar.gz/0c49ea906af564487e61a48c293a02588bc030af"

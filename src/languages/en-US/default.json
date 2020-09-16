@@ -5,5 +5,6 @@
         "base": "The prefix to use PenguBot is: {{prefix}}"
     },
     "basicError": "{{pCross}} I have come across an issue, please try again.",
-    "poweredBy": "Powered by"
+    "poweredBy": "Powered by",
+    "noDetailedDescription": "There's no other detailed information about this command."
 }
