@@ -1,0 +1,79 @@
+{
+    "cat": {
+        "embedTitle": "",
+        "description": ""
+    },
+    "comic": {
+        "embedTitle": "",
+        "description": ""
+    },
+    "cookie": {
+        "response": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "cuddle": {
+        "response": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "dog": {
+        "description": ""
+    },
+    "feed": {
+        "response": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "fox": {
+        "description": ""
+    },
+    "hug": {
+        "response": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "kiss": {
+        "response": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "meme": {
+        "title": "",
+        "link": "",
+        "nsfwPost": "",
+        "description": ""
+    },
+    "pat": {
+        "response": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "pengu": {
+        "description": ""
+    },
+    "poke": {
+        "response": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "punch": {
+        "response": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "slap": {
+        "response": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "tickle": {
+        "response": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "wholesome": {
+        "nsfwPost": "",
+        "description": ""
+    }
+}
