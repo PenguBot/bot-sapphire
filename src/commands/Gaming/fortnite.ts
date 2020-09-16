@@ -8,7 +8,8 @@ import { ApplyOptions } from "@sapphire/decorators";
 
 @ApplyOptions<CommandOptions>({
     description: "commands/gaming:fortnite.description",
-    detailedDescription: "commands/gaming:fortnite.detailedDescription"
+    detailedDescription: "commands/gaming:fortnite.detailedDescription",
+    preconditions: ["permissions"]
 })
 export class PenguCommand extends Command {
 

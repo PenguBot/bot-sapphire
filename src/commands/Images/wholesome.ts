@@ -1,7 +1,13 @@
-import { Command } from "@sapphire/framework";
+import { Command, CommandOptions } from "@sapphire/framework";
 import { Message, TextChannel } from "discord.js";
 import { randomSubredditItem } from "@utils/util";
+import { ApplyOptions } from "@sapphire/decorators";
 
+@ApplyOptions<CommandOptions>({
+    description: "commands/images:wholesome.description",
+    detailedDescription: "noDetailedDescription",
+    preconditions: ["permissions"]
+})
 export class PenguCommand extends Command {
 
     public subReddits = ["wholesome", "aww", "AnimalsBeingBros"];

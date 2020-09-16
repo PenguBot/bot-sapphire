@@ -9,7 +9,8 @@ import { ApplyOptions } from "@sapphire/decorators";
 @ApplyOptions<CommandOptions>({
     description: "commands/gaming:osu.description",
     detailedDescription: "commands/gaming:osu.detailedDescription",
-    aliases: ["osustats"]
+    aliases: ["osustats"],
+    preconditions: ["permissions"]
 })
 export class PenguCommand extends Command {
 

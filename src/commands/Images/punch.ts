@@ -1,6 +1,12 @@
-import { Command, Args } from "@sapphire/framework";
+import { Command, Args, CommandOptions } from "@sapphire/framework";
 import { Message, MessageEmbed } from "discord.js";
+import { ApplyOptions } from "@sapphire/decorators";
 
+@ApplyOptions<CommandOptions>({
+    description: "commands/images:punch.description",
+    detailedDescription: "commands/images:punch.detailedDescription",
+    preconditions: ["permissions"]
+})
 export class PenguCommand extends Command {
 
     public readonly images: Array<string> = [
@@ -17,11 +23,11 @@ export class PenguCommand extends Command {
         const randomImage = this.images[Math.floor(Math.random() * this.images.length)];
 
         const embed = new MessageEmbed()
-            .setFooter("© PenguBot.com")
+            .setFooter("PenguBot.com")
             .setTimestamp()
             .setColor("RANDOM")
             .setImage(randomImage);
 
-        return message.channel.send(await message.fetchLanguageKey("commands/images:punch", { from: `${message.author}`, to: `${mentioned}` }), { embed });
+        return message.channel.send(await message.fetchLanguageKey("commands/images:punch.response", { from: `${message.author}`, to: `${mentioned}` }), { embed });
     }
 }

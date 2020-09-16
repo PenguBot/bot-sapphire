@@ -40,7 +40,7 @@
         "timePlayed": "Time Played",
         "hours": "hours",
         "description": "Get statistics of players from Counter Strike: Global Offensive.",
-        "detailedDescription": "You need to provide a steam username of a player to use this command (i.e. p!csgo Guardian). To save a default profile, use the --save flag with this command (i.e. p!csgo Guardian --save)."
+        "detailedDescription": "You need to provide a steam username of a player to use this command (i.e. p!csgo AdityaTD). The profile statistics should be set to public in order for this to work. To save a default profile, use the --save flag with this command (i.e. p!csgo AdityaTD --save)."
     },
     "coc": {
         "trophies": "Trophies",

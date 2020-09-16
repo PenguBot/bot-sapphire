@@ -10,7 +10,8 @@ import { ApplyOptions } from "@sapphire/decorators";
 @ApplyOptions<CommandOptions>({
     description: "commands/gaming:csgo.description",
     detailedDescription: "commands/gaming:csgo.detailedDescription",
-    aliases: ["counterstrikestats"]
+    aliases: ["counterstrikestats"],
+    preconditions: ["permissions"]
 })
 export class PenguCommand extends Command {
 

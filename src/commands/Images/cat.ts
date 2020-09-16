@@ -1,7 +1,14 @@
-import { Command } from "@sapphire/framework";
+import { Command, CommandOptions } from "@sapphire/framework";
 import { Message, MessageEmbed } from "discord.js";
 import { fetch } from "@utils/util";
+import { ApplyOptions } from "@sapphire/decorators";
 
+@ApplyOptions<CommandOptions>({
+    description: "commands/images:cat.description",
+    detailedDescription: "noDetailedDescription",
+    aliases: ["catfact"],
+    preconditions: ["permissions"]
+})
 export class PenguCommand extends Command {
 
     public async run(message: Message) {
@@ -9,10 +16,10 @@ export class PenguCommand extends Command {
         if (!fact) return message.sendTranslated("basicError");
 
         return message.channel.send(new MessageEmbed()
-            .setFooter("© PenguBot.com - Powered by catfact.ninja")
+            .setFooter(`PenguBot.com - ${await message.fetchLanguageKey("poweredBy")} catfact.ninja`)
             .setTimestamp()
             .setColor("RANDOM")
-            .setDescription(`**${(await message.fetchLanguageKey("commands/images:catTitle"))}**\n${fact}`)
+            .setDescription(`**${(await message.fetchLanguageKey("commands/images:cat.embedTitle"))}**\n${fact}`)
             .setImage(`http://thecatapi.com/api/images/get?format=src&type=jpg&size=med&${Date.now()}`));
     }
 

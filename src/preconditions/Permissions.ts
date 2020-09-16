@@ -8,7 +8,7 @@ export class PermissionCondition extends Precondition {
         if (!message.member) return err(new UserError("permissions", "Member is null."));
 
         const clientPermissions = message.member?.permissionsIn(message.channel);
-        return clientPermissions?.has(378944) ? ok() : err(new UserError("permissions", "Missing permissions."));
+        return clientPermissions?.has(379968) ? ok() : err(new UserError("permissions", "Missing permissions."));
     }
 
 }

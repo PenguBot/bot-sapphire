@@ -1,7 +1,13 @@
-import { Command } from "@sapphire/framework";
+import { Command, CommandOptions } from "@sapphire/framework";
 import { Message, MessageEmbed } from "discord.js";
 import { fetch } from "@utils/util";
+import { ApplyOptions } from "@sapphire/decorators";
 
+@ApplyOptions<CommandOptions>({
+    description: "commands/images:dog.description",
+    detailedDescription: "noDetailedDescription",
+    preconditions: ["permissions"]
+})
 export class PenguCommand extends Command {
 
     public async run(message: Message) {
@@ -9,7 +15,7 @@ export class PenguCommand extends Command {
         if (body.status !== "success") return message.sendTranslated("basicError");
 
         return message.channel.send(new MessageEmbed()
-            .setFooter("© PenguBot.com - Powered by dog.ceo")
+            .setFooter(`PenguBot.com - ${await message.fetchLanguageKey("poweredBy")} dog.ceo`)
             .setTimestamp()
             .setColor("RANDOM")
             .setImage(body.message));

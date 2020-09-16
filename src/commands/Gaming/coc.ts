@@ -9,7 +9,8 @@ import { ApplyOptions } from "@sapphire/decorators";
 @ApplyOptions<CommandOptions>({
     description: "commands/gaming:coc.description",
     detailedDescription: "commands/gaming:coc.detailedDescription",
-    aliases: ["clashofclans"]
+    aliases: ["clashofclans"],
+    preconditions: ["permissions"]
 })
 export class PenguCommand extends Command {
 
