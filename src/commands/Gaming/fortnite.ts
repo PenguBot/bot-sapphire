@@ -5,11 +5,12 @@ import { API_KEYS } from "@root/config";
 import { DbSet } from "@lib/structures/DbSet";
 import moment from "moment";
 import { ApplyOptions } from "@sapphire/decorators";
+import { PreConditions } from "@lib/types/Types";
 
 @ApplyOptions<CommandOptions>({
     description: "commands/gaming:fortnite.description",
     detailedDescription: "commands/gaming:fortnite.detailedDescription",
-    preconditions: ["permissions"]
+    preconditions: [PreConditions.Permissions]
 })
 export class PenguCommand extends Command {
 

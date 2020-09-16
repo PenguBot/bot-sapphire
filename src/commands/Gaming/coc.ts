@@ -5,12 +5,13 @@ import { API_KEYS } from "@root/config";
 import { DbSet } from "@lib/structures/DbSet";
 import { toTitleCase } from "@sapphire/utilities";
 import { ApplyOptions } from "@sapphire/decorators";
+import { PreConditions } from "@lib/types/Types";
 
 @ApplyOptions<CommandOptions>({
     description: "commands/gaming:coc.description",
     detailedDescription: "commands/gaming:coc.detailedDescription",
     aliases: ["clashofclans"],
-    preconditions: ["permissions"]
+    preconditions: [PreConditions.Permissions]
 })
 export class PenguCommand extends Command {
 

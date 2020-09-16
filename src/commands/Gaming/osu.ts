@@ -5,12 +5,13 @@ import { API_KEYS } from "@root/config";
 import moment from "moment";
 import { DbSet } from "@lib/structures/DbSet";
 import { ApplyOptions } from "@sapphire/decorators";
+import { PreConditions } from "@lib/types/Types";
 
 @ApplyOptions<CommandOptions>({
     description: "commands/gaming:osu.description",
     detailedDescription: "commands/gaming:osu.detailedDescription",
     aliases: ["osustats"],
-    preconditions: ["permissions"]
+    preconditions: [PreConditions.Permissions]
 })
 export class PenguCommand extends Command {
 

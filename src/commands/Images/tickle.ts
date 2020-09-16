@@ -2,11 +2,12 @@ import { Command, Args, CommandOptions } from "@sapphire/framework";
 import { Message, MessageEmbed } from "discord.js";
 import { fetch } from "@utils/util";
 import { ApplyOptions } from "@sapphire/decorators";
+import { PreConditions } from "@lib/types/Types";
 
 @ApplyOptions<CommandOptions>({
     description: "commands/images:tickle.description",
     detailedDescription: "commands/images:tickle.detailedDescription",
-    preconditions: ["permissions"]
+    preconditions: [PreConditions.Permissions]
 })
 export class PenguCommand extends Command {
 

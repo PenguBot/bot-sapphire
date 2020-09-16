@@ -2,11 +2,12 @@ import { Command, CommandOptions } from "@sapphire/framework";
 import { Message, TextChannel } from "discord.js";
 import { randomSubredditItem } from "@utils/util";
 import { ApplyOptions } from "@sapphire/decorators";
+import { PreConditions } from "@lib/types/Types";
 
 @ApplyOptions<CommandOptions>({
     description: "commands/images:meme.description",
     detailedDescription: "noDetailedDescription",
-    preconditions: ["permissions"]
+    preconditions: [PreConditions.Permissions]
 })
 export class PenguCommand extends Command {
 
