@@ -11,7 +11,8 @@ import { PreConditions } from "@lib/types/Types";
     description: "commands/gaming:osu.description",
     detailedDescription: "commands/gaming:osu.detailedDescription",
     aliases: ["osustats"],
-    preconditions: [PreConditions.Permissions]
+    preconditions: [PreConditions.Permissions],
+    strategyOptions: { flags: ["save"] }
 })
 export class PenguCommand extends Command {
 
@@ -23,7 +24,8 @@ export class PenguCommand extends Command {
         const res: OSUResponseData[] = await fetch(`https://osu.ppy.sh/api/get_user?k=${API_KEYS.OSU}&u=${encodeURIComponent(username as string)}`);
         if (!res || !res[0]) return message.sendTranslated("commands/gaming:notFound");
 
-        // @todo save flag to save username
+        const saveFlag = args.getFlags("save");
+        if (saveFlag) await this.saveGametag(username, message.author).catch(e => message.sendTranslated("commands/gaming:tagSaveError", [{ error: e }]));
 
         const data = res[0];
         return message.channel.send(new MessageEmbed()
@@ -51,7 +53,17 @@ export class PenguCommand extends Command {
         const { users } = await DbSet.connect();
         const gametagData = await users.fetchGametag<OSUGametagData>(this.name, author);
 
-        return gametagData.data?.username;
+        return gametagData.data?.tag;
+    }
+
+    public async saveGametag(tag: string, author: User) {
+        const { users } = await DbSet.connect();
+        await users.ensure(author.id);
+
+        const gametagData = await users.fetchGametag<OSUGametagData>(this.name, author);
+        gametagData.data = { ...gametagData.data, tag };
+
+        return gametagData.save();
     }
 
 }
@@ -90,5 +102,5 @@ interface OSUEvent {
 }
 
 interface OSUGametagData {
-    username?: string;
+    tag?: string;
 }

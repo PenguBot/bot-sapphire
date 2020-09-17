@@ -10,7 +10,8 @@ import { PreConditions } from "@lib/types/Types";
 @ApplyOptions<CommandOptions>({
     description: "commands/gaming:fortnite.description",
     detailedDescription: "commands/gaming:fortnite.detailedDescription",
-    preconditions: [PreConditions.Permissions]
+    preconditions: [PreConditions.Permissions],
+    strategyOptions: { flags: ["save"] }
 })
 export class PenguCommand extends Command {
 
@@ -25,7 +26,8 @@ export class PenguCommand extends Command {
         const stats: FortnitePlayerStats = await fetch(`https://fortniteapi.io/v1/stats?account=${res.account_id}`, { headers: { Authorization: API_KEYS.FORTNITE } });
         if (!stats.result || !stats.global_stats) return message.sendTranslated("commands/gaming:statsNotFound");
 
-        // @todo save flag to save account id
+        const saveFlag = args.getFlags("save");
+        if (saveFlag) await this.saveGametag(username, message.author).catch(e => message.sendTranslated("commands/gaming:tagSaveError", [{ error: e }]));
 
         return message.channel.send(new MessageEmbed()
             .setFooter(`PenguBot.com`)
@@ -48,13 +50,21 @@ export class PenguCommand extends Command {
         const { users } = await DbSet.connect();
         const gametagData = await users.fetchGametag<FortniteGametagData>(this.name, author);
 
-        return gametagData.data?.username;
+        return gametagData.data?.tag;
+    }
+
+    public async saveGametag(tag: string, author: User) {
+        const { users } = await DbSet.connect();
+        const gametagData = await users.fetchGametag<FortniteGametagData>(this.name, author);
+
+        gametagData.data = { ...gametagData.data, tag };
+        return gametagData.save();
     }
 
 }
 
 interface FortniteGametagData {
-    username?: string;
+    tag?: string;
 }
 
 interface FortnitePlayerSearchData {

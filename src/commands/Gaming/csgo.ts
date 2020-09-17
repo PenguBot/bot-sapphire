@@ -12,7 +12,8 @@ import { PreConditions } from "@lib/types/Types";
     description: "commands/gaming:csgo.description",
     detailedDescription: "commands/gaming:csgo.detailedDescription",
     aliases: ["counterstrikestats"],
-    preconditions: [PreConditions.Permissions]
+    preconditions: [PreConditions.Permissions],
+    strategyOptions: { flags: ["save"] }
 })
 export class PenguCommand extends Command {
 
@@ -27,7 +28,8 @@ export class PenguCommand extends Command {
         const data: CSGOPlayerStats = await fetch(`https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?key=${API_KEYS.CSGO}&steamid=${res.response.steamid}&appid=730`);
         if (!data || !data.playerstats) return message.sendTranslated("commands/gaming:statsNotFound");
 
-        // @todo save flag to save account id
+        const saveFlag = args.getFlags("save");
+        if (saveFlag) await this.saveGametag(username, message.author).catch(e => message.sendTranslated("commands/gaming:tagSaveError", [{ error: e }]));
 
         return message.channel.send(new MessageEmbed()
             .setFooter(`PenguBot.com`)
@@ -50,13 +52,21 @@ export class PenguCommand extends Command {
         const { users } = await DbSet.connect();
         const gametagData = await users.fetchGametag<CSGOGametagData>(this.name, author);
 
-        return gametagData.data?.username;
+        return gametagData.data?.tag;
+    }
+
+    public async saveGametag(tag: string, author: User) {
+        const { users } = await DbSet.connect();
+        const gametagData = await users.fetchGametag<CSGOGametagData>(this.name, author);
+
+        gametagData.data = { ...gametagData.data, tag };
+        return gametagData.save();
     }
 
 }
 
 interface CSGOGametagData {
-    username?: string;
+    tag?: string;
 }
 
 interface CSGOPlayerSearchData {

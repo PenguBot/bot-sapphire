@@ -11,7 +11,8 @@ import { PreConditions } from "@lib/types/Types";
     description: "commands/gaming:coc.description",
     detailedDescription: "commands/gaming:coc.detailedDescription",
     aliases: ["clashofclans"],
-    preconditions: [PreConditions.Permissions]
+    preconditions: [PreConditions.Permissions],
+    strategyOptions: { flags: ["save"] }
 })
 export class PenguCommand extends Command {
 
@@ -23,7 +24,8 @@ export class PenguCommand extends Command {
         const res: ClashOfClansRes = await fetch(`https://api.clashofclans.com/v1/players/${encodeURIComponent(username.toUpperCase())}`, { headers: { Authorization: API_KEYS.COC } });
         if (!res) return message.sendTranslated("commands/gaming:notFound");
 
-        // @todo save flag to save account tag
+        const saveFlag = args.getFlags("save");
+        if (saveFlag) await this.saveGametag(username, message.author).catch(e => message.sendTranslated("commands/gaming:tagSaveError", [{ error: e }]));
 
         const embed = new MessageEmbed()
             .setFooter(`PenguBot.com`)
@@ -57,6 +59,14 @@ export class PenguCommand extends Command {
         const gametagData = await users.fetchGametag<ClashOfClansGametagData>(this.name, author);
 
         return gametagData.data?.tag;
+    }
+
+    public async saveGametag(tag: string, author: User) {
+        const { users } = await DbSet.connect();
+        const gametagData = await users.fetchGametag<ClashOfClansGametagData>(this.name, author);
+
+        gametagData.data = { ...gametagData.data, tag };
+        return gametagData.save();
     }
 
 }
