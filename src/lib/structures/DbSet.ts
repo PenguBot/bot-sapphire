@@ -1,4 +1,5 @@
 import { connect } from "@orm/dbConfig";
+import { ClientEconomyEntity } from "@orm/entities/ClientEconomyEntity";
 import { GuildEconomyEntity } from "@orm/entities/GuildEconomyEntity";
 import { UserEconomyEntity } from "@orm/entities/UserEconomyEntity";
 import { UserGametagEntity } from "@orm/entities/UserGametagEntity";
@@ -16,6 +17,10 @@ export class DbSet {
 
     public get clients() {
         return this.connection.getCustomRepository(ClientRepository);
+    }
+
+    public get clientEconomyEntities() {
+        return this.connection.getRepository(ClientEconomyEntity);
     }
 
     public get guilds() {

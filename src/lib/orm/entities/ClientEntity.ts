@@ -1,5 +1,6 @@
 import { CLIENT_ID } from "@root/config";
-import { BaseEntity, Column, Entity, PrimaryColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToOne, PrimaryColumn } from "typeorm";
+import { GuildEconomyEntity } from "./GuildEconomyEntity";
 
 @Entity("client", { schema: "public" })
 export class ClientEntity extends BaseEntity {
@@ -10,5 +11,8 @@ export class ClientEntity extends BaseEntity {
 	public userBlocklist: string[] = [];
 
 	@Column("varchar", { name: "guild_blocklist", array: true, default: () => "ARRAY[]::VARCHAR[]" })
-	public guildBlocklist: string[] = [];
+    public guildBlocklist: string[] = [];
+
+    @OneToOne(() => GuildEconomyEntity, eco => eco.guild, { cascade: true })
+	public economy?: GuildEconomyEntity;
 }

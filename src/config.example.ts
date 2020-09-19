@@ -7,6 +7,10 @@ export const BOT_TOKEN = "";
 export const CLIENT_ID = "303181184718995457";
 export const PREFIX = "p!";
 
+export const TAX_RATE_GENERAL = 15;
+export const TAX_RATE_GAMBLING = 7.5;
+export const TAX_RATE_SALES = 22;
+
 export const PGSQL_DATABASE_NAME = "";
 export const PGSQL_DATABASE_PASSWORD = "";
 export const PGSQL_DATABASE_USER = "";
