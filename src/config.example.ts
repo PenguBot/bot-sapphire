@@ -4,6 +4,7 @@ import { ClientOptions } from "discord.js";
 export const DEV = "DEV" in process.env ? process.env.DEV === "true" : !("PM2_HOME" in process.env);
 
 export const BOT_TOKEN = "";
+export const CLIENT_ID = "303181184718995457";
 export const PREFIX = "p!";
 
 export const PGSQL_DATABASE_NAME = "";

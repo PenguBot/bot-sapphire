@@ -2,6 +2,7 @@ import { connect } from "@orm/dbConfig";
 import { GuildEconomyEntity } from "@orm/entities/GuildEconomyEntity";
 import { UserEconomyEntity } from "@orm/entities/UserEconomyEntity";
 import { UserGametagEntity } from "@orm/entities/UserGametagEntity";
+import { ClientRepository } from "@orm/repositories/ClientRepository";
 import { GuildRepository } from "@orm/repositories/GuildRepository";
 import { UserRepository } from "@orm/repositories/UserRepository";
 import type { Connection } from "typeorm";
@@ -11,6 +12,10 @@ export class DbSet {
 	public connection: Connection;
 	private constructor(connection: Connection) {
 		this.connection = connection;
+    }
+
+    public get clients() {
+        return this.connection.getCustomRepository(ClientRepository);
     }
 
     public get guilds() {
