@@ -1,8 +1,9 @@
-import { UserEntity } from "@orm/entities/UserEntity";
-import { EntityRepository, FindOneOptions, Repository } from "typeorm";
 import { DbSet } from "@lib/structures/DbSet";
+import { UserEconomyEntity } from "@orm/entities/UserEconomyEntity";
+import { UserEntity } from "@orm/entities/UserEntity";
 import { UserGametagEntity } from "@orm/entities/UserGametagEntity";
 import { User } from "discord.js";
+import { EntityRepository, FindOneOptions, Repository } from "typeorm";
 
 @EntityRepository(UserEntity)
 export class UserRepository extends Repository<UserEntity> {
@@ -13,6 +14,16 @@ export class UserRepository extends Repository<UserEntity> {
 		const data = new UserEntity();
 		data.id = id;
 		return data;
+    }
+
+    public async ensureEconomy(id: string, options: FindOneOptions<UserEntity> = {}) {
+		const user = await this.ensure(id, { ...options, relations: ["economy"] });
+		if (!user.economy) {
+			user.economy = new UserEconomyEntity();
+			user.economy.user = user;
+		}
+
+		return user as UserEntity & { profile: NonNullable<UserEntity["economy"]> };
 	}
 
 	public async fetchGametag<T>(gameName: string, user: User): Promise<UserGametagEntity<T>> {
