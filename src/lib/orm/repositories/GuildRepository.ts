@@ -1,3 +1,4 @@
+import { GuildEconomyEntity } from "@orm/entities/GuildEconomyEntity";
 import { GuildEntity } from "@orm/entities/GuildEntity";
 import { EntityRepository, FindOneOptions, Repository } from "typeorm";
 
@@ -10,5 +11,15 @@ export class GuildRepository extends Repository<GuildEntity> {
 		const data = new GuildEntity();
 		data.id = id;
 		return data;
+    }
+
+    public async ensureEconomy(id: string, options: FindOneOptions<GuildEntity> = {}) {
+		const guild = await this.ensure(id, { ...options, relations: ["economy"] });
+		if (!guild.economy) {
+			guild.economy = new GuildEconomyEntity();
+			guild.economy.guild = guild;
+		}
+
+		return guild as GuildEntity & { profile: NonNullable<GuildEntity["economy"]> };
 	}
 }
