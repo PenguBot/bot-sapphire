@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { PenguClient } from "@lib/PenguClient";
-import { kBigIntTransformer } from "@utils/util";
+import { kBigIntTransformer } from "@utils/utils";
 import { container } from "tsyringe";
 import { AfterInsert, AfterLoad, AfterRemove, AfterUpdate, BaseEntity, Column, Entity, JoinColumn, OneToOne } from "typeorm";
 import { UserEntity } from "./UserEntity";

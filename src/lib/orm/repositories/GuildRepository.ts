@@ -20,6 +20,6 @@ export class GuildRepository extends Repository<GuildEntity> {
 			guild.economy.guild = guild;
 		}
 
-		return guild as GuildEntity & { profile: NonNullable<GuildEntity["economy"]> };
+		return guild as GuildEntity & { economy: NonNullable<GuildEntity["economy"]> };
 	}
 }

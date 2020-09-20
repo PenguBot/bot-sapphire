@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/unified-signatures */
+/* eslint-disable valid-jsdoc,@typescript-eslint/unified-signatures */
 import { ClientEconomyEntity } from "@orm/entities/ClientEconomyEntity";
 import { ClientEntity } from "@orm/entities/ClientEntity";
 import { CLIENT_ID } from "@root/config";
@@ -17,6 +17,6 @@ export class ClientRepository extends Repository<ClientEntity> {
 			client.economy.client = client;
 		}
 
-		return client as ClientEntity & { profile: NonNullable<ClientEntity["economy"]> };
+		return client as ClientEntity & { economy: NonNullable<ClientEntity["economy"]> };
 	}
 }

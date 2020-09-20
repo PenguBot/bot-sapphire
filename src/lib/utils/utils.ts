@@ -12,6 +12,8 @@ import { URL } from "url";
  */
 export const kBigIntTransformer: ValueTransformer = { from: Number, to: String };
 
+export const kBigIntTransformerPure: ValueTransformer = { from: BigInt, to: String };
+
 /**
  * @copyright 2019-2020 Antonio Román
  * @license Apache-2.0

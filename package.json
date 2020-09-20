@@ -41,6 +41,8 @@
     "typeorm": "node -r module-alias/register ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
+    "@klasa/async-queue": "^0.0.1",
+    "@klasa/timer-manager": "^0.0.1",
     "@sapphire/decorators": "^1.0.0",
     "@sapphire/framework": "sapphire-project/framework#build",
     "@sapphire/pieces": "sapphire-project/pieces#build",

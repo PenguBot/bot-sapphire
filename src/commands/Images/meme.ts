@@ -1,6 +1,6 @@
 import { Command, CommandOptions } from "@sapphire/framework";
 import { Message, TextChannel } from "discord.js";
-import { randomSubredditItem } from "@utils/util";
+import { randomSubredditItem } from "@utils/utils";
 import { ApplyOptions } from "@sapphire/decorators";
 import { PreConditions } from "@lib/types/Types";
 

@@ -1,6 +1,6 @@
 import { Command, CommandOptions } from "@sapphire/framework";
 import { Message, MessageEmbed } from "discord.js";
-import { fetch } from "@utils/util";
+import { fetch } from "@utils/utils";
 import { ApplyOptions } from "@sapphire/decorators";
 import { PreConditions } from "@lib/types/Types";
 
