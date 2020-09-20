@@ -105,6 +105,7 @@
   },
   "_moduleAliases": {
     "@orm": "dist/lib/orm",
+    "@economy": "dist/lib/utils/economy",
     "@utils": "dist/lib/utils",
     "@lib": "dist/lib",
     "@root": "dist"
