@@ -1,0 +1,22 @@
+{
+    "float": {
+        "invalidNaN": "",
+        "invalidDecimal": "",
+        "tooSmall": "",
+        "tooBig": ""
+    },
+    "integer": {
+        "invalidNumber": "",
+        "tooSmall": "",
+        "tooBig": ""
+    },
+    "number": {
+        "invalid": "",
+        "tooSmall": "",
+        "tooBig": ""
+    },
+    "string": {
+        "tooShort": "",
+        "tooLong": ""
+    }
+}
