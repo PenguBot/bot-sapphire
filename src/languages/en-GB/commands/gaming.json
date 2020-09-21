@@ -1,0 +1,55 @@
+{
+    "noGamerTag": "{{pCross}} You need to provide a username to check statistics. You can save a default user by using the flag `--save` with this command.",
+    "notFound": "{{pCross}} I could not find a user corresponding to that username, please try a different one.",
+    "statsNotFound": "{{pCross}} No stats could be found for that username, please try a different one.",
+    "osu": {
+        "totalScore": "Total Score",
+        "rankedScore": "Ranked Score",
+        "level": "Level",
+        "count": "Count",
+        "rank": "Rank",
+        "globalRank": "Global Rank",
+        "accuracy": "Accuracy",
+        "timePlayed": "Time Played",
+        "hours": "Hours",
+        "description": "Get statistics of osu! players.",
+        "detailedDescription": "You need to provide the username of an osu! player to use this command (i.e. p!osu www). To save a default profile, use the --save flag with this command (i.e. p!osu www --save)."
+    },
+    "fortnite": {
+        "winRate": "Win Rate",
+        "level": "Level",
+        "progress": "",
+        "kills": "",
+        "kdr": "",
+        "matchesPlayed": "",
+        "timePlayed": "",
+        "wins": "",
+        "score": "",
+        "hours": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "csgo": {
+        "kdr": "",
+        "kills": "",
+        "deaths": "",
+        "wins": "",
+        "knifeKills": "",
+        "bombsPlanted": "",
+        "lastMatchKills": "",
+        "timePlayed": "",
+        "hours": "",
+        "description": "",
+        "detailedDescription": ""
+    },
+    "coc": {
+        "trophies": "",
+        "warStars": "",
+        "bestTrophies": "",
+        "troopLevels": "",
+        "spellLevels": "",
+        "heroLevels": "",
+        "description": "",
+        "detailedDescription": ""
+    }
+}
