@@ -1,1 +1,10 @@
-{}
+{
+    "default": "",
+    "prefix": {
+        "guild": "",
+        "base": ""
+    },
+    "basicError": "",
+    "poweredBy": "",
+    "noDetailedDescription": ""
+}
