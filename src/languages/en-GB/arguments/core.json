@@ -1,22 +1,22 @@
 {
     "float": {
-        "invalidNaN": "",
-        "invalidDecimal": "",
-        "tooSmall": "",
-        "tooBig": ""
+        "invalidNaN": "{{pCross}} The argument is not a valid number.",
+        "invalidDecimal": "{{pCross}} The argument did not resolve to a float.",
+        "tooSmall": "{{pCross}} The argument is too small.",
+        "tooBig": "{{pCross}} The argument is too big."
     },
     "integer": {
-        "invalidNumber": "",
-        "tooSmall": "",
-        "tooBig": ""
+        "invalidNumber": "{{pCross}} The argument did not resolve to an integer.",
+        "tooSmall": "{{pCross}} The argument is too small.",
+        "tooBig": "{{pCross}} The argument is too big."
     },
     "number": {
-        "invalid": "",
-        "tooSmall": "",
-        "tooBig": ""
+        "invalid": "{{pCross}} The argument did not resolve to a number.",
+        "tooSmall": "{{pCross}} The argument is too small.",
+        "tooBig": "{{pCross}} The argument is too big."
     },
     "string": {
-        "tooShort": "",
-        "tooLong": ""
+        "tooShort": "{{pCross}} The argument is too short.",
+        "tooLong": "{{pCross}} The argument is too long."
     }
 }
