@@ -60,7 +60,7 @@
     "punch": {
         "response": "",
         "description": "",
-        "detailedDescription": ""
+        "detailedDescription": "You must mention the user you would like to punch when using this command."
     },
     "slap": {
         "response": "",
