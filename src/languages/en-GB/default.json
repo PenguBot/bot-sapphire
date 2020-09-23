@@ -1,0 +1,10 @@
+{
+    "default": "{{key}} has not been localised for en-GB yet.",
+    "prefix": {
+        "guild": "The prefix for this server is: {{prefix}}",
+        "base": "The prefix to use PenguBot is: {{prefix}}"
+    },
+    "basicError": "{{pCross}} I have come across an issue, please try again.",
+    "poweredBy": "Powered by",
+    "noDetailedDescription": "There's no more information about this command."
+}

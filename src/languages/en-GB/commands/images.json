@@ -1,0 +1,79 @@
+{
+    "cat": {
+        "embedTitle": "Cat Image and Fact",
+        "description": "Get a random cat picture along with an interesting fact."
+    },
+    "comic": {
+        "embedTitle": "Random Comic",
+        "description": "Sends a random XKCD comic for your entertainment."
+    },
+    "cookie": {
+        "response": "{{to}}, {{from}} just gave you a cookie!",
+        "description": "Send someone a cookie and make their day.",
+        "detailedDescription": "You must mention the user you would like to send a cookie when using this command."
+    },
+    "cuddle": {
+        "response": "{{to}}, you just got cuddled by {{from}}!",
+        "description": "Cuddle someone to make them feel loved!",
+        "detailedDescription": "You must mention the user you would like to cuddle when using this command."
+    },
+    "dog": {
+        "description": "Get cute and random dog and puppy pictures."
+    },
+    "feed": {
+        "response": "{{to}}, you just got fed by {{from}}!",
+        "description": "Feed a hungry friend some food using this command.",
+        "detailedDescription": "You must mention the user you would like to feed when using this command."
+    },
+    "fox": {
+        "description": "Receive random fox pictures."
+    },
+    "hug": {
+        "response": "{{from}} just gave you a hug, {{to}}!",
+        "description": "Give someone a warm hug using this command.",
+        "detailedDescription": "You must mention the user you would like to hug when using this command."
+    },
+    "kiss": {
+        "response": "{{from}} just gave you a kiss, {{to}}!",
+        "description": "Send someone a virtual kiss.",
+        "detailedDescription": "You must mention the user you would like to kiss when using this command."
+    },
+    "meme": {
+        "title": "Title",
+        "link": "Link",
+        "nsfwPost": "{{pCross}} This meme is marked NSFW. Please mark this channel as NSFW or switch to an NSFW to receive it.",
+        "description": "Who doesn't like memes? Get hilarious memes sent straight to you."
+    },
+    "pat": {
+        "response": "{{from}} just patted you, {{to}}!",
+        "description": "Pat someone and make them feel appreciated!",
+        "detailedDescription": "You must mention the user you would like to pat when using this command."
+    },
+    "pengu": {
+        "description": "Recieve cute and adorable penguin images."
+    },
+    "poke": {
+        "response": "{{from}} just poked you, {{to}}!",
+        "description": "Poke someone to get their attention.",
+        "detailedDescription": "You must mention the user you would like to poke when using this command."
+    },
+    "punch": {
+        "response": "{{from}} just punched you, {{to}}!",
+        "description": "Someone making you angry? Give them a punch.",
+        "detailedDescription": "You must mention the user you would like to punch when using this command."
+    },
+    "slap": {
+        "response": "{{to}}, you have been slapped by {{from}}!",
+        "description": "Virtually slap someone with this command!",
+        "detailedDescription": "You must mention the user you would like to slap when using this command."
+    },
+    "tickle": {
+        "response": "{{from}} just tickled you, {{to}}!",
+        "description": "Tickle someone 'till they laugh!",
+        "detailedDescription": "You must mention the user you would like to tickle when using this command."
+    },
+    "wholesome": {
+        "nsfwPost": "{{pCross}} Unfortunately, this wholesome post turned out not to be so wholesome after all... please try again.",
+        "description": "Get a very wholesome post that'll bring you a smile :)"
+    }
+}
