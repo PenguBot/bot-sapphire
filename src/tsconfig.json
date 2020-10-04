@@ -6,6 +6,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@orm/*": ["lib/orm/*"],
+			"@economy/*": ["lib/utils/economy/*"],
 			"@utils/*": ["lib/utils/*"],
 			"@lib/*": ["lib/*"],
 			"@root/*": ["*"]

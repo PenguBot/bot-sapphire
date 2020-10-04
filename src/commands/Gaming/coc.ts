@@ -1,6 +1,6 @@
 import { Command, Args, CommandOptions } from "@sapphire/framework";
 import { Message, MessageEmbed, User } from "discord.js";
-import { fetch } from "@utils/util";
+import { fetch } from "@utils/utils";
 import { API_KEYS } from "@root/config";
 import { DbSet } from "@lib/structures/DbSet";
 import { toTitleCase } from "@sapphire/utilities";

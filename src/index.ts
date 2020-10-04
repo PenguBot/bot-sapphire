@@ -5,7 +5,7 @@ import { DbSet } from "@lib/structures/DbSet";
 import { BOT_TOKEN, CLIENT_OPTIONS, TOKENS } from "@root/config";
 import { Dedupe, ExtraErrorData, RewriteFrames } from "@sentry/integrations";
 import * as Sentry from "@sentry/node";
-import { floatPromise } from "@utils/util";
+import { floatPromise } from "@utils/utils";
 
 if (TOKENS.SENTRY_DNS) {
     Sentry.init({
